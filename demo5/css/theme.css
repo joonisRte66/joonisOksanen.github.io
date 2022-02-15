@@ -29,7 +29,7 @@ body {
 .navbar-default,.navbar-default .navbar-header .navbar-brand,h1,h2,h3,h4,h5,h6 {
 	font-family:Varela,Helvetica,Arial,sans-serif;
 	font-weight:200;
-	letter-spacing:1px;
+	letter-spacing:5px;
   color:rgb(0, 255, 13);
 }
 a {

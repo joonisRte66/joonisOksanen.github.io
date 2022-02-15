@@ -504,7 +504,9 @@ footer ul li a.active,footer ul li a:active,footer ul li a:focus,footer ul li a:
 	padding-left: 80px;
   }
   section .title, section.couponsection h2 {
-    font-size:30px;
+    font-size:30px;	  
+    border-style: solid;
+    border-color: green;
   }
   header .header-content .header-content-inner {
     text-align:left;

@@ -303,7 +303,7 @@ footer,section.contact {
   display: inline-block;
   text-align: right;
   line-height: 40px;
-  border-radius: 70%;
+  border-radius: 70px;
   background: rgba(255,255,255,0.1);
 }
 header .header-content .header-content-inner h1 {

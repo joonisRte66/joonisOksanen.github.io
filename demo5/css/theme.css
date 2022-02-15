@@ -102,6 +102,7 @@ p {
 	.navbar-default {
 		background-color:transparent;
 		border-color:transparent;
+		border-radius: 100px;
 	}
 	.navbar-default .navbar-header .navbar-brand {
 		color:rgba(255,255,255,.7)

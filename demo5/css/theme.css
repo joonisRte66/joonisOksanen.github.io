@@ -303,7 +303,6 @@ footer,section.contact {
   display: inline-block;
   text-align: right;
   line-height: 40px;
-  border-radius: 70px;
   background: rgba(255,255,255,0.1);
 }
 header .header-content .header-content-inner h1 {
@@ -351,7 +350,6 @@ section .title {
   padding:15px 35px;
   background:#900d0d;
   margin-top:10px;
-  border-radius:10000px;
 }
 .btn-buynow:hover {
   opacity:0.8;
@@ -412,7 +410,7 @@ section .overlay {
 }
 #contactform input[type=submit] {
   width:100%;
-  border-radius:0;
+  border-radius:100px;
   padding:18px 20px;
   color:#fff;
 }
@@ -457,9 +455,7 @@ footer ul li a.active,footer ul li a:active,footer ul li a:focus,footer ul li a:
   	background-color:#fdcc52;
   	border-color:#fdcc52
   }
-  .btn {
-  	border-radius:300px
-  }
+  .btn {  }
   .btn-xl {
   	padding:300px 60px;
   	font-size:11px
@@ -483,7 +479,7 @@ footer ul li a.active,footer ul li a:active,footer ul li a:focus,footer ul li a:
   	background: 0 0
   }
   .nav>li>a.menuhighlight {
-    border-radius: 30px;
+    border-radius: 100px;
     background: #333;
     color: #fff;
     padding: 8px 17px;

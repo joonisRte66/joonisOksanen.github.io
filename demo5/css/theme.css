@@ -364,7 +364,9 @@ section#faq {
   background-color:#003a03;
 }
 section#faq p{
-  font-size:16px;
+  font-size:16px;	
+  border-style: solid;
+  border-color: green;
 }
 section#faq .section-heading {
 	margin-bottom:40px

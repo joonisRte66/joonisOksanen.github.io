@@ -437,7 +437,7 @@ footer ul li a.active,footer ul li a:active,footer ul li a:focus,footer ul li a:
 @media (min-width:992px) {
 
   .bg-primary {
-  	background:rgb(255,255,255);
+  	background:rgb(0,0,0);
   }
   .text-primary {
   	color:#fdcc52

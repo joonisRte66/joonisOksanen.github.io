@@ -340,7 +340,7 @@ section .title {
   border-style: solid;
   border-width: medium;
 }
-gift{
+.gift{
 	text-align: center;
 }
 .coupon h3, .coupon h4, .header-content h1, .header-content h4 {

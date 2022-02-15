@@ -334,11 +334,14 @@ section .title {
   margin-top: 50px;
   padding: 40px;
   background: rgba(252, 255, 250, 0.14);
-  text-align: center;
+  text-align: right;
   border: 8px dashed rgba(255, 255, 255, 0.32);
   color: #fff;
   border-style: solid;
   border-width: medium;
+}
+gift{
+	text-align: center;
 }
 .coupon h3, .coupon h4, .header-content h1, .header-content h4 {
   color:#fff;

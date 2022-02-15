@@ -355,6 +355,7 @@ section .title {
   padding:15px 35px;
   background:#900d0d;
   margin-top:10px;
+  border-radius:10000px;
 }
 .btn-buynow:hover {
   opacity:0.8;

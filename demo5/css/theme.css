@@ -338,6 +338,8 @@ section .title {
   text-align: right;
   border: 8px dashed rgba(255, 255, 255, 0.32);
   color: #fff;
+  border-style: solid;
+  border-width: medium;
 }
 .coupon h3, .coupon h4, .header-content h1, .header-content h4 {
   color:#fff;

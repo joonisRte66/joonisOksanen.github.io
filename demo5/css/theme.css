@@ -334,7 +334,7 @@ section .title {
   margin-top: 50px;
   padding: 40px;
   background: rgba(252, 255, 250, 0.14);
-  text-align: right;
+  text-align: center;
   border: 8px dashed rgba(255, 255, 255, 0.32);
   color: #fff;
   border-style: solid;

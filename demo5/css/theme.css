@@ -316,14 +316,14 @@ section {
 	padding:100px 0
 }
 section h2 {
-	font-size:50px
+	font-size:80px
 }
 section.couponsection {
   padding: 150px 0;
   position: relative;
 }
 section.couponsection h2 {
-	margin-top:0;
+	margin-top:20;
 	font-size:50px
 }
 
@@ -366,7 +366,7 @@ section#faq {
   background-color:#003a03;
 }
 section#faq p{
-  font-size:16px;	
+  font-size:26px;	
   border-style: solid;
   border-color: green;
 }

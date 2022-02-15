@@ -271,7 +271,7 @@ header .device-container .screen img {}
   	position:absolute;
   }
 	header .header-content {
-		text-align:right;
+		text-align:center;
 		padding:0;
 		height:100vh
 	}

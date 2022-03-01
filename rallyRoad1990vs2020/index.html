@@ -12,7 +12,7 @@
             <button onclick="change2020()">2020</button>
         </div> 
         <div class="countainer">
-            <div class="panel active" style="background-image: url('img/montecarlo_1990.jpg');">
+            <div id="1" class="panel active" style="background-image: url('img/montecarlo_1990.jpg');">
                 <h3>Monte Carlo 1990</h3>
             </div>
             <div class="panel" style="background-image: url('img/montecarlo_2020.jpg');">
@@ -32,6 +32,7 @@
         <script>
             function change1990()
             {
+                getElementById("1").innerHTML = url('img/montecarlo_1990.jpg');
                 console.log("1990");
             }
             

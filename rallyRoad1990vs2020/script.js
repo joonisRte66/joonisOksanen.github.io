@@ -13,4 +13,7 @@ function removeActiveClasses(){
     })
 }
 
-<button onclick="change1990()">1990</button> 
+function change1990()
+{
+    console.log("test");
+}

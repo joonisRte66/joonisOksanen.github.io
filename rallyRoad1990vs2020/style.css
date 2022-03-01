@@ -12,6 +12,12 @@ body{
     overflow: hidden;
 }
 
+h5{
+    font-family: "Times New Roman", sans-serif;
+    align-items: center;
+    font-size: 150;
+}
+
 .countainer{
     display: flex;
     width: 90vw;
@@ -27,6 +33,7 @@ body{
     position: relative;
     transition: flex 0.5s ease-in;
     color: #fff;
+    font-size: 20;
     cursor: pointer;
     margin:10px;
 }

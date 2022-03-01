@@ -29,8 +29,8 @@ body {
 .navbar-default,.navbar-default .navbar-header .navbar-brand,h1,h2,h3,h4,h5,h6 {
 	font-family:Varela,Helvetica,Arial,sans-serif;
 	font-weight:200;
-	letter-spacing:1px;
-  color:rgb(0, 255, 13);
+	letter-spacing:5px;
+  color:rgb(255, 0, 13);
 }
 a {
 	-webkit-transition:all .35s;
@@ -47,7 +47,7 @@ hr {
 	border-color:rgba(34,34,34,.1)
 }
 hr.light {
-	border-color:rgb(68, 0, 255)
+	border-color:rgb(20, 10, 255)
 }
 p {
 	font-size:18px;
@@ -55,7 +55,7 @@ p {
 	margin-bottom:20px
 }
 .navbar-default {
-	background-color:rgb(0, 204, 255);
+	background-color:rgb(255, 0, 0);
 	border-color:rgba(34,34,34,.05);
 	-webkit-transition:all .35s;
 	-moz-transition:all .35s;
@@ -63,12 +63,12 @@ p {
 }
 .navbar-default .navbar-header .navbar-brand {
 	color:#eeff00;
-  font-family: Marmelad;
+  font-family: Arial;
 }
 .btn,.navbar-default .nav>li>a {
 	font-family:Lato,Helvetica,Arial,sans-serif;
 	text-transform:uppercase;
-	letter-spacing:2px
+	letter-spacing:20px
 }
 .navbar-default .navbar-header .navbar-brand:focus,.navbar-default .navbar-header .navbar-brand:hover {
 	color:#1fbb00
@@ -246,6 +246,8 @@ header .header-content .header-content-inner h1 {
 	margin-top:0;
 	margin-bottom:30px;
 	font-size:30px
+	border-style: solid;
+  	border-color: green;
 }
 header .header-content .header-content-inner .list-badges {
 	margin-bottom:25px
@@ -255,9 +257,7 @@ header .header-content .header-content-inner .list-badges img {
 	margin-bottom:25px
 }
 
-header .device-container .screen img {
-	border-radius:3px
-}
+header .device-container .screen img {}
 @media (min-width:768px) {
 	header {
 		min-height:100%
@@ -271,7 +271,7 @@ header .device-container .screen img {
   	position:absolute;
   }
 	header .header-content {
-		text-align:right;
+		text-align:center;
 		padding:0;
 		height:100vh
 	}
@@ -297,13 +297,12 @@ footer,section.contact {
 .social a {
   color:#fff;
   font-size:20px;
-  margin-right:200px;
+  margin-right:5px;
   width: 40px;
   height: 40px;
   display: inline-block;
-  text-align: right;
+  text-align: center;
   line-height: 40px;
-  border-radius: 70%;
   background: rgba(255,255,255,0.1);
 }
 header .header-content .header-content-inner h1 {
@@ -311,17 +310,17 @@ header .header-content .header-content-inner h1 {
     font-family: Great Vibes;
 }
 section {
-	padding:100px 0
+	padding:120px
 }
 section h2 {
-	font-size:50px
+	font-size:80px
 }
 section.couponsection {
   padding: 150px 0;
   position: relative;
 }
 section.couponsection h2 {
-	margin-top:0;
+	margin-top:20;
 	font-size:50px
 }
 
@@ -338,6 +337,11 @@ section .title {
   text-align: right;
   border: 8px dashed rgba(255, 255, 255, 0.32);
   color: #fff;
+  border-style: solid;
+  border-width: medium;
+}
+.gift{
+	text-align: center;
 }
 .coupon h3, .coupon h4, .header-content h1, .header-content h4 {
   color:#fff;
@@ -362,7 +366,9 @@ section#faq {
   background-color:#003a03;
 }
 section#faq p{
-  font-size:16px;
+  font-size:26px;	
+  border-style: solid;
+  border-color: green;
 }
 section#faq .section-heading {
 	margin-bottom:40px
@@ -390,8 +396,8 @@ section .overlay {
 }
 
 #contactform input, #contactform textarea {
-  border: 1px solid rgba(0, 0, 0, 0.09);
-  background-color: rgba(255,255,255,0.1);
+  border: 1px solid rgba(0, 0, 0, 0.9);
+  background-color: rgba(255,255,255,0.5);
   width: 100%;
   padding: 20px 20px;
   letter-spacing: 1px;
@@ -407,7 +413,7 @@ section .overlay {
 }
 #contactform input[type=submit] {
   width:100%;
-  border-radius:0;
+  border-radius:100px;
   padding:18px 20px;
   color:#fff;
 }
@@ -416,7 +422,7 @@ footer p,footer ul li a {
   font-size:12px
 }
 footer,footer ul li a {
-  color:rgba(255,255,255,.3)
+  color:rgba(255,255,255,0.3)
 }
 
 footer {
@@ -434,7 +440,7 @@ footer ul li a.active,footer ul li a:active,footer ul li a:focus,footer ul li a:
 @media (min-width:992px) {
 
   .bg-primary {
-  	background:#37488a;
+  	background:rgb(0,0,0);
   }
   .text-primary {
   	color:#fdcc52
@@ -452,9 +458,7 @@ footer ul li a.active,footer ul li a:active,footer ul li a:focus,footer ul li a:
   	background-color:#fdcc52;
   	border-color:#fdcc52
   }
-  .btn {
-  	border-radius:300px
-  }
+  .btn {  }
   .btn-xl {
   	padding:300px 60px;
   	font-size:11px
@@ -478,7 +482,7 @@ footer ul li a.active,footer ul li a:active,footer ul li a:focus,footer ul li a:
   	background: 0 0
   }
   .nav>li>a.menuhighlight {
-    border-radius: 30px;
+    border-radius: 100px;
     background: #333;
     color: #fff;
     padding: 8px 17px;
@@ -502,7 +506,9 @@ footer ul li a.active,footer ul li a:active,footer ul li a:focus,footer ul li a:
 	padding-left: 80px;
   }
   section .title, section.couponsection h2 {
-    font-size:30px;
+    font-size:30px;	  
+    border-style: solid;
+    border-color: green;
   }
   header .header-content .header-content-inner {
     text-align:left;

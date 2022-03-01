@@ -12,8 +12,3 @@ function removeActiveClasses(){
         panel.classList.remove('active');
     })
 }
-
-function change1990()
-{
-    console.log("test");
-}

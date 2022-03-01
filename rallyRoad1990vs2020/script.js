@@ -12,3 +12,5 @@ function removeActiveClasses(){
         panel.classList.remove('active');
     })
 }
+
+<button onclick="change1990()">1990</button> 

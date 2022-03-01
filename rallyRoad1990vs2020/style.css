@@ -12,10 +12,10 @@ body{
     overflow: hidden;
 }
 
-.h5{
+p{
     font-family: "Times New Roman", sans-serif;
     align-items: center;
-    font-size: 150;
+    font-size: 300;
 }
 
 button{

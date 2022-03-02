@@ -21,6 +21,8 @@ button{
     align-items: center;
     height: 50px;
     width: 100px;
+    color: white;
+    background-color: black;
 }
 
 .countainer{

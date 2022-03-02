@@ -11,14 +11,14 @@ body{
     min-height: 100vh;
     overflow: hidden;
 }
-.countainer p{
 
-    font-family: "Times New Roman", sans-serif;
+.rally{
     align-items: center;
-    font-size: 300;
+    font-size: 150px;
 }
 
 button{
+    align-items: center;
     height: 50px;
     width: 100px;
 }

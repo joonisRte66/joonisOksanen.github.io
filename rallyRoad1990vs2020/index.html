@@ -9,24 +9,25 @@
             function changeone()
             {
                 document.getElementById("div_1").innerHTML='<img src=img/montecarlo_1990.jpg>';
-                console.log("1990");
             }
             
             function changetwo()
             {
                 document.getElementById("div_2").innerHTML='<img src=img/montecarlo_2020.jpg>';
-                console.log("2020");
             }
         </script>
 
     </head>
 
     <body>
-        <div class="countainer">
+        <div class="rally">
             <p>Rally Roads</p>
+        </div>
+
+        <div class="countainer">
             <button onclick="changeone();">1990</button> 
             <button onclick="changetwo();">2020</button>
-            <div id="div_1" class="panel active" style="background-image: url('img/montecarlo_2020.jpg')">
+            <div id="div_1" class="panel" style="background-image: url('img/montecarlo_2020.jpg')">
                 <h3>Monte Carlo</h3>
             </div>
             <div id="div_2" class="panel" style="background-image: url('img/finland_2020.jpg')">

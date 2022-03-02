@@ -37,7 +37,7 @@ button{
     flex: 0.5;
     position: relative;
     transition: flex 0.5s ease-in;
-    color:blue;
+    color:red;
     font-size: 20;
     cursor: pointer;
     margin:10px;
@@ -46,12 +46,12 @@ button{
 .panel h3{
     position: absolute;
     bottom: 20px;
-    left: 350px;
+    left: 420px;
     opacity:0;
 }
 
 .panel.active{
-    flex:5;
+    flex:10;
 }
 
 .panel.active h3{

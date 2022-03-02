@@ -11,11 +11,11 @@ body{
     min-height: 100vh;
     overflow: hidden;
 }
-
 .countainer p{
+
     font-family: "Times New Roman", sans-serif;
     align-items: center;
-    font-size: 150;
+    font-size: 300;
 }
 
 button{

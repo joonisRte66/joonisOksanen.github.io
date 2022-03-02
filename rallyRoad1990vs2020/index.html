@@ -1,34 +1,45 @@
-<html>
+<!DOCTYPE html>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
         <title>Rally Roads</title>
+        
+        <script>
+            function changeone()
+            {
+                document.getElementById("div_1").innerHTML='<img src=img/montecarlo_1990.jpg>';
+                console.log("1990");
+            }
+            
+            function changetwo()
+            {
+                document.getElementById("div_2").innerHTML='<img src=img/montecarlo_2020.jpg>';
+                console.log("2020");
+            }
+        </script>
+
     </head>
+
     <body>
-        <h5>Rally Roads 1990</h5>
-        <div>
-            <button id="btn1">1990</button>
-            <button id="btn2">2020</button>
-        </div> 
         <div class="countainer">
-            <div class="panel active" style="background-image: url('img/montecarlo_1990.jpg');">
-                <h3>Monte Carlo 1990</h3>
+            <p>Rally Roads</p>
+            <button onclick="changeone();">1990</button> 
+            <button onclick="changetwo();">2020</button>
+            <div id="div_1" class="panel active" style="background-image: url('img/montecarlo_2020.jpg')">
+                <h3>Monte Carlo</h3>
             </div>
-            <div class="panel" style="background-image: url('img/montecarlo_1990.jpg');">
-                <h3>Wild Forest</h3>
+            <div id="div_2" class="panel" style="background-image: url('img/finland_2020.jpg')">
+                <h3>Finland</h3>
             </div>
-            <div class="panel" style="background-image: url('img/montecarlo_1990.jpg');">
-                <h3>Sunny Beach</h3>
+            <div id="div_3" class="panel" style="background-image: url('img/sweden_2020.jpg')">
+                <h3>Sweden</h3>
             </div>
-            <div class="panel" style="background-image: url('img/montecarlo_1990.jpg');">
-                <h3>City on nature</h3>
-            </div>
-            <div class="panel" style="background-image: url('img/montecarlo_1990.jpg');">
-                <h3>Mountains - Clouds</h3>
+            <div id="div_4" class="panel" style="background-image: url('img/estonia_2020.jpg')">
+                <h3>Estonia</h3>
             </div>
         </div>
-
+        
         <script src="script.js"></script>
     </body>
 </html>

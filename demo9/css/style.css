@@ -109,8 +109,8 @@ h6 {
      box-sizing: border-box;
 }
 
-button{
-     color: yellow;
+input [type=submit]{
+     color: #5a2f27;
 }
 
 h1 a,

@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family');
 
-ul {
+#navigointi ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -8,11 +8,11 @@ ul {
   background-color: #222;
 }
 
-li {
+#navigointi li {
   float: left;
 }
 
-li a {
+#navigointi li a {
   display: block;
   color: white;
   text-align: center;
@@ -20,7 +20,7 @@ li a {
   text-decoration: none;
 }
 
-li a:hover {
+#navigointi li a:hover {
   background-color: #f00;
 }
 
@@ -28,4 +28,3 @@ h1{
   color: red;
   font-family: 'verdana';
 }
-

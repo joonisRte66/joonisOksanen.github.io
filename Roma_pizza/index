@@ -1,1 +1,10 @@
-# joonisRte66.github.io
+<!doctype html>
+<html>
+  <head>
+    <title>Demo2</title>
+  </head>
+  <body>
+    <p>Terve maailma!</p>
+    <img src="kuva.jpg" alt="autosta kuva">
+  </body>
+</html>

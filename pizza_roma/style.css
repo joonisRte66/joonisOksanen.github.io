@@ -21,3 +21,11 @@
   font-size: 23px;
   font-family: 'Verdana';
 }
+
+.navigointi .navigoinnit ul li{
+  display: inline-block;
+  padding: 15px 20px;
+}
+
+.navigointi .navigoinnit ul li a{
+}

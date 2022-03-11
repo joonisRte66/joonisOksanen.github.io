@@ -35,3 +35,15 @@ body {
   color: #f00;
   font-family: 'verdana';
 }
+
+#header{
+  height: 100vh;
+  backround-image: url('');
+  backround-size: cover;
+  display: flex;
+}
+
+header{
+  margin-top:20px;
+  display: flex;
+}

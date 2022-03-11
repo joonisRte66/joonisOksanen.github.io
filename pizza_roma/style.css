@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family');
+
 *{
   margin: 0;
   padding: 0;
@@ -17,4 +19,5 @@
 .navigointi .logo{
   padding: 15px 20px;
   font-size: 23px;
+  font-family: 'Verdana';
 }

@@ -8,3 +8,13 @@
 .home{
   height: 100vh;
 }
+
+.navigointi{
+  display: flex;
+  justify-content: space-around;
+}
+
+.navigointi .logo{
+  padding: 15px 20px;
+  font-size: 23px;
+}

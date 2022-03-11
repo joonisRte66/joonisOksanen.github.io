@@ -7,33 +7,33 @@
   text-decoration: none;
 }
 
-.home{
+.koti{
   height: 100vh;
 }
 
-.navigointi{
+.navbar{
   display: flex;
   justify-content: space-around;
 }
 
-.navigointi .logo{
+.navbar .logo{
   padding: 15px 20px;
   font-size: 23px;
   font-family: 'Verdana';
 }
 
-.navigointi .navigoinnit ul li{
+.navbar .navs ul li{
   display: inline-block;
   padding: 15px 20px;
 }
 
-.navigointi .navigoinnit ul li a{
+.navbar .navs ul li a{
   color: #f00;
   font-size: 20px;
   font-family: 'Verdana';
 }
 
-.navigointi .navigoinnit ul li a:hover{
+.navbar .navs ul li a:hover{
   color: #000;
   font-family: 'Verdana';
   border-bottom: 1px solid #123;

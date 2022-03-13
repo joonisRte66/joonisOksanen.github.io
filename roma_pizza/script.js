@@ -29,6 +29,12 @@ function juustoFunktio() {
 function laskeYhteisHinta() {
   kaikenYhteisHinta = kinkkuAnanasMaara.value * 8 + juustoPizzaMaara.value * 5;
   document.getElementById("hinta").innerHTML = "Yhteishinta: " + kaikenYhteisHinta + " €";
+  if (onkoKinkkuValittu.checked) { // Jos juustopizzoja on niin tulostetaan niiden määrä
+    document.getElementById("valitutKinkkuPizzat").innerHTML = kinkkuAnanasMaara.value + " kinkkuananaspizzaa";
+  }
+  if (onkoJuustoValittu.checked) {
+    document.getElementById("valitutJuustoPizzat").innerHTML = juustoPizzaMaara.value + " juustopizzaa";
+  }
 }
 // 2 funktiota jotka toteutuu kun käyttäjä valitsee joko 'nouto' tai 'kuljetus'
 function kotiinKuljetus() { // Jos käyttäjä valitsee kuljetuksen

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family');
 
 body {
-  background-image:url('img/banner.png');
+  background-image:url('img/banner_2.png');
 }
 
 /* Navigointipalkki */
@@ -31,39 +31,84 @@ body {
 }
 
 #pizzaRoma {
+  text-align: center;
   font-size: 155%;
   color: yellow;
-  background-color: black;
   font-family: 'verdana';
 }
 
 #teksti {
-  font-size: 155%;
+  text-align: center;
+  font-size: 200%;
   color: yellow;
-  background-color: black;
   font-family: 'verdana';
 }
 
 .button {
   border: none;
-  color: antiquewhite;
   padding: 16px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
   transition-duration: 0.4s;
   cursor: pointer;
 }
 
 .button1 {
+  margin: 200px 260px;
   background-color: black; 
-  color: red; 
-  border: 2px solid yellow;
+  color: yellow; 
+  border: 5px solid red;
 }
 
 .button1:hover {
-  background-color: yellow;
+  background-color: red;
   color: black;
+}
+
+.button2 {
+  margin: 200px 280px;
+  background-color: black; 
+  color: yellow; 
+  border: 5px solid red;
+}
+
+.button2:hover {
+  background-color: red;
+  color: black;
+}
+
+.card{
+  width: 800px;
+  height: 550px;
+  display: inline-block;
+  border-radius: 30px;
+  padding: 15px 25px;
+  box-sizing: border-box;
+  cursor: pointer;
+  margin: 95px 70px;
+  background-image: url('img/fantasia.png');
+  background-position: center;
+  background-size: cover;
+  font-size: 200%;
+  text-align: center;
+  color: antiquewhite;
+}
+
+.card2{
+  width: 800px;
+  height: 550px;
+  display: inline-block;
+  border-radius: 30px;
+  padding: 15px 25px;
+  box-sizing: border-box;
+  cursor: pointer;
+  margin: 100px 70px;
+  background-image: url('img/pizza.png');
+  background-position: center;
+  background-size: cover;
+  font-size: 200%;
+  text-align: center;
+  color: antiquewhite;
 }

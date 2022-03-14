@@ -27,19 +27,59 @@ function juustoFunktio() {
   } else if (juustoPizzaMaara.value <= 0) {
     document.getElementById("juusto").innerHTML = "Valitse vähintään yksi tai poista rasti.";
   } else {
-    document.getElementById("juusto").innerHTML = "Virhe...";
+    document.getElementById("juusto").innerHTML = "Virhe";
   }
+}
+var kinkkuAnanasLisaKatkarapu; // Muuttuja johon tallennetan tieto tuleeko kinkkuananaspizzaan katkarapua
+var kinkkuAnanasLisaSipuli; // Muttuuja johon tallennetaan tieto tuleeko kinkuananaspizzaan sipulia
+function kinkkuAnanasLisaTayte() {
+  kinkkuAnanasLisaKatkarapu = document.getElementById("lisaKatkarapu"); // Lukee inputin kyseisiin muuttujiin
+  kinkkuananasLisaSipuli = document.getElementById("lisaSipuli");
+  document.getElementById("kinkkuAnanasLisaTayte").innerHTML = "Lisätty!";
+}
+var juustoLisaKatkarapu;
+var juustoLisaSipuli;
+function juustoLisaTayte() {
+  juustoLisaKatkarapu = document.getElementById("juustoLisaKatkarapu");
+  juustoLisaSipuli = document.getElementById("juustoLisaSipuli");
+  document.getElementById("juustoLisaTayte").innerHTML = "Lisätty!";
 }
 // Funktio jolla lasketaan valittujen pizzojen yhteishinta
 function laskeYhteisHinta() {
   kaikenYhteisHinta = kinkkuAnanasMaara.value * 8 + juustoPizzaMaara.value * 5;
-  document.getElementById("hinta").innerHTML = "Yhteishinta: " + kaikenYhteisHinta + " €";
-  if (kinkkuAnanasMaara.value > 0) { // Jos kyseisiä pizzoja on enemmän kuin 0 niin tulostetaan niiden määrä
-    document.getElementById("valitutKinkkuPizzat").innerHTML = kinkkuAnanasMaara.value + " kinkkuananaspizzaa";
+
+  if (kinkkuAnanasMaara.value > 0) { // Jos kinkkuananas pizzoja on enemmän kuin 0 niin jatketaan:
+    if (lisaKatkarapu.checked) { // Jos kinkkuananaspizzaan tulee katkarapua niin jatketaan:
+    kaikenYhteisHinta = kaikenYhteisHinta + 1 * kinkkuAnanasMaara.value; // Lisätään lisätäytteen hinta
+    }
+    if (lisaSipuli.checked) { // Jos lisasipuli on valittu
+    kaikenYhteisHinta = kaikenYhteisHinta + 1 * kinkkuAnanasMaara.value;
+    }
+  }
+
+  if (juustoPizzaMaara.value > 0) {
+    if (juustoLisaKatkarapu.checked) {
+    kaikenYhteisHinta = kaikenYhteisHinta + 1 * juustoPizzaMaara.value;
+    }
+    if (juustoLisaSipuli.checked) {
+    kaikenYhteisHinta = kaikenYhteisHinta + 1 * juustoPizzaMaara.value;
+    }
+}
+  document.getElementById("hinta").innerHTML = "Yhteishinta: " + kaikenYhteisHinta + " €"; // Tulostaa yhteishinnan
+  if (kinkkuAnanasMaara.value > 0) { // Jos kinkkuananas pizzoja on enemmän kuin 0 niin jatketaan:
+    if (lisaKatkarapu.checked || lisaSipuli.checked) {  // Jos kinkkuananas pizzoissa on lisätäytteitä niin jatketaan:
+      document.getElementById("valitutKinkkuPizzat").innerHTML = kinkkuAnanasMaara.value + " kinkkuananaspizzaa valituilla lisätäytteillä";
+    } else { // Jos lisätäytteitä ei ole:
+      document.getElementById("valitutKinkkuPizzat").innerHTML = kinkkuAnanasMaara.value + " kinkkuananaspizzaa";
+    }
   }
   if (juustoPizzaMaara.value > 0) {
+    if (juustoLisaKatkarapu.checked || juustoLisaSipuli.checked) {
+      document.getElementById("valitutJuustoPizzat").innerHTML = juustoPizzaMaara.value + " juustopizzaa valituilla lisätäytteillä";
+  } else {
     document.getElementById("valitutJuustoPizzat").innerHTML = juustoPizzaMaara.value + " juustopizzaa";
   }
+}
 }
 // 2 funktiota jotka toteutuu kun käyttäjä valitsee joko 'nouto' tai 'kuljetus'
 function kotiinKuljetus() { // Jos käyttäjä valitsee kuljetuksen

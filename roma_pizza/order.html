@@ -33,7 +33,7 @@
 
     <input type="checkbox" id="lisaKatkarapu" value="">Katkarapu (<strong>+1€</strong>)
     <input type="checkbox" id="lisaSipuli" value="">Sipuli (<strong>+1€</strong>)
-    <button onclick="kinkkuAnanasLisaTayte()">Lisää ostoskoriin</button>
+    <button onclick="kinkkuFunktio()">Lisää ostoskoriin</button>
     <p id="kinkkuAnanasLisaTayte"></p>
 
     
@@ -43,7 +43,7 @@
 
     <input type="checkbox" id="juustoLisaKatkarapu" value="">Katkarapu (<strong>+1€</strong>)
     <input type="checkbox" id="juustoLisaSipuli" value="">Sipuli (<strong>+1€</strong>)
-    <button onclick="juustoLisaTayte()">Lisää ostoskoriin</button>
+    <button onclick="juustoFunktio()">Lisää ostoskoriin</button>
     <p id="juustoLisaTayte"></p>
 
     <p id="kinkku"></p> <!-- Tähän tulee kinkkupizzojen määrä ja yhteishinta -->
@@ -52,12 +52,11 @@
     <p id="hinta"></p>
     <p id="valitutKinkkuPizzat"></p>
     <p id="valitutJuustoPizzat"></p>
-    
-    <!-- Vaihtoehto ottaa nouto tai kotiinkuljetus -->
-    <p>Kotiinkuljetus vai nouto?</p>
-    <button onclick="kotiinKuljetus()">Kotiin</button>
-    <button onclick="tilausNouto()">Nouto</button>
-    <p id="kuljetus"></p>
+        <!-- Vaihtoehto ottaa nouto tai kotiinkuljetus -->
+        <button onclick="kotiinKuljetus()">Kotiin</button>
+        <button onclick="tilausNouto()">Tilaus</button>
+        <p id="kuljetus"></p>
+
     
     <!-- 'Hyväksy' nappi ei tee mitään sillä ei kuulu tallentaa tietoja tietokantaan tai vastaavaan -->
     <article id="huvaksu">

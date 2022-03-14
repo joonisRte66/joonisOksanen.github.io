@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family');
 
 body {
-  background-color:antiquewhite;
+  background-image:url('img/banner.png');
 }
 
 /* Navigointipalkki */
@@ -10,28 +10,36 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: antiquewhite;
+  background-color: black;
 }
 #navigointi li {
-  float: left;
+  float: right;
 }
 #navigointi li a {
   display: block;
-  color: black;
+  color: red;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 125%;
 }
 #navigointi li a:hover {
-  background-color: #f00;
+  background-color: yellow;
 }
 #navigointi ul li[nykyinen] {
-  background-color: #f00;
+  background-color: yellow;
 }
 
 #pizzaRoma {
   font-size: 155%;
-  color: #f00;
+  color: yellow;
+  background-color: black;
+  font-family: 'verdana';
+}
+
+#teksti {
+  font-size: 155%;
+  color: yellow;
+  background-color: black;
   font-family: 'verdana';
 }

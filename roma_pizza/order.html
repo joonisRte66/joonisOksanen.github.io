@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="styleOrder.css">
         <title>Pizza Roma</title>
     </head>
 
@@ -21,7 +21,34 @@
             <div id="logo" class="pizza"> 
                 <h1 id="pizzaRoma">Tervetuloa Pizza Roman tilaukseen!</h1>
                 <h1 id="teksti">Tilaa itsellesi sopiva pizza alla olevasta listasta!</h1>
-            </div> 
+            </div>
+             <!-- Pizzantilausprosessi alkaa tästä -->
+            <article id="pizzaTilaus">
+                <p>Tilauksen teko:</p>
+                <p>Valitse vaihtoehdoista ja tilaa kotiovelle edullisesti maukaus ja lämmin pizza!!</p>
+                <!-- Kinkkuananaspizza -->
+                <input type="checkbox" id="kinkkuananas" value=""> Kinkkuananaspizza <strong>8€</strong><br> <!-- Luo 'checkboxin' josta valitaan pizza -->
+                <input type="number" id="kinkkuAnanasMaara" value=""> <!-- Luo alueen johon syötetään pizzojen määrä -->
+                <button onclick="kinkkuFunktio()">Lisää ostoskoriin</button><br> <!-- Nappi joka laukaisee funktion kinkkuFunktio() -->
+                <!-- Juustopizza -->
+                <input type="checkbox" id="juustoPizza" value=""> Juustopizza <strong>5€</strong><br>
+                <input type="number" id="juustoPizzaMaara" value="">
+                <button onclick="juustoFunktio()">Lisää ostoskoriin</button>
+                <p id="kinkku"></p> <!-- Tähän tulee kinkkupizzojen määrä ja yhteishinta -->
+                <p id="juusto"></p> 
+                <button onclick="laskeYhteisHinta()">Laske yhteishinta</button> <!-- Nappi joka laukaisee funktion laskeYhteisHinta() -->
+                <p id="hinta"></p>
+                <!-- Vaihtoehto ottaa nouto tai kotiinkuljetus -->
+                <p>Kotiinkuljetus vai nouto?</p>
+                <button onclick="kotiinKuljetus()">Kotiin</button>
+                <button onclick="tilausNouto()">Nouto</button>
+                <p id="kuljetus"></p>
+                <!-- 'Hyväksy' nappi ei tee mitään sillä ei kuulu tallentaa tietoja tietokantaan tai vastaavaan -->
+                <article id="huvaksu">
+                <input type="text" value="">
+                <button onclick="">Hyväksy</button>
+                </article>
+            </article> 
         </header>
         <script src="script.js"></script>
     </body>

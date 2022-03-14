@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family');
 
 body {
-  background-image:url('img/banner.png');
+  background-image:url('img/banner_2.png');
 }
 
 /* Navigointipalkki */
@@ -64,4 +64,9 @@ body {
 
 #huvaksu {
   display:none;
+}
+
+#pizzaTilaus p{
+  color: yellow;
+  background-color: black;
 }

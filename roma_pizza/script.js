@@ -3,6 +3,7 @@ var onkoKinkkuValittu; // Muuttuja johon tallennetaan tieto onko kinkkupizza val
 var kaikenYhteisHinta; // Muuttuja johon tallennetaan kaikkien valittujen pizzojen hinta
 var onkoJuustoValittu; // Muuttuja johon tallennetaan tieto onko juustopizza valittu
 // Funktio jolla lasketaan kinkkuananaspizzan määrä ja hinta
+
 function kinkkuFunktio() {
   onkoKinkkuValittu = document.getElementById("kinkkuananas"); // Hankkii tiedon onko checkboxissa rasti
   if (onkoKinkkuValittu.checked && kinkkuAnanasMaara.value >= 0) { // JOS checkboxissa on rasti niin seuraavat asiat suoritetaan   
@@ -16,6 +17,7 @@ function kinkkuFunktio() {
     document.getElementById("kinkku").innerHTML = "Virhe";
   }
 }
+
 // Funktio jolla lasketaan juustopizzojen määrät jne
 function juustoFunktio() {
   onkoJuustoValittu = document.getElementById("juustoPizza");
@@ -30,6 +32,7 @@ function juustoFunktio() {
     document.getElementById("juusto").innerHTML = "Virhe";
   }
 }
+
 var kinkkuAnanasLisaKatkarapu; // Muuttuja johon tallennetan tieto tuleeko kinkkuananaspizzaan katkarapua
 var kinkkuAnanasLisaSipuli; // Muttuuja johon tallennetaan tieto tuleeko kinkuananaspizzaan sipulia
 function kinkkuAnanasLisaTayte() {
@@ -44,6 +47,8 @@ function juustoLisaTayte() {
   juustoLisaSipuli = document.getElementById("juustoLisaSipuli");
   document.getElementById("juustoLisaTayte").innerHTML = "Lisätty!";
 }
+
+
 // Funktio jolla lasketaan valittujen pizzojen yhteishinta
 function laskeYhteisHinta() {
   kaikenYhteisHinta = kinkkuAnanasMaara.value * 8 + juustoPizzaMaara.value * 5;
@@ -52,7 +57,7 @@ function laskeYhteisHinta() {
     if (lisaKatkarapu.checked) { // Jos kinkkuananaspizzaan tulee katkarapua niin jatketaan:
     kaikenYhteisHinta = kaikenYhteisHinta + 1 * kinkkuAnanasMaara.value; // Lisätään lisätäytteen hinta
     }
-    if (lisaSipuli.checked) { // Jos lisasipuli on valittu
+    if (lisaSipuli.checked) {
     kaikenYhteisHinta = kaikenYhteisHinta + 1 * kinkkuAnanasMaara.value;
     }
   }
@@ -65,6 +70,7 @@ function laskeYhteisHinta() {
     kaikenYhteisHinta = kaikenYhteisHinta + 1 * juustoPizzaMaara.value;
     }
 }
+
   document.getElementById("hinta").innerHTML = "Yhteishinta: " + kaikenYhteisHinta + " €"; // Tulostaa yhteishinnan
   if (kinkkuAnanasMaara.value > 0) { // Jos kinkkuananas pizzoja on enemmän kuin 0 niin jatketaan:
     if (lisaKatkarapu.checked || lisaSipuli.checked) {  // Jos kinkkuananas pizzoissa on lisätäytteitä niin jatketaan:
@@ -73,6 +79,7 @@ function laskeYhteisHinta() {
       document.getElementById("valitutKinkkuPizzat").innerHTML = kinkkuAnanasMaara.value + " kinkkuananaspizzaa";
     }
   }
+
   if (juustoPizzaMaara.value > 0) {
     if (juustoLisaKatkarapu.checked || juustoLisaSipuli.checked) {
       document.getElementById("valitutJuustoPizzat").innerHTML = juustoPizzaMaara.value + " juustopizzaa valituilla lisätäytteillä";

@@ -33,14 +33,12 @@ body {
 #pizzaRoma {
   font-size: 155%;
   color: yellow;
-  background-color: black;
   font-family: 'verdana';
 }
 
 #teksti {
   font-size: 155%;
   color: yellow;
-  background-color: black;
   font-family: 'verdana';
 }
 /* Pizzantilausprosessi CSS */
@@ -68,5 +66,4 @@ body {
 
 #pizzaTilaus p{
   color: yellow;
-  background-color: black;
 }

@@ -43,25 +43,27 @@ body {
   background-color: black;
   font-family: 'verdana';
 }
-/* Pizzantilausprosessi CSS */
-#pizzaTilaus button {
-  border-radius: 8px;
-  background-color: antiquewhite;
-  cursor: pointer;
-  text-decoration:none;
-  padding: 10px;
+
+.button {
+  border: none;
+  color: antiquewhite;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
   transition-duration: 0.4s;
+  cursor: pointer;
 }
 
-#pizzaTilaus button:hover {
-  font-size:105%;
+.button1 {
+  background-color: black; 
+  color: red; 
+  border: 2px solid yellow;
 }
 
-#pizzaTilaus input {
-  border-radius:5px;
-  background-color: beige;
-}
-
-#huvaksu {
-  display:none;
+.button1:hover {
+  background-color: yellow;
+  color: black;
 }

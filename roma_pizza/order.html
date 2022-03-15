@@ -26,10 +26,9 @@
 <!-- Pizzantilausprosessi alkaa tästä -->
 <article id="pizzaTilaus">
     <!-- Kinkkuananaspizza -->
+    <article id="lisaTayteRajaus"> <!-- Tämän articlen sisältö noudattaa lisaTayteRajaus CSS sääntöjä -->
     <input type="checkbox" id="kinkkuananas" value=""> Kinkkuananaspizza <strong>8€</strong>  <!-- Luo 'checkboxin' josta valitaan pizza -->
     <input type="number" min="1" max="10" id="kinkkuAnanasMaara" placeholder="Määrä" value=""><br> <!-- Luo alueen johon syötetään pizzojen määrä -->
-
-    <article id="lisaTayteRajaus"> <!-- Tämän articlen sisältö noudattaa lisaTayteRajaus CSS sääntöjä -->
     <img id="order-pizza-kuvat" src="kinkkuananas.jpg" alt="Kinkkuananaspizza"><br> <!-- Lisää pizzan kuvan -->
     <p>Muutokset</p>
     <input type="checkbox" class="checkbox-kytkin" id="lisaKatkarapu" value="">Katkarapu (<strong>+1€</strong>)<br>
@@ -37,14 +36,13 @@
     <input type="checkbox" class="checkbox-kytkin" id="kinkkuAnanasGluteenitonPohja" value="">Gluteeniton pohja (<strong>+2€</strong>)<br>
     <p id="kinkkuAnanasLisaTayte"></p>
     </article>
-    <br><button id="iso-nappi" onclick="kinkkuFunktio()">Lisää ostoskoriin</button>
+    <button id="iso-nappi" onclick="kinkkuFunktio()">Lisää ostoskoriin</button>
     <br><br>
     
     <!-- Juustopizza -->
-    <input type="checkbox" id="juustoPizza" value=""> Juustopizza <strong>5€</strong>
-    <input type="number" min="1" max="10" id="juustoPizzaMaara" placeholder="Määrä" value=""><br>   
-
     <article id="lisaTayteRajaus">
+    <input type="checkbox" id="juustoPizza" value=""> Juustopizza <strong>5€</strong>
+    <input type="number" min="1" max="10" id="juustoPizzaMaara" placeholder="Määrä" value=""><br> 
     <img id="order-pizza-kuvat" src="juustopizza.jpg" alt="juustopizza"><br>
     <p>Muutokset</p>
     <input type="checkbox" class="checkbox-kytkin" id="juustoLisaKatkarapu" value="">Katkarapu (<strong>+1€</strong>)<br>
@@ -52,7 +50,7 @@
     <input type="checkbox" class="checkbox-kytkin" id="juustoGluteenitonPohja" value="">Gluteeniton pohja (<strong>+2€</strong>)<br>
     <p id="juustoLisaTayte"></p>
     </article>
-    <br><button id="iso-nappi" onclick="juustoFunktio()">Lisää ostoskoriin</button>
+    <button id="iso-nappi" onclick="juustoFunktio()">Lisää ostoskoriin</button>
 
     <br><br>
 

@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", onkoKirjautunut);
 
 function onkoKirjautunut(){
     if(localStorage.getItem("kirjautunut") === "kylla") {
-        document.getElementById("pizzaRoma").textContent += " " + localStorage.getItem("nimi");
+        document.getElementById("pizzaRoma1").textContent += "Tervetuloa: " + localStorage.getItem("nimi");
         document.getElementById("kirjautumis_lomake").style.display = "none";
         document.getElementById("ulosKirjautumis_lomake");
     }

@@ -35,6 +35,7 @@
     <input type="checkbox" class="checkbox-kytkin" id="lisaSipuli" value="">Sipuli (<strong>+1€</strong>)<br>
     <input type="checkbox" class="checkbox-kytkin" id="kinkkuAnanasGluteenitonPohja" value="">Gluteeniton pohja (<strong>+2€</strong>)<br>
     <p id="kinkkuAnanasLisaTayte"></p>
+    <p style="color:red"; id="kinkkuVirhe"></p>
     </article>
     <button id="iso-nappi" onclick="kinkkuFunktio()">Lisää ostoskoriin</button>
     <br><br>
@@ -49,6 +50,7 @@
     <input type="checkbox" class="checkbox-kytkin" id="juustoLisaSipuli" value="">Sipuli (<strong>+1€</strong>)<br>
     <input type="checkbox" class="checkbox-kytkin" id="juustoGluteenitonPohja" value="">Gluteeniton pohja (<strong>+2€</strong>)<br>
     <p id="juustoLisaTayte"></p>
+    <p style="color:red"; id="juustoVirhe"></p>
     </article>
     <button id="iso-nappi" onclick="juustoFunktio()">Lisää ostoskoriin</button>
     <br><br>
@@ -63,6 +65,7 @@
         <input type="checkbox" id="cocaColaLisaJaa" value="">Jää (<strong>+0€</strong>)
         <button onclick="cocaColaFunktio()">Lisää juoma ostoskoriin</button>
         <p id="cocaColaLisaJaat"></p>
+        <p style="color:red;" id="cocaColaVirhe"></p>
     
         <!--Sprite-->
         <input type="checkbox" id="sprite" value=""> Sprite<strong>3€</strong>
@@ -70,6 +73,7 @@
         <input type="checkbox" id="spriteLisaJaa" value=""> Jää (<strong>+0€</strong>)
         <button onclick="spriteFunktio()">Lisää juoma ostoskoriin</button>
         <p id="spriteLisaJaat"></p>
+        <p style="color:red;" id="spriteVirhe"></p>
     
         <!--Jaffa-->
         <input type="checkbox" id="jaffa" value=""> Jaffa<strong>3€</strong>
@@ -77,6 +81,7 @@
         <input type="checkbox" id="jaffaLisaJaa" value=""> Jää (<strong>+0€</strong>)
         <button onclick="jaffaFunktio()">Lisää juoma ostoskoriin</button>
         <p id="jaffaLisaJaat"></p>
+        <p style="color:red;" id="jaffaVirhe"></p>
 
     <p id="kinkku"></p> <!-- Tähän tulee kinkkupizzojen määrä ja yhteishinta -->
     <p id="juusto"></p> 

@@ -20,69 +20,112 @@ var tuleekoSpriteJaita; // Muuttuja johon tallennetaan tieto tuleeko spriteen j�
 var spriteYhteishinta // Muuttuja johon tallennetaan sprite juomien yhteishinta
 // Funktio jolla lasketaan kinkkuananaspizzan määrä ja hinta
 function kinkkuFunktio() {
-  onkoKinkkuValittu = document.getElementById("kinkkuananas"); // Hankkii tiedon onko checkboxissa rasti
-  if (onkoKinkkuValittu.checked && kinkkuAnanasMaara.value >= 0) { // JOS checkboxissa on rasti niin seuraavat asiat suoritetaan   
-    kinkkuPizzaYhteishinta = kinkkuAnanasMaara.value * 8; // Laskee pizzojen määrän * hinta ja tallentaa ne muuttujaan
-    kinkkuAnanasLisaTayte() // Suorittaa funktion jossa tarkistetaan onko lisätäytteitä
-  } else if(!onkoKinkkuValittu.checked) { // Tarkistaa onko checkboxissa rastia. Jos ei niin tulostetaan virheviesti
-    document.getElementById("kinkku").innerHTML = "Laita rasti ruutuun jos näitä haluat."; // Tulostaa jos kinkkupizzaa ei valittu mutta silti painaa napppia
-  } else if (kinkkuAnanasMaara.value <= 0) {  // Jos kinkkuananaspizzoja on 0 tai alle niin jatketaan:
-    document.getElementById("kinkku").innerHTML = "Valitse vähintään yksi tai poista rasti.";
-  } else { // Jos jotain muuta käy
-    document.getElementById("kinkku").innerHTML = "Virhe";
+  var kinkkuAnanasMaara = 0; // Muuttuja johon tallennetaan kinkkuananaspizzojen määrä
+  onkoKinkkuValittu = document.getElementById("kinkkuananas"); // Tallennetaan tieto onko kinkkuananas valittu muuttujaan onkoKinkkuValittu
+  kinkkuAnanasMaara = document.getElementById("kinkkuAnanasMaara"); // Tallennetaan kinkkuananaspizzojen määrä muuttujaan
+  if (onkoKinkkuValittu.checked) { // Tarkistetaan onko kinkkuananaspizzaa valittu
+    if (kinkkuAnanasMaara.value > 0) { // Tarkistaa onko kinkkuananas pizzoja enemmän kuin 0
+      kinkkuPizzaYhteishinta = kinkkuAnanasMaara.value * 8; // Kinkkuananaspizzojen yhteishinta = Määrä * Hinta (8e)
+      kinkkuAnanasLisaTayte() // Kutsuu funktiota
+      document.getElementById("kinkkuVirhe").innerHTML = ""; // Jos pizzoja on yli 0 ja rasti ruudussa niin virhe teksti poistetaan
+    } else { // Jos kinkkuananaspizzoja on valittu alle 0
+      document.getElementById("kinkkuVirhe").innerHTML = "VIRHE: Valitse vähintään yksi";
+      document.getElementById("kinkkuAnanasLisaTayte").innerHTML = "";
+      document.getElementById("valitutKinkkuPizzat").innerHTML = "";
+    }
+  } else { // Jos kinkkuananaspizzaa ei ole valittu
+    document.getElementById("kinkkuVirhe").innerHTML = "VIRHE: Laita rasti ruutuun ensin";
+    document.getElementById("kinkkuAnanasLisaTayte").innerHTML = "";
+    document.getElementById("valitutKinkkuPizzat").innerHTML = "";
   }
 }
-// Funktio jolla lasketaan juustopizzojen määrät jne
+
 function juustoFunktio() {
+  var juustoPizzaMaara = 0;
   onkoJuustoValittu = document.getElementById("juustoPizza");
-  if (onkoJuustoValittu.checked && juustoPizzaMaara.value >= 0) {
-    juustoPizzaYhteishinta = juustoPizzaMaara.value * 5;
-    juustoLisaTayte()
-  } else if(!onkoJuustoValittu.checked) {
-    document.getElementById("juusto").innerHTML = "Laita rasti ruutuun jos näitä haluat.";
-  } else if (juustoPizzaMaara.value <= 0) {
-    document.getElementById("juusto").innerHTML = "Valitse vähintään yksi tai poista rasti.";
+  juustoPizzaMaara = document.getElementById("juustoPizzaMaara");
+  if (onkoJuustoValittu.checked) {
+    if (juustoPizzaMaara.value > 0) {
+      juustoPizzaYhteishinta = juustoPizzaMaara.value * 5;
+      juustoLisaTayte()
+      document.getElementById("juustoVirhe").innerHTML = "";
+    } else {
+      document.getElementById("juustoVirhe").innerHTML = "VIRHE: Valitse vähintään yksi";
+      document.getElementById("juustoLisaTayte").innerHTML = "";
+      document.getElementById("valitutJuustoPizzat").innerHTML = "";
+    }
   } else {
-    document.getElementById("juusto").innerHTML = "Virhe";
+    document.getElementById("juustoVirhe").innerHTML = "VIRHE: Laita rasti ruutuun ensin";
+    document.getElementById("juustoLisaTayte").innerHTML = "";
+    document.getElementById("valitutJuustoPizzat").innerHTML = "";
   }
 }
+
 function cocaColaFunktio() {
-  onkoKokaKolaValittu = document.getElementById("cocaCola"); // Hankkii tiedon onko cocacola valittu
-  if (onkoKokaKolaValittu.checked && cocaColaJuomaMaara.value >= 0) { // Jos cocacola on valittu ja niitä on yli 0 niin jatketaan:
-    kokaKolaYhteishinta = cocaColaJuomaMaara.value * 3; // Yhteishinta on määrä * hinta
-    cocaColaLisaJaat() // Kutsuu funktiota cocaColaLisaJaat() joka arvioi tuleeko lisäjäitä
-  } else if (!onkoKokaKolaValittu.checked) { // Jos cocacola ei ole valittu mutta käyttäjä yrittää edetä tulostetaan virhe viesti
-    document.getElementById("cocaCola").innerHTML = "Laita rasti ruutuun jos näitä haluat.";
-  } else if (cocaColaJuomaMaara.value <= 0) { // Jos cocacola juomia on 0 tai alle niin tulostetaan virheviesti
-    document.getElementById("cocaCola").innerHTML = "Valitse vähintään yksi tai poista rasti.";
+  var cocaColaJuomaMaara = 0;
+  onkoKokaKolaValittu = document.getElementById("cocaCola");
+  cocaColaJuomaMaara = document.getElementById("cocaColaJuomaMaara");
+
+  if (onkoKokaKolaValittu.checked) {
+    if (cocaColaJuomaMaara.value > 0) {
+      kokaKolaYhteishinta = cocaColaJuomaMaara.value * 3;
+      cocaColaLisaJaat()
+      document.getElementById("cocaColaVirhe").innerHTML = "";
+    } else {
+      document.getElementById("cocaColaVirhe").innerHTML = "VIRHE: Valitse vähintään yksi";
+      document.getElementById("cocaCola").innerHTML = "";
+      document.getElementById("cocaColaLisaJaat").innerHTML = "";
+      document.getElementById("valitutCocaColat").innerHTML = "";
+    }
   } else {
-    document.getElementById("cocaCola").innerHTML = "Virhe";
+    document.getElementById("cocaColaVirhe").innerHTML = "VIRHE: Laita rasti ruutuun ensin";
+    document.getElementById("cocaCola").innerHTML = "";
+    document.getElementById("cocaColaLisaJaat").innerHTML = "";
+    document.getElementById("valitutCocaColat").innerHTML = "";
   }
 }
+
 function spriteFunktio() {
+  var spriteJuomaMaara = 0;
   onkoSpriteValittu = document.getElementById("sprite");
-  if (onkoSpriteValittu.checked && spriteJuomaMaara.value >= 0) {
-    spriteYhteishinta = spriteJuomaMaara.value * 3;
-    spriteLisaJaat()
-  } else if (!onkoSpriteValittu.checked) {
-    document.getElementById("sprite").innerHTML = "Laita rasti ruutuun jos näitä haluat.";
-  } else if (spriteJuomaMaara.value <= 0) {
-    document.getElementById("sprite").innerHTML = "Valitse vähintään 1 tai poista rasti.";
+  spriteJuomaMaara = document.getElementById("spriteJuomaMaara");
+
+  if (onkoSpriteValittu.checked) {
+    if (spriteJuomaMaara.value > 0) {
+      spriteYhteishinta = spriteJuomaMaara.value * 3;
+      spriteLisaJaat()
+      document.getElementById("spriteVirhe").innerHTML = "";
+    } else {
+      document.getElementById("spriteVirhe").innerHTML = "VIRHE: Valitse vähintään yksi";
+      document.getElementById("sprite").innerHTML = "";
+      document.getElementById("valitutSpritet").innerHTML = "";
+    }
   } else {
-    document.getElementById("sprite").innerHTML = "Virhe.";
+    document.getElementById("spriteVirhe").innerHTML = "VIRHE: Laita rasti ruutuun ensin";
+    document.getElementById("sprite").innerHTML = "";
+    document.getElementById("valitutSpritet").innerHTML = "";
   }
 }
+
 function jaffaFunktio() {
+  var jaffaJuomaMaara = 0;
   onkoJaffaValittu = document.getElementById("jaffa");
-  if (onkoJaffaValittu.checked && jaffaJuomaMaara.value >= 0) {
-    jaffaYhteishinta = jaffaJuomaMaara.value * 3;
-    jaffaLisaJaat()
-  } else if (!onkoJaffaValittu.checked) {
-    document.getElementById("jaffa").innerHTML = "Laita rasti ruutuun jos näitä haluat.";
-  } else if (jaffaJuomaMaara.value <= 0) {
-    document.getElementById("jaffa").innerHTML = "Valitse vähintään 1 tai poista rasti.";
+  jaffaJuomaMaara = document.getElementById("jaffaJuomaMaara");
+
+  if (onkoJaffaValittu.checked) {
+    if (jaffaJuomaMaara.value > 0) {
+      jaffaYhteishinta = jaffaJuomaMaara.value * 3;
+      jaffaLisaJaat()
+      document.getElementById("jaffaVirhe").innerHTML = "";
+    } else {
+      document.getElementById("jaffaVirhe").innerHTML = "VIRHE: Valitse vähintään yksi";
+      document.getElementById("jaffa").innerHTML = "";
+      document.getElementById("valitutJaffat").innerHTML = "";
+    }
   } else {
-    document.getElementById("jaffa").innerHTML = "Virhe.";
+    document.getElementById("jaffaVirhe").innerHTML = "VIRHE: Laita rasti ruutuun ensin";
+    document.getElementById("jaffa").innerHTML = "";
+    document.getElementById("valitutJaffat").innerHTML = "";
   }
 }
 function kinkkuAnanasLisaTayte() {

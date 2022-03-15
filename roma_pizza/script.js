@@ -89,3 +89,31 @@ function tilausNouto() { // Jos käyttäjä valitsee noudon
   document.getElementById("kuljetus").innerHTML = kaikenYhteisHinta * 0.5 + " min valmistumiseen";
   document.getElementById("huvaksu").style.display = "none"; // Piiloittaa osoitekentän jos noutotilaus valitaan
 }
+
+function myOrderF(){
+  location.href = "orderF.html";
+}
+
+function myOrder(){
+  location.href = "order.html";
+}
+
+document.addEventListener("DOMContentLoaded", onkoKirjautunut);
+
+function onkoKirjautunut(){
+    if(localStorage.getItem("kirjautunut") === "kylla") {
+        document.getElementById("pizzaRoma").textContent += " " + localStorage.getItem("nimi");
+        document.getElementById("kirjautumis_lomake").style.display = "none";
+        document.getElementById("ulosKirjautumis_lomake");
+    }
+    else
+        document.getElementById("ulosKirjautumis_lomake").style.display = "none";
+}
+
+function kirjaudu(){
+    localStorage.setItem("nimi", document.getElementById("nimi").value);
+    localStorage.setItem("kirjautunut", "kylla");
+}
+function kirjauduUlos(){
+    localStorage.setItem("kirjautunut", "null")
+}

@@ -13,23 +13,30 @@
             <nav id="navigointi">
                 <ul>
                   <img src="img/roma_pizzeria.png">
-                  <li><a href="order.html">Tilaus</a></li>
+                  <li><a href="order.html">Kauppa</a></li>
                   <li nykyinen="sivu"><a href="index.html">Koti</a></li>
+                  <form id="kirjautumis_lomake">
+                    <input id="nimi" type="text" placeholder="Syötä nimesi" value="" />
+                    <input id="kirjaudu_nappi" type="submit" value="Kirjaudu sisään" onClick="kirjaudu()" />
+                  </form>
+                  <form id="ulosKirjautumis_lomake">
+                    <input id="kirjaudu_nappi_ulos" type="submit" value="Kirjaudu ulos" onClick="kirjauduUlos()" />
+                  </form>
                 </ul>
             </nav>
             <!-- logo -->
             <div id="logo" class="pizza"> 
-                <h1 id="pizzaRoma">Tervetuloa Pizza Romaan!</h1>
+                <h3 id="pizzaRoma">Tervetuloa Pizza Romaan!</h3>
                 <h1 id="teksti">Maukkaat pizzat kotiovelle edullisesti!!</h1>
-            <div id="card" class="card">
-                <p>Tilaa nyt maukas fantasia pizza!</p>
+            <div id="card2" class="card">
+                <h2>Tilaa nyt maukas fantasia pizza!</h2>
                 <h1>Voit itse valita KAIKKI haluamasi pizzan täytteet!</h1>
-                <button class="button button1">Tilaa fantasia pizza</button>
+                <button onclick="myOrderF()" class="button button1">Tilaa fantasia pizza</button>
             </div>
             <div id="card" class="card2">
-                <p>Tilaa nyt maukas valmis pizza!</p>
+                <h2>Tilaa nyt maukas valmis pizza!</h2>
                 <h1>Valitse KUUDESTA eri vaihtoehdosta!</h1>
-                <button class="button button2">Tilaa pizza</button>
+                <button onclick="myOrder()" class="button button2">Tilaa pizza</button>
             </div>
         </header>
         <script src="script.js"></script>

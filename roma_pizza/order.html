@@ -60,36 +60,48 @@
         <p>Valitse mieleisesi juoma(t)!</p> 
     
         <!--Cocacola-->
-        <input type="checkbox" id="Cocacola" value=""> Cocacola <strong>3€</strong><br>
-        <input type="number" min="1" max="10" id="cocacolaJuomaMaara" value="">
+        <input type="checkbox" id="cocaCola" value=""> Cocacola <strong>3€</strong><br>
+        <input type="number" min="1" max="10" id="cocaColaJuomaMaara" value="">
     
-        <input type="checkbox" id="cocacolaLisaJaa" value="">Jää (<strong>+0€</strong>)
-        <button onclick="cocacolaFunktio()">Lisää juoma ostoskoriin</button>
-        <p id="cocacolaLisaJaa"></p>
+        <input type="checkbox" id="cocaColaLisaJaa" value="">Jää (<strong>+0€</strong>)
+        <button onclick="cocaColaFunktio()">Lisää juoma ostoskoriin</button>
+        <p id="cocaColaLisaJaat"></p>
     
         <!--Sprite-->
-        <input type="checkbox" id="Sprite" value=""> Sprite<strong>3€</strong>
+        <input type="checkbox" id="sprite" value=""> Sprite<strong>3€</strong>
         <input type="number" min="1" max="10" id="spriteJuomaMaara" value="">
     
         <input type="checkbox" id="spriteLisaJaa" value=""> Jää (<strong>+0€</strong>)
         <button onclick="spriteFunktio()">Lisää juoma ostoskoriin</button>
-        <p id="spriteLisaJaa"></p>
+        <p id="spriteLisaJaat"></p>
     
         <!--Jaffa-->
-        <input type="checkbox" id="Jaffa" value=""> Jaffa <strong>3€</strong>
+        <input type="checkbox" id="jaffa" value=""> Jaffa<strong>3€</strong>
         <input type="number" min="1" max="10" id="jaffaJuomaMaara" value="">
     
         <input type="checkbox" id="jaffaLisaJaa" value=""> Jää (<strong>+0€</strong>)
         <button onclick="jaffaFunktio()">Lisää juoma ostoskoriin</button>
-    </header>
+        <p id="jaffaLisaJaat"></p>
+
+    </article>
 
 
     <p id="kinkku"></p> <!-- Tähän tulee kinkkupizzojen määrä ja yhteishinta -->
     <p id="juusto"></p> 
+
+    <p id="cocaCola"></p>
+    <p id="sprite"></p>
+    <p id="jaffa"></p>
+
     <button onclick="laskeYhteisHinta()">Laske yhteishinta</button> <!-- Nappi joka laukaisee funktion laskeYhteisHinta() -->
     <p id="hinta"></p>
+
     <p id="valitutKinkkuPizzat"></p>
     <p id="valitutJuustoPizzat"></p>
+
+    <p id="valitutCocaColat"></p>
+    <p id="valitutSpritet"></p>
+    <p id="valitutJaffat"></p>
 
     <!-- Vaihtoehto ottaa nouto tai kotiinkuljetus -->
     <button onclick="kotiinKuljetus()">Kotiin</button>

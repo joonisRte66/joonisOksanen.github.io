@@ -9,23 +9,23 @@ var juustoLisaKatkarapu; // Muuttuja johon tallennetaan tieto tuleeko juustopizz
 var juustoLisaSipuli; // Muuttuja johon tallennetaan tieto tuleeko juustopizzaan lisäsipulia
 var kinkkuAnanasLisaKatkarapu; // Muuttuja johon tallennetan tieto tuleeko kinkkuananaspizzaan katkarapua
 var kinkkuAnanasLisaSipuli; // Muttuuja johon tallennetaan tieto tuleeko kinkuananaspizzaan sipulia
-var onkoKokaKolaValittu;
-var tuleekoKokaKolaJaita;
-var kokaKolaYhteishinta;
-var onkoJaffaValittu;
-var tuleekoJaffaJaita;
-var jaffaYhteishinta;
-var onkoSpriteValittu;
-var tuleekoSpriteJaita;
-var spriteYhteishinta
+var onkoKokaKolaValittu; // Muuttuja johon tallennetaan tieto onko cocacola valittu
+var tuleekoKokaKolaJaita; // Muuttuja johon tallennetaan tieto tuleeko cocacolaan jäitä
+var kokaKolaYhteishinta; // Muuttuja johon tallennetaan cocacola juomien yhteishinta
+var onkoJaffaValittu; // Muuttuja johon tallennetaan tieto onko jaffa valittu
+var tuleekoJaffaJaita; // Muuttuja johon tallennetaan tieto tuleeko jaffaan jäitä
+var jaffaYhteishinta; // Muuttuja johon tallennetaan jaffojen yhteishinta
+var onkoSpriteValittu; // Muuttuja johon tallennetaan tieto onko sprite valittu
+var tuleekoSpriteJaita; // Muuttuja johon tallennetaan tieto tuleeko spriteen jäitä
+var spriteYhteishinta // Muuttuja johon tallennetaan sprite juomien yhteishinta
 // Funktio jolla lasketaan kinkkuananaspizzan määrä ja hinta
 function kinkkuFunktio() {
   onkoKinkkuValittu = document.getElementById("kinkkuananas"); // Hankkii tiedon onko checkboxissa rasti
   if (onkoKinkkuValittu.checked && kinkkuAnanasMaara.value >= 0) { // JOS checkboxissa on rasti niin seuraavat asiat suoritetaan   
     kinkkuPizzaYhteishinta = kinkkuAnanasMaara.value * 8; // Laskee pizzojen määrän * hinta ja tallentaa ne muuttujaan
     kinkkuAnanasLisaTayte() // Suorittaa funktion jossa tarkistetaan onko lisätäytteitä
-  } else if(!onkoKinkkuValittu.checked) { // Jos checkboxissa ei ole rasta
-    document.getElementById("kinkku").innerHTML = "Laita raksi ruutuun jos näitä haluat."; // Tulostaa jos kinkkupizzaa ei valittu mutta silti painaa napppia
+  } else if(!onkoKinkkuValittu.checked) { // Tarkistaa onko checkboxissa rastia. Jos ei niin tulostetaan virheviesti
+    document.getElementById("kinkku").innerHTML = "Laita rasti ruutuun jos näitä haluat."; // Tulostaa jos kinkkupizzaa ei valittu mutta silti painaa napppia
   } else if (kinkkuAnanasMaara.value <= 0) {  // Jos kinkkuananaspizzoja on 0 tai alle niin jatketaan:
     document.getElementById("kinkku").innerHTML = "Valitse vähintään yksi tai poista rasti.";
   } else { // Jos jotain muuta käy
@@ -39,7 +39,7 @@ function juustoFunktio() {
     juustoPizzaYhteishinta = juustoPizzaMaara.value * 5;
     juustoLisaTayte()
   } else if(!onkoJuustoValittu.checked) {
-    document.getElementById("juusto").innerHTML = "Laita raksi ruutuun jos näitä haluat.";
+    document.getElementById("juusto").innerHTML = "Laita rasti ruutuun jos näitä haluat.";
   } else if (juustoPizzaMaara.value <= 0) {
     document.getElementById("juusto").innerHTML = "Valitse vähintään yksi tai poista rasti.";
   } else {
@@ -47,13 +47,13 @@ function juustoFunktio() {
   }
 }
 function cocaColaFunktio() {
-  onkoKokaKolaValittu = document.getElementById("cocaCola");
-  if (onkoKokaKolaValittu.checked && cocaColaJuomaMaara.value >= 0) {
-    kokaKolaYhteishinta = cocaColaJuomaMaara.value * 3;
-    cocaColaLisaJaat()
-  } else if (!onkoKokaKolaValittu.checked) {
+  onkoKokaKolaValittu = document.getElementById("cocaCola"); // Hankkii tiedon onko cocacola valittu
+  if (onkoKokaKolaValittu.checked && cocaColaJuomaMaara.value >= 0) { // Jos cocacola on valittu ja niitä on yli 0 niin jatketaan:
+    kokaKolaYhteishinta = cocaColaJuomaMaara.value * 3; // Yhteishinta on määrä * hinta
+    cocaColaLisaJaat() // Kutsuu funktiota cocaColaLisaJaat() joka arvioi tuleeko lisäjäitä
+  } else if (!onkoKokaKolaValittu.checked) { // Jos cocacola ei ole valittu mutta käyttäjä yrittää edetä tulostetaan virhe viesti
     document.getElementById("cocaCola").innerHTML = "Laita rasti ruutuun jos näitä haluat.";
-  } else if (cocaColaJuomaMaara.value <= 0) {
+  } else if (cocaColaJuomaMaara.value <= 0) { // Jos cocacola juomia on 0 tai alle niin tulostetaan virheviesti
     document.getElementById("cocaCola").innerHTML = "Valitse vähintään yksi tai poista rasti.";
   } else {
     document.getElementById("cocaCola").innerHTML = "Virhe";

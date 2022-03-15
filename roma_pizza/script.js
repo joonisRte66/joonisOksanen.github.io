@@ -1,3 +1,5 @@
+var kinkkuAnanasGluteenitonPohja; // Muuttuja johon tallennetaan tieto tuleeko kinkkuananaspizzaan gluteeniton pohja
+var juustoGluteenitonPohja; // Muuttuja johon tallennetaan tieto tuleeko juustopizzaan gluteention pohja
 var kinkkuPizzaYhteishinta; // Muuttuja johon tallennetaan kinkku pizzojen yhteishinta
 var juustoPizzaYhteishinta; // Muuttuja johon tallennetaan juusto pizzojen yhteishinta
 var onkoJuustoValittu; // Muuttuja johon tallennetaan tieto onko juustopizza valittu
@@ -38,11 +40,13 @@ function juustoFunktio() {
 function kinkkuAnanasLisaTayte() {
   kinkkuAnanasLisaKatkarapu = document.getElementById("lisaKatkarapu"); // Lukee inputin kyseisiin muuttujiin
   kinkkuAnanasLisaSipuli = document.getElementById("lisaSipuli");
+  kinkkuAnanasGluteenitonPohja = document.getElementById("kinkkuAnanasGluteenitonPohja");
   document.getElementById("kinkkuAnanasLisaTayte").innerHTML = "Lisätty!";
 }
 function juustoLisaTayte() {
   juustoLisaKatkarapu = document.getElementById("juustoLisaKatkarapu");
   juustoLisaSipuli = document.getElementById("juustoLisaSipuli");
+  juustoGluteenitonPohja = document.getElementById("juustoGluteenitonPohja");
   document.getElementById("juustoLisaTayte").innerHTML = "Lisätty!";
 }
 // Funktio jolla lasketaan valittujen pizzojen yhteishinta
@@ -55,6 +59,9 @@ function laskeYhteisHinta() {
     if (lisaSipuli.checked) { // Jos kinkkuananaspizzassa on sipulia niin jatketaan:
     kaikenYhteisHinta = kaikenYhteisHinta + 1 * kinkkuAnanasMaara.value;
     }
+    if (kinkkuAnanasGluteenitonPohja.checked) {
+    kaikenYhteisHinta = kaikenYhteisHinta + 2 * kinkkuAnanasMaara.value;
+    }
   }
   if (juustoPizzaMaara.value > 0) {
     if (juustoLisaKatkarapu.checked) {
@@ -63,11 +70,16 @@ function laskeYhteisHinta() {
     if (juustoLisaSipuli.checked) {
     kaikenYhteisHinta = kaikenYhteisHinta + 1 * juustoPizzaMaara.value;
     }
+    if (juustoGluteenitonPohja.checked) {
+    kaikenYhteisHinta = kaikenYhteisHinta + 2 * juustoPizzaMaara.value;
+    }
 }
   document.getElementById("hinta").innerHTML = "Yhteishinta: " + kaikenYhteisHinta + " €"; // Tulostaa yhteishinnan
   if (kinkkuAnanasMaara.value > 0) { // Jos kinkkuananas pizzoja on enemmän kuin 0 niin jatketaan:
     if (lisaKatkarapu.checked || lisaSipuli.checked) {  // Jos kinkkuananas pizzoissa on lisätäytteitä niin jatketaan:
       document.getElementById("valitutKinkkuPizzat").innerHTML = kinkkuAnanasMaara.value + " kinkkuananaspizzaa valituilla lisätäytteillä";
+    } else if (kinkkuAnanasGluteenitonPohja.checked) {
+      document.getElementById("valitutKinkkuPizzat").innerHTML = kinkkuAnanasMaara.value + " kinkkuananaspizzaa gluteenittomalla pohjalla";
     } else { // Jos lisätäytteitä ei ole:
       document.getElementById("valitutKinkkuPizzat").innerHTML = kinkkuAnanasMaara.value + " kinkkuananaspizzaa";
     }
@@ -75,6 +87,8 @@ function laskeYhteisHinta() {
   if (juustoPizzaMaara.value > 0) {
     if (juustoLisaKatkarapu.checked || juustoLisaSipuli.checked) {
       document.getElementById("valitutJuustoPizzat").innerHTML = juustoPizzaMaara.value + " juustopizzaa valituilla lisätäytteillä";
+  } else if (juustoGluteenitonPohja.checked) {
+    document.getElementById("valitutJuustoPizzat").innerHTML = juustoPizzaMaara.value + " juustopizzaa gluteenittomalla pohjalla";
   } else {
     document.getElementById("valitutJuustoPizzat").innerHTML = juustoPizzaMaara.value + " juustopizzaa";
   }

@@ -112,6 +112,10 @@ function myOrder(){
   location.href = "order.html";
 }
 
+function myOrderJ(){
+  location.href = "orderJ.html";
+}
+
 document.addEventListener("DOMContentLoaded", onkoKirjautunut);
 
 function onkoKirjautunut(){

@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css?family');
+
+body {
+  background-image:url('img/banner_2.png');
+}
+
+/* Navigointipalkki */
+#navigointi ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+}
+#navigointi li {
+  float: right;
+}
+#navigointi li a {
+  display: block;
+  color: red;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 125%;
+}
+#navigointi li a:hover {
+  background-color: yellow;
+}
+#navigointi ul li[nykyinen] {
+  background-color: yellow;
+}
+
+#pizzaRoma {
+  font-size: 155%;
+  color: yellow;
+  font-family: 'verdana';
+}
+
+#teksti {
+  font-size: 155%;
+  color: yellow;
+  font-family: 'verdana';
+}
+
+.button {
+  border: none;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: black; 
+  color: yellow; 
+  border: 5px solid red;
+}
+
+.button1:hover {
+  background-color: red;
+  color: black;
+}
+
+.button2 {
+  background-color: black; 
+  color: yellow; 
+  border: 5px solid red;
+}
+
+.button2:hover {
+  background-color: red;
+  color: black;
+}
+
+.button3 {
+  background-color: black; 
+  color: yellow; 
+  border: 5px solid red;
+}
+
+.button3:hover {
+  background-color: red;
+  color: black;
+}

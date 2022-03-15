@@ -103,6 +103,18 @@ input[type=text]{
   color: black;
 }
 
+.button3 {
+  margin: 160px 280px;
+  background-color: black; 
+  color: yellow; 
+  border: 5px solid red;
+}
+
+.button3:hover {
+  background-color: red;
+  color: black;
+}
+
 .card{
   width: 800px;
   height: 550px;
@@ -131,6 +143,24 @@ input[type=text]{
   cursor: pointer;
   margin: 100px 70px;
   background-image: url('img/pizza_blur.png');
+  background-position: center;
+  background-size: cover;
+  font-size: 200%;
+  text-align: center;
+  color: antiquewhite;
+  filter: drop-shadow(8px 8px 10px black);
+}
+
+.card3{
+  width: 800px;
+  height: 550px;
+  display: inline-block;
+  border-radius: 30px;
+  padding: 15px 25px;
+  box-sizing: border-box;
+  cursor: pointer;
+  margin: 100px 70px;
+  background-image: url('img/drinks_blur.jpg');
   background-position: center;
   background-size: cover;
   font-size: 200%;

@@ -128,7 +128,7 @@ input[type=text]:hover{
 }
 
 .button3 {
-  margin: 0px 280px;
+  margin: 0px 5px;
   background-color: yellow; 
   color: black; 
   border: 5px solid red;
@@ -188,25 +188,12 @@ input, textarea {
   margin: 6px 6px 6px 0;
 }
 
-input[type=submit] {
-  background-color: yellow;
-  color: red;
-  padding: 12px 20px;
-  border: none;
-  cursor: pointer;
-}
-
 input[type=reset] {
   background-color: red;
   color: yellow;
   padding: 12px 20px;
   border: none;
   cursor: pointer;
-}
-
-input[type=submit]:hover {
-  background-color: red;
-  color: black;
 }
 
 input[type=reset]:hover {

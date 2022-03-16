@@ -87,6 +87,21 @@
     <button id="iso-nappi" onclick="kebabFunktio()">Lisää ostoskoriin</button>
     <br><br>
 
+    <!-- Jauhelihapizza -->
+    <article id="lisaTayteRajaus">
+    <input type="checkbox" id="jauhelihaPizza" value=""> Jauhelihapizza <strong>6€</strong>
+    <input type="number" min="1" max="10" id="jauhelihaPizzaMaara" placeholder="Määrä" value=""><br>
+    <img id="order-pizza-kuvat" src="jauhelihapizza.jpg" alt="jauhelihapizza"><br>
+    <p>Muutokset</p>
+    <input type="checkbox" class="checkbox-kytkin" id="jauhelihaLisaKatkarapu" value="">Katkarapu (<strong>+1€</strong>)<br>
+    <input type="checkbox" class="checkbox-kytkin" id="jauhelihaLisaSipuli" value="">Sipuli (<strong>+1€</strong>)<br>
+    <input type="checkbox" class="checkbox-kytkin" id="jauhelihaGluteenitonPohja" value="">Gluteeniton pohja (<strong>+2€</strong>)<br>
+    <p id="jauhelihaLisaTayte"></p>
+    <p style="color:red;" id="jauhelihaVirhe"></p>
+    </article>
+    <button id="iso-nappi" onclick="jauhelihaFunktio()">Lisää ostoskoriin</button>
+    <br><br>
+
 
     <!--Juomien tilaus-->
         <p>Juomien tilaus: </p>
@@ -122,6 +137,7 @@
     <p id="juusto"></p> 
     <p id="opera"></p>
     <p id="kebab"></p>
+    <p id="jauheliha"></p>
     <p id="cocaCola"></p>
     <p id="sprite"></p>
     <p id="jaffa"></p>
@@ -130,6 +146,7 @@
     <p id="valitutJuustoPizzat"></p>
     <p id="valitutOperaPizzat"></p>
     <p id="valitutKebabPizzat"></p>
+    <p id="valitutJauhelihaPizzat"></p>
     <p id="valitutCocaColat"></p>
     <p id="valitutSpritet"></p>
     <p id="valitutJaffat"></p>

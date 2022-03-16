@@ -72,6 +72,22 @@
     <button id="iso-nappi" onclick="operaFunktio()">Lisää ostoskoriin</button>
     <br><br>
 
+    <!-- Kebabpizza -->
+    <article id="lisaTayteRajaus">
+    <input type="checkbox" id="kebabPizza" value=""> Kebabpizza <strong>7€</strong>
+    <input type="number" min="1" max="10" id="kebabPizzaMaara" placeholder="Määrä" value=""><br>
+    <img id="order-pizza-kuvat" src="kebabpizza.jpg" alt="kebabpizza"><br>
+    <p>Muutokset</p>
+    <input type="checkbox" class="checkbox-kytkin" id="kebabLisaKatkarapu" value="">Katkarapu (<strong>+1€</strong>)<br>
+    <input type="checkbox" class="checkbox-kytkin" id="kebabLisaSipuli" value="">Sipuli (<strong>+1€</strong>)<br>
+    <input type="checkbox" class="checkbox-kytkin" id="kebabGluteenitonPohja" value="">Gluteeniton pohja (<strong>+2€</strong>)<br>
+    <p id="kebabLisaTayte"></p>
+    <p style="color:red;" id="kebabVirhe"></p>
+    </article>
+    <button id="iso-nappi" onclick="kebabFunktio()">Lisää ostoskoriin</button>
+    <br><br>
+
+
     <!--Juomien tilaus-->
         <p>Juomien tilaus: </p>
         <p>Valitse mieleisesi juoma(t)!</p> 
@@ -105,6 +121,7 @@
     <p id="kinkku"></p> <!-- Tähän tulee kinkkupizzojen määrä ja yhteishinta -->
     <p id="juusto"></p> 
     <p id="opera"></p>
+    <p id="kebab"></p>
     <p id="cocaCola"></p>
     <p id="sprite"></p>
     <p id="jaffa"></p>
@@ -112,6 +129,7 @@
     <p id="valitutKinkkuPizzat"></p>
     <p id="valitutJuustoPizzat"></p>
     <p id="valitutOperaPizzat"></p>
+    <p id="valitutKebabPizzat"></p>
     <p id="valitutCocaColat"></p>
     <p id="valitutSpritet"></p>
     <p id="valitutJaffat"></p>

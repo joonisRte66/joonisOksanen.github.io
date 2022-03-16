@@ -1,14 +1,17 @@
 var kinkkuAnanasGluteenitonPohja; // Muuttuja johon tallennetaan tieto tuleeko kinkkuananaspizzaan gluteeniton pohja
 var juustoGluteenitonPohja; // Muuttuja johon tallennetaan tieto tuleeko juustopizzaan gluteention pohja
 var operaGluteenitonPohja;
+var kebabGluteenitonPohja;
 
 var kinkkuPizzaYhteishinta; // Muuttuja johon tallennetaan kinkku pizzojen yhteishinta
 var juustoPizzaYhteishinta; // Muuttuja johon tallennetaan juusto pizzojen yhteishinta
 var operaPizzaYhteishinta;
+var kebabPizzaYhteishinta;
 
 var onkoJuustoValittu; // Muuttuja johon tallennetaan tieto onko juustopizza valittu
 var onkoKinkkuValittu; // Muuttuja johon tallennetaan tieto onko kinkkupizza valittu
 var onkoOperaValittu;
+var onkoKebabValittu;
 
 var kaikenYhteisHinta; // Muuttuja johon tallennetaan kaikkien valittujen pizzojen hinta
 
@@ -17,6 +20,9 @@ var juustoLisaSipuli; // Muuttuja johon tallennetaan tieto tuleeko juustopizzaan
 
 var operaLisaKatkarapu;
 var operaLisaSipuli;
+
+var kebabLisaKatkarapu;
+var kebabLisaSipuli;
 
 var kinkkuAnanasLisaKatkarapu; // Muuttuja johon tallennetan tieto tuleeko kinkkuananaspizzaan katkarapua
 var kinkkuAnanasLisaSipuli; // Muttuuja johon tallennetaan tieto tuleeko kinkuananaspizzaan sipulia
@@ -97,6 +103,28 @@ function operaFunktio() {
     document.getElementById("operaVirhe").innerHTML = "VIRHE: Laita rasti ruutuun ensin";
     document.getElementById("operaLisaTayte").innerHTML = "";
     document.getElementById("valitutOperaPizzat").innerHTML = "";
+  }
+}
+
+function kebabFunktio() {
+  var kebabPizzaMaara = 0;
+  onkoKebabValittu = document.getElementById("kebabPizza");
+  kebabPizzaMaara = document.getElementById("kebabPizzaMaara");
+  if (onkoKebabValittu.checked) {
+    if (kebabPizzaMaara.value > 0) {
+      kebabPizzaYhteishinta = kebabPizzaMaara.value * 7;
+      kebabLisaTayte()
+      document.getElementById("kebabVirhe").innerHTML = "";
+      laskeYhteisHinta()
+    } else {
+      document.getElementById("kebabVirhe").innerHTML = "VIRHE: Valitse vähintään yksi";
+      document.getElementById("kebabLisaTayte").innerHTML = "";
+      document.getElementById("valitutKebabPizzat").innerHTML = "";
+    }
+  } else {
+    document.getElementById("kebabVirhe").innerHTML = "VIRHE: Laita rasti ruutuun ensin";
+    document.getElementById("kebabLisaTayte").innerHTML = "";
+    document.getElementById("valitutKebabPizzat").innerHTML = "";
   }
 }
 
@@ -188,7 +216,12 @@ function operaLisaTayte() {
   operaGluteenitonPohja = document.getElementById("operaGluteenitonPohja");
   document.getElementById("operaLisaTayte").innerHTML = "Lisätty!";
 }
-
+function kebabLisaTayte() {
+  kebabLisaKatkarapu = document.getElementById("kebabLisaKatkarapu");
+  kebabLisaSipuli = document.getElementById("kebabLisaSipuli");
+  kebabGluteenitonPohja = document.getElementById("kebabGluteenitonPohja");
+  document.getElementById("kebabLisaTayte").innerHTML = "Lisätty!";
+}
 
 
 function cocaColaLisaJaat() {
@@ -205,7 +238,7 @@ function jaffaLisaJaat() {
 }
 // Funktio jolla lasketaan valittujen pizzojen yhteishinta
 function laskeYhteisHinta() {
-  kaikenYhteisHinta = kinkkuAnanasMaara.value * 8 + juustoPizzaMaara.value * 5 + operaPizzaMaara.value * 13 + cocaColaJuomaMaara.value * 3 + spriteJuomaMaara.value * 3 + jaffaJuomaMaara.value * 3;
+  kaikenYhteisHinta = kinkkuAnanasMaara.value * 8 + juustoPizzaMaara.value * 5 + operaPizzaMaara.value * 13 + kebabPizzaMaara.value * 7 + cocaColaJuomaMaara.value * 3 + spriteJuomaMaara.value * 3 + jaffaJuomaMaara.value * 3;
   if (kinkkuAnanasMaara.value > 0) { // Jos kinkkuananas pizzoja on enemmän kuin 0 niin jatketaan:
     if (lisaKatkarapu.checked) { // Jos kinkkuananaspizzaan tulee katkarapua niin jatketaan:
      kaikenYhteisHinta = kaikenYhteisHinta + 1 * kinkkuAnanasMaara.value; // Lisätään lisätäytteen hinta
@@ -240,13 +273,17 @@ function laskeYhteisHinta() {
     }
   }
 
-
-
-
-
-
-
-
+  if (kebabPizzaMaara.value > 0) {
+    if (kebabLisaKatkarapu.checked) {
+      kaikenYhteisHinta = kaikenYhteisHinta + 1 * kebabPizzaMaara.value;
+    }
+    if (kebabLisaSipuli.checked) {
+      kaikenYhteisHinta = kaikenYhteisHinta + 1 * kebabPizzaMaara.value;
+    }
+    if (kebabGluteenitonPohja.checked) {
+      kaikenYhteisHinta = kaikenYhteisHinta + 2 * kebabPizzaMaara.value;
+    }
+  }
 
   document.getElementById("hinta").innerHTML = "Yhteishinta: " + kaikenYhteisHinta + " €"; // Tulostaa yhteishinnan
 
@@ -278,6 +315,15 @@ function laskeYhteisHinta() {
     }
   }
 
+  if (kebabPizzaMaara.value > 0) {
+    if (kebabLisaKatkarapu.checked || kebabLisaSipuli.checked) {
+      document.getElementById("valitutKebabPizzat").innerHTML = kebabPizzaMaara.value + " kebabpizzaa valituilla lisätäytteillä";
+    } else if (kebabGluteenitonPohja.checked) {
+      document.getElementById("valitutKebabPizzat").innerHTML = kebabPizzaMaara.value + " kebabpizzaa gluteenittomalla pohjalla";
+    } else {
+      document.getElementById("valitutKebabPizzat").innerHTML = kebabPizzaMaara.value + " kebabpizzaa"
+    }
+  }
 
 
 

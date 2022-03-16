@@ -134,3 +134,6 @@ body {
 #iso-nappi {
   width: 265px;
 }
+#yhteenVeto {
+  border-bottom: 1px solid grey;
+}

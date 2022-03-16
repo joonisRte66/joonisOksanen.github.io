@@ -9,32 +9,129 @@ var juustoLisaKatkarapu; // Muuttuja johon tallennetaan tieto tuleeko juustopizz
 var juustoLisaSipuli; // Muuttuja johon tallennetaan tieto tuleeko juustopizzaan lisäsipulia
 var kinkkuAnanasLisaKatkarapu; // Muuttuja johon tallennetan tieto tuleeko kinkkuananaspizzaan katkarapua
 var kinkkuAnanasLisaSipuli; // Muttuuja johon tallennetaan tieto tuleeko kinkuananaspizzaan sipulia
+var onkoKokaKolaValittu; // Muuttuja johon tallennetaan tieto onko cocacola valittu
+var tuleekoKokaKolaJaita; // Muuttuja johon tallennetaan tieto tuleeko cocacolaan jäitä
+var kokaKolaYhteishinta; // Muuttuja johon tallennetaan cocacola juomien yhteishinta
+var onkoJaffaValittu; // Muuttuja johon tallennetaan tieto onko jaffa valittu
+var tuleekoJaffaJaita; // Muuttuja johon tallennetaan tieto tuleeko jaffaan jäitä
+var jaffaYhteishinta; // Muuttuja johon tallennetaan jaffojen yhteishinta
+var onkoSpriteValittu; // Muuttuja johon tallennetaan tieto onko sprite valittu
+var tuleekoSpriteJaita; // Muuttuja johon tallennetaan tieto tuleeko spriteen jäitä
+var spriteYhteishinta // Muuttuja johon tallennetaan sprite juomien yhteishinta
 // Funktio jolla lasketaan kinkkuananaspizzan määrä ja hinta
+
 function kinkkuFunktio() {
-  onkoKinkkuValittu = document.getElementById("kinkkuananas"); // Hankkii tiedon onko checkboxissa rasti
-  if (onkoKinkkuValittu.checked && kinkkuAnanasMaara.value >= 0) { // JOS checkboxissa on rasti niin seuraavat asiat suoritetaan   
-    kinkkuPizzaYhteishinta = kinkkuAnanasMaara.value * 8; // Laskee pizzojen määrän * hinta ja tallentaa ne muuttujaan
-    kinkkuAnanasLisaTayte() // Suorittaa funktion jossa tarkistetaan onko lisätäytteitä
-  } else if(!onkoKinkkuValittu.checked) { // Jos checkboxissa ei ole rasta
-    document.getElementById("kinkku").innerHTML = "Laita raksi ruutuun jos näitä haluat."; // Tulostaa jos kinkkupizzaa ei valittu mutta silti painaa napppia
-  } else if (kinkkuAnanasMaara.value <= 0) {  // Jos kinkkuananaspizzoja on 0 tai alle niin jatketaan:
-    document.getElementById("kinkku").innerHTML = "Valitse vähintään yksi tai poista rasti.";
-  } else { // Jos jotain muuta käy
-    document.getElementById("kinkku").innerHTML = "Virhe";
+  var kinkkuAnanasMaara = 0; // Muuttuja johon tallennetaan kinkkuananaspizzojen määrä
+  onkoKinkkuValittu = document.getElementById("kinkkuananas"); // Tallennetaan tieto onko kinkkuananas valittu muuttujaan onkoKinkkuValittu
+  kinkkuAnanasMaara = document.getElementById("kinkkuAnanasMaara"); // Tallennetaan kinkkuananaspizzojen määrä muuttujaan
+  if (onkoKinkkuValittu.checked) { // Tarkistetaan onko kinkkuananaspizzaa valittu
+    if (kinkkuAnanasMaara.value > 0) { // Tarkistaa onko kinkkuananas pizzoja enemmän kuin 0
+      kinkkuPizzaYhteishinta = kinkkuAnanasMaara.value * 8; // Kinkkuananaspizzojen yhteishinta = Määrä * Hinta (8e)
+      kinkkuAnanasLisaTayte() // Kutsuu funktiota
+      document.getElementById("kinkkuVirhe").innerHTML = ""; // Jos pizzoja on yli 0 ja rasti ruudussa niin virhe teksti poistetaan
+      laskeYhteisHinta()
+    } else { // Jos kinkkuananaspizzoja on valittu alle 0
+      document.getElementById("kinkkuVirhe").innerHTML = "VIRHE: Valitse vähintään yksi";
+      document.getElementById("kinkkuAnanasLisaTayte").innerHTML = "";
+      document.getElementById("valitutKinkkuPizzat").innerHTML = "";
+    }
+  } else { // Jos kinkkuananaspizzaa ei ole valittu
+    document.getElementById("kinkkuVirhe").innerHTML = "VIRHE: Laita rasti ruutuun ensin";
+    document.getElementById("kinkkuAnanasLisaTayte").innerHTML = "";
+    document.getElementById("valitutKinkkuPizzat").innerHTML = "";
   }
 }
-// Funktio jolla lasketaan juustopizzojen määrät jne
+
 function juustoFunktio() {
+  var juustoPizzaMaara = 0;
   onkoJuustoValittu = document.getElementById("juustoPizza");
-  if (onkoJuustoValittu.checked && juustoPizzaMaara.value >= 0) {
-    juustoPizzaYhteishinta = juustoPizzaMaara.value * 5;
-    juustoLisaTayte()
-  } else if(!onkoJuustoValittu.checked) {
-    document.getElementById("juusto").innerHTML = "Laita raksi ruutuun jos näitä haluat.";
-  } else if (juustoPizzaMaara.value <= 0) {
-    document.getElementById("juusto").innerHTML = "Valitse vähintään yksi tai poista rasti.";
+  juustoPizzaMaara = document.getElementById("juustoPizzaMaara");
+  if (onkoJuustoValittu.checked) {
+    if (juustoPizzaMaara.value > 0) {
+      juustoPizzaYhteishinta = juustoPizzaMaara.value * 5;
+      juustoLisaTayte()
+      document.getElementById("juustoVirhe").innerHTML = "";
+      laskeYhteisHinta()
+    } else {
+      document.getElementById("juustoVirhe").innerHTML = "VIRHE: Valitse vähintään yksi";
+      document.getElementById("juustoLisaTayte").innerHTML = "";
+      document.getElementById("valitutJuustoPizzat").innerHTML = "";
+    }
   } else {
-    document.getElementById("juusto").innerHTML = "Virhe";
+    document.getElementById("juustoVirhe").innerHTML = "VIRHE: Laita rasti ruutuun ensin";
+    document.getElementById("juustoLisaTayte").innerHTML = "";
+    document.getElementById("valitutJuustoPizzat").innerHTML = "";
+  }
+}
+
+function cocaColaFunktio() {
+  var cocaColaJuomaMaara = 0;
+  onkoKokaKolaValittu = document.getElementById("cocaCola");
+  cocaColaJuomaMaara = document.getElementById("cocaColaJuomaMaara");
+
+  if (onkoKokaKolaValittu.checked) {
+    if (cocaColaJuomaMaara.value > 0) {
+      kokaKolaYhteishinta = cocaColaJuomaMaara.value * 3;
+      cocaColaLisaJaat()
+      document.getElementById("cocaColaVirhe").innerHTML = "";
+      laskeYhteisHinta()
+    } else {
+      document.getElementById("cocaColaVirhe").innerHTML = "VIRHE: Valitse vähintään yksi";
+      document.getElementById("cocaCola").innerHTML = "";
+      document.getElementById("cocaColaLisaJaat").innerHTML = "";
+      document.getElementById("valitutCocaColat").innerHTML = "";
+    }
+  } else {
+    document.getElementById("cocaColaVirhe").innerHTML = "VIRHE: Laita rasti ruutuun ensin";
+    document.getElementById("cocaCola").innerHTML = "";
+    document.getElementById("cocaColaLisaJaat").innerHTML = "";
+    document.getElementById("valitutCocaColat").innerHTML = "";
+  }
+}
+
+function spriteFunktio() {
+  var spriteJuomaMaara = 0;
+  onkoSpriteValittu = document.getElementById("sprite");
+  spriteJuomaMaara = document.getElementById("spriteJuomaMaara");
+
+  if (onkoSpriteValittu.checked) {
+    if (spriteJuomaMaara.value > 0) {
+      spriteYhteishinta = spriteJuomaMaara.value * 3;
+      spriteLisaJaat()
+      document.getElementById("spriteVirhe").innerHTML = "";
+      laskeYhteisHinta()
+    } else {
+      document.getElementById("spriteVirhe").innerHTML = "VIRHE: Valitse vähintään yksi";
+      document.getElementById("sprite").innerHTML = "";
+      document.getElementById("valitutSpritet").innerHTML = "";
+    }
+  } else {
+    document.getElementById("spriteVirhe").innerHTML = "VIRHE: Laita rasti ruutuun ensin";
+    document.getElementById("sprite").innerHTML = "";
+    document.getElementById("valitutSpritet").innerHTML = "";
+  }
+}
+
+function jaffaFunktio() {
+  var jaffaJuomaMaara = 0;
+  onkoJaffaValittu = document.getElementById("jaffa");
+  jaffaJuomaMaara = document.getElementById("jaffaJuomaMaara");
+
+  if (onkoJaffaValittu.checked) {
+    if (jaffaJuomaMaara.value > 0) {
+      jaffaYhteishinta = jaffaJuomaMaara.value * 3;
+      jaffaLisaJaat()
+      document.getElementById("jaffaVirhe").innerHTML = "";
+      laskeYhteisHinta()
+    } else {
+      document.getElementById("jaffaVirhe").innerHTML = "VIRHE: Valitse vähintään yksi";
+      document.getElementById("jaffa").innerHTML = "";
+      document.getElementById("valitutJaffat").innerHTML = "";
+    }
+  } else {
+    document.getElementById("jaffaVirhe").innerHTML = "VIRHE: Laita rasti ruutuun ensin";
+    document.getElementById("jaffa").innerHTML = "";
+    document.getElementById("valitutJaffat").innerHTML = "";
   }
 }
 function kinkkuAnanasLisaTayte() {
@@ -49,32 +146,45 @@ function juustoLisaTayte() {
   juustoGluteenitonPohja = document.getElementById("juustoGluteenitonPohja");
   document.getElementById("juustoLisaTayte").innerHTML = "Lisätty!";
 }
+function cocaColaLisaJaat() {
+  tuleekoKokaKolaJaita = document.getElementById("cocaColaLisaJaa");
+  document.getElementById("cocaColaLisaJaat").innerHTML = "Lisätty!";
+}
+function spriteLisaJaat() {
+  tuleekoSpriteJaita = document.getElementById("spriteLisaJaa");
+  document.getElementById("spriteLisaJaat").innerHTML = "Lisätty!"
+}
+function jaffaLisaJaat() {
+  tuleekoJaffaJaita = document.getElementById("jaffaLisaJaa");
+  document.getElementById("jaffaLisaJaat").innerHTML = "Lisätty!";
+}
 // Funktio jolla lasketaan valittujen pizzojen yhteishinta
 function laskeYhteisHinta() {
-  kaikenYhteisHinta = kinkkuAnanasMaara.value * 8 + juustoPizzaMaara.value * 5;
+  kaikenYhteisHinta = kinkkuAnanasMaara.value * 8 + juustoPizzaMaara.value * 5 + cocaColaJuomaMaara.value * 3 + spriteJuomaMaara.value * 3 + jaffaJuomaMaara.value * 3;
   if (kinkkuAnanasMaara.value > 0) { // Jos kinkkuananas pizzoja on enemmän kuin 0 niin jatketaan:
     if (lisaKatkarapu.checked) { // Jos kinkkuananaspizzaan tulee katkarapua niin jatketaan:
-    kaikenYhteisHinta = kaikenYhteisHinta + 1 * kinkkuAnanasMaara.value; // Lisätään lisätäytteen hinta
+     kaikenYhteisHinta = kaikenYhteisHinta + 1 * kinkkuAnanasMaara.value; // Lisätään lisätäytteen hinta
     }
     if (lisaSipuli.checked) { // Jos kinkkuananaspizzassa on sipulia niin jatketaan:
-    kaikenYhteisHinta = kaikenYhteisHinta + 1 * kinkkuAnanasMaara.value;
+     kaikenYhteisHinta = kaikenYhteisHinta + 1 * kinkkuAnanasMaara.value;
     }
     if (kinkkuAnanasGluteenitonPohja.checked) {
-    kaikenYhteisHinta = kaikenYhteisHinta + 2 * kinkkuAnanasMaara.value;
+     kaikenYhteisHinta = kaikenYhteisHinta + 2 * kinkkuAnanasMaara.value;
     }
   }
   if (juustoPizzaMaara.value > 0) {
     if (juustoLisaKatkarapu.checked) {
-    kaikenYhteisHinta = kaikenYhteisHinta + 1 * juustoPizzaMaara.value;
+     kaikenYhteisHinta = kaikenYhteisHinta + 1 * juustoPizzaMaara.value;
     }
     if (juustoLisaSipuli.checked) {
-    kaikenYhteisHinta = kaikenYhteisHinta + 1 * juustoPizzaMaara.value;
+     kaikenYhteisHinta = kaikenYhteisHinta + 1 * juustoPizzaMaara.value;
     }
     if (juustoGluteenitonPohja.checked) {
-    kaikenYhteisHinta = kaikenYhteisHinta + 2 * juustoPizzaMaara.value;
+     kaikenYhteisHinta = kaikenYhteisHinta + 2 * juustoPizzaMaara.value;
     }
 }
   document.getElementById("hinta").innerHTML = "Yhteishinta: " + kaikenYhteisHinta + " €"; // Tulostaa yhteishinnan
+
   if (kinkkuAnanasMaara.value > 0) { // Jos kinkkuananas pizzoja on enemmän kuin 0 niin jatketaan:
     if (lisaKatkarapu.checked || lisaSipuli.checked) {  // Jos kinkkuananas pizzoissa on lisätäytteitä niin jatketaan:
       document.getElementById("valitutKinkkuPizzat").innerHTML = kinkkuAnanasMaara.value + " kinkkuananaspizzaa valituilla lisätäytteillä";
@@ -92,7 +202,32 @@ function laskeYhteisHinta() {
   } else {
     document.getElementById("valitutJuustoPizzat").innerHTML = juustoPizzaMaara.value + " juustopizzaa";
   }
-}
+ }
+  if (cocaColaJuomaMaara.value > 0) {
+    if (tuleekoKokaKolaJaita.checked) {
+      document.getElementById("valitutCocaColat").innerHTML = cocaColaJuomaMaara.value + " Cocacolaa jäillä";
+    } else {
+      document.getElementById("valitutCocaColat").innerHTML = cocaColaJuomaMaara.value + " Cocacolaa ilman jäitä";
+    }
+  }
+
+  if (spriteJuomaMaara.value > 0) {
+    if (tuleekoSpriteJaita.checked) {
+      document.getElementById("valitutSpritet").innerHTML = spriteJuomaMaara.value + " Spriteä jäillä";
+    } else {
+      document.getElementById("valitutSpritet").innerHTML = spriteJuomaMaara.value + " Spriteä ilman jäitä";
+    }
+  }
+
+  if (jaffaJuomaMaara.value > 0) {
+    if (tuleekoJaffaJaita.checked) {
+      document.getElementById("valitutJaffat").innerHTML = jaffaJuomaMaara.value + " Jaffaa jäillä";
+    } else {
+      document.getElementById("valitutJaffat").innerHTML = jaffaJuomaMaara.value + " Jaffaa ilman jäitä";
+    }
+  }
+
+
 }
 // 2 funktiota jotka toteutuu kun käyttäjä valitsee joko 'nouto' tai 'kuljetus'
 function kotiinKuljetus() { // Jos käyttäjä valitsee kuljetuksen

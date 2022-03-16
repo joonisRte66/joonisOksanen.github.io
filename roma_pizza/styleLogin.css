@@ -61,6 +61,10 @@ body {
   font: 500 1rem 'Verdana';
 }
 
+.form--hidden{
+  display: none;
+}
+
 .form > *:first-child{
   margin-top: 0;
 }
@@ -143,4 +147,8 @@ body {
   color: var(--color-secondary);
   text-decoration: none;
   cursor: pointer;
+}
+
+.form__link:hover{
+  text-decoration: underline;
 }

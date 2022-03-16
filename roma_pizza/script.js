@@ -156,6 +156,28 @@ function jauhelihaFunktio() {
   }
 }
 
+function pepperoniFunktio() {
+  var pepperoniPizzaMaara = 0;
+  onkoPepperoniValittu = document.getElementById("pepperoniPizza");
+  pepperoniPizzaMaara = document.getElementById("pepperoniPizzaMaara");
+  if (onkoPepperoniValittu.checked) {
+    if (pepperoniPizzaMaara.value > 0) {
+      pepperoniPizzaYhteishinta = pepperoniPizzaMaara.value * 7;
+      pepperoniLisaTayte()
+      document.getElementById("pepperoniVirhe").innerHTML = "";
+      laskeYhteisHinta()
+    } else {
+      document.getElementById("pepperoniVirhe").innerHTML = "VIRHE: Valitse vähintään yksi";
+      document.getElementById("pepperoniLisaTayte").innerHTML = "";
+      document.getElementById("valitutPepperoniPizzat").innerHTML = "";
+    }
+  } else {
+    document.getElementById("pepperoniVirhe").innerHTML = "VIRHE: Laita rasti ruutuun ensin";
+    document.getElementById("pepperoniLisaTayte").innerHTML = "";
+    document.getElementById("valitutPepperoniPizzat").innerHTML = "";
+  }
+}
+
 function cocaColaFunktio() {
   var cocaColaJuomaMaara = 0;
   onkoKokaKolaValittu = document.getElementById("cocaCola");
@@ -256,6 +278,12 @@ function jauhelihaLisaTayte() {
   jauhelihaGluteenitonPohja = document.getElementById("jauhelihaGluteenitonPohja");
   document.getElementById("jauhelihaLisaTayte").innerHTML = "Lisätty!";
 }
+function pepperoniLisaTayte() {
+  pepperoniLisaKatkarapu = document.getElementById("pepperoniLisaKatkarapu");
+  pepperoniLisaSipuli = document.getElementById("pepperoniLisaSipuli");
+  pepperoniGluteenitonPohja = document.getElementById("pepperoniGluteenitonPohja");
+  document.getElementById("pepperoniLisaTayte").innerHTML = "Lisätty!";
+}
 
 
 function cocaColaLisaJaat() {
@@ -272,7 +300,7 @@ function jaffaLisaJaat() {
 }
 // Funktio jolla lasketaan valittujen pizzojen yhteishinta
 function laskeYhteisHinta() {
-  kaikenYhteisHinta = kinkkuAnanasMaara.value * 8 + juustoPizzaMaara.value * 5 + operaPizzaMaara.value * 13 + kebabPizzaMaara.value * 7 + jauhelihaPizzaMaara.value * 6 + cocaColaJuomaMaara.value * 3 + spriteJuomaMaara.value * 3 + jaffaJuomaMaara.value * 3;
+  kaikenYhteisHinta = kinkkuAnanasMaara.value * 8 + juustoPizzaMaara.value * 5 + operaPizzaMaara.value * 13 + kebabPizzaMaara.value * 7 + jauhelihaPizzaMaara.value * 6 + cocaColaJuomaMaara.value * 3 + spriteJuomaMaara.value * 3 + jaffaJuomaMaara.value * 3 + pepperoniPizzaMaara.value * 8;
   if (kinkkuAnanasMaara.value > 0) { // Jos kinkkuananas pizzoja on enemmän kuin 0 niin jatketaan:
     if (lisaKatkarapu.checked) { // Jos kinkkuananaspizzaan tulee katkarapua niin jatketaan:
      kaikenYhteisHinta = kaikenYhteisHinta + 1 * kinkkuAnanasMaara.value; // Lisätään lisätäytteen hinta
@@ -331,6 +359,18 @@ function laskeYhteisHinta() {
     }
   }
 
+  if (pepperoniPizzaMaara.value > 0) {
+    if (pepperoniLisaKatkarapu.checked) {
+      kaikenYhteisHinta = kaikenYhteisHinta + 1 * pepperoniPizzaMaara.value;
+    }
+    if (pepperoniLisaSipuli.checked) {
+      kaikenYhteisHinta = kaikenYhteisHinta + 1 * pepperoniPizzaMaara.value;
+    }
+    if (pepperoniGluteenitonPohja.checked) {
+      kaikenYhteisHinta = kaikenYhteisHinta + 2 * pepperoniPizzaMaara.value;
+    }
+  }
+
   document.getElementById("hinta").innerHTML = "Yhteishinta: " + kaikenYhteisHinta + " €"; // Tulostaa yhteishinnan
 
   if (kinkkuAnanasMaara.value > 0) { // Jos kinkkuananas pizzoja on enemmän kuin 0 niin jatketaan:
@@ -378,6 +418,15 @@ function laskeYhteisHinta() {
       document.getElementById("valitutJauhelihaPizzat").innerHTML = jauhelihaPizzaMaara.value + " jauhelihapizzaa gluteenittomalla pohjalla";
     } else {
       document.getElementById("valitutJauhelihaPizzat").innerHTML = jauhelihaPizzaMaara.value + " jauhelihapizzaa"
+    }
+  }
+  if (pepperoniPizzaMaara.value > 0) {
+    if (pepperoniLisaKatkarapu.checked || pepperoniLisaSipuli.checked) {
+      document.getElementById("valitutPepperoniPizzat").innerHTML = pepperoniPizzaMaara.value + " pepperonipizzaa valituilla lisätäytteillä";
+    } else if (pepperoniGluteenitonPohja.checked) {
+      document.getElementById("valitutPepperoniPizzat").innerHTML = pepperoniPizzaMaara.value + " pepperonipizzaa gluteenittomalla pohjalla";
+    } else {
+      document.getElementById("valitutPepperoniPizzat").innerHTML = pepperoniPizzaMaara.value + " pepperonipizzaa"
     }
   }
 

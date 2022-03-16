@@ -1,25 +1,39 @@
 var kinkkuAnanasGluteenitonPohja; // Muuttuja johon tallennetaan tieto tuleeko kinkkuananaspizzaan gluteeniton pohja
 var juustoGluteenitonPohja; // Muuttuja johon tallennetaan tieto tuleeko juustopizzaan gluteention pohja
+var operaGluteenitonPohja;
+
 var kinkkuPizzaYhteishinta; // Muuttuja johon tallennetaan kinkku pizzojen yhteishinta
 var juustoPizzaYhteishinta; // Muuttuja johon tallennetaan juusto pizzojen yhteishinta
+var operaPizzaYhteishinta;
+
 var onkoJuustoValittu; // Muuttuja johon tallennetaan tieto onko juustopizza valittu
 var onkoKinkkuValittu; // Muuttuja johon tallennetaan tieto onko kinkkupizza valittu
+var onkoOperaValittu;
+
 var kaikenYhteisHinta; // Muuttuja johon tallennetaan kaikkien valittujen pizzojen hinta
+
 var juustoLisaKatkarapu; // Muuttuja johon tallennetaan tieto tuleeko juustopizzaan katkarapua
 var juustoLisaSipuli; // Muuttuja johon tallennetaan tieto tuleeko juustopizzaan lisäsipulia
+
+var operaLisaKatkarapu;
+var operaLisaSipuli;
+
 var kinkkuAnanasLisaKatkarapu; // Muuttuja johon tallennetan tieto tuleeko kinkkuananaspizzaan katkarapua
 var kinkkuAnanasLisaSipuli; // Muttuuja johon tallennetaan tieto tuleeko kinkuananaspizzaan sipulia
+
 var onkoKokaKolaValittu; // Muuttuja johon tallennetaan tieto onko cocacola valittu
 var tuleekoKokaKolaJaita; // Muuttuja johon tallennetaan tieto tuleeko cocacolaan jäitä
 var kokaKolaYhteishinta; // Muuttuja johon tallennetaan cocacola juomien yhteishinta
+
 var onkoJaffaValittu; // Muuttuja johon tallennetaan tieto onko jaffa valittu
 var tuleekoJaffaJaita; // Muuttuja johon tallennetaan tieto tuleeko jaffaan jäitä
 var jaffaYhteishinta; // Muuttuja johon tallennetaan jaffojen yhteishinta
+
 var onkoSpriteValittu; // Muuttuja johon tallennetaan tieto onko sprite valittu
 var tuleekoSpriteJaita; // Muuttuja johon tallennetaan tieto tuleeko spriteen jäitä
 var spriteYhteishinta // Muuttuja johon tallennetaan sprite juomien yhteishinta
-// Funktio jolla lasketaan kinkkuananaspizzan määrä ja hinta
 
+// Funktio jolla lasketaan kinkkuananaspizzan määrä ja hinta
 function kinkkuFunktio() {
   var kinkkuAnanasMaara = 0; // Muuttuja johon tallennetaan kinkkuananaspizzojen määrä
   onkoKinkkuValittu = document.getElementById("kinkkuananas"); // Tallennetaan tieto onko kinkkuananas valittu muuttujaan onkoKinkkuValittu
@@ -61,6 +75,28 @@ function juustoFunktio() {
     document.getElementById("juustoVirhe").innerHTML = "VIRHE: Laita rasti ruutuun ensin";
     document.getElementById("juustoLisaTayte").innerHTML = "";
     document.getElementById("valitutJuustoPizzat").innerHTML = "";
+  }
+}
+
+function operaFunktio() {
+  var operaPizzaMaara = 0;
+  onkoOperaValittu = document.getElementById("operaPizza");
+  operaPizzaMaara = document.getElementById("operaPizzaMaara");
+  if (onkoOperaValittu.checked) {
+    if (operaPizzaMaara.value > 0) {
+      operaPizzaYhteishinta = operaPizzaMaara.value * 13;
+      operaLisaTayte()
+      document.getElementById("operaVirhe").innerHTML = "";
+      laskeYhteisHinta()
+    } else {
+      document.getElementById("operaVirhe").innerHTML = "VIRHE: Valitse vähintään yksi";
+      document.getElementById("operaLisaTayte").innerHTML = "";
+      document.getElementById("valitutOperaPizzat").innerHTML = "";
+    }
+  } else {
+    document.getElementById("operaVirhe").innerHTML = "VIRHE: Laita rasti ruutuun ensin";
+    document.getElementById("operaLisaTayte").innerHTML = "";
+    document.getElementById("valitutOperaPizzat").innerHTML = "";
   }
 }
 
@@ -146,6 +182,15 @@ function juustoLisaTayte() {
   juustoGluteenitonPohja = document.getElementById("juustoGluteenitonPohja");
   document.getElementById("juustoLisaTayte").innerHTML = "Lisätty!";
 }
+function operaLisaTayte() {
+  operaLisaKatkarapu = document.getElementById("operaLisaKatkarapu");
+  operaLisaSipuli = document.getElementById("operaLisaSipuli");
+  operaGluteenitonPohja = document.getElementById("operaGluteenitonPohja");
+  document.getElementById("operaLisaTayte").innerHTML = "Lisätty!";
+}
+
+
+
 function cocaColaLisaJaat() {
   tuleekoKokaKolaJaita = document.getElementById("cocaColaLisaJaa");
   document.getElementById("cocaColaLisaJaat").innerHTML = "Lisätty!";
@@ -160,7 +205,7 @@ function jaffaLisaJaat() {
 }
 // Funktio jolla lasketaan valittujen pizzojen yhteishinta
 function laskeYhteisHinta() {
-  kaikenYhteisHinta = kinkkuAnanasMaara.value * 8 + juustoPizzaMaara.value * 5 + cocaColaJuomaMaara.value * 3 + spriteJuomaMaara.value * 3 + jaffaJuomaMaara.value * 3;
+  kaikenYhteisHinta = kinkkuAnanasMaara.value * 8 + juustoPizzaMaara.value * 5 + operaPizzaMaara.value * 13 + cocaColaJuomaMaara.value * 3 + spriteJuomaMaara.value * 3 + jaffaJuomaMaara.value * 3;
   if (kinkkuAnanasMaara.value > 0) { // Jos kinkkuananas pizzoja on enemmän kuin 0 niin jatketaan:
     if (lisaKatkarapu.checked) { // Jos kinkkuananaspizzaan tulee katkarapua niin jatketaan:
      kaikenYhteisHinta = kaikenYhteisHinta + 1 * kinkkuAnanasMaara.value; // Lisätään lisätäytteen hinta
@@ -183,6 +228,26 @@ function laskeYhteisHinta() {
      kaikenYhteisHinta = kaikenYhteisHinta + 2 * juustoPizzaMaara.value;
     }
 }
+  if (operaPizzaMaara.value > 0) {
+    if (operaLisaKatkarapu.checked) {
+      kaikenYhteisHinta = kaikenYhteisHinta + 1 * operaPizzaMaara.value;
+    }
+    if (operaLisaSipuli.checked) {
+      kaikenYhteisHinta = kaikenYhteisHinta + 1 * operaPizzaMaara.value;
+    }
+    if (operaGluteenitonPohja.checked) {
+      kaikenYhteisHinta = kaikenYhteisHinta + 2 * operaPizzaMaara.value;
+    }
+  }
+
+
+
+
+
+
+
+
+
   document.getElementById("hinta").innerHTML = "Yhteishinta: " + kaikenYhteisHinta + " €"; // Tulostaa yhteishinnan
 
   if (kinkkuAnanasMaara.value > 0) { // Jos kinkkuananas pizzoja on enemmän kuin 0 niin jatketaan:
@@ -203,6 +268,19 @@ function laskeYhteisHinta() {
     document.getElementById("valitutJuustoPizzat").innerHTML = juustoPizzaMaara.value + " juustopizzaa";
   }
  }
+  if (operaPizzaMaara.value > 0) {
+    if (operaLisaKatkarapu.checked || operaLisaSipuli.checked) {
+      document.getElementById("valitutOperaPizzat").innerHTML = operaPizzaMaara.value + " operapizzaa valituilla lisätäytteillä";
+    } else if (operaGluteenitonPohja.checked) {
+      document.getElementById("valitutOperaPizzat").innerHTML = operaPizzaMaara.value + " operapizzaa gluteenittomalla pohjalla";
+    } else {
+      document.getElementById("valitutOperaPizzat").innerHTML = operaPizzaMaara.value + " operapizzaa"
+    }
+  }
+
+
+
+
   if (cocaColaJuomaMaara.value > 0) {
     if (tuleekoKokaKolaJaita.checked) {
       document.getElementById("valitutCocaColat").innerHTML = cocaColaJuomaMaara.value + " Cocacolaa jäillä";

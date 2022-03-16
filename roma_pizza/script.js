@@ -247,6 +247,6 @@ function myOrder(){
   location.href = "order.html";
 }
 
-function myOrderJ(){
-  location.href = "orderJ.html";
+function myFeed(){
+  location.href = "index.html";
 }

@@ -248,6 +248,6 @@ function myOrder(){
 }
 
 function myFeed(){
-  alert("Kiitos palautteesta.");
   location.href = "index.html";
+  alert("Kiitos palautteesta.");
 }

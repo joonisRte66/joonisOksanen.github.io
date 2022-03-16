@@ -165,7 +165,7 @@ input[type=text]:hover{
 
 form {
   width: 400px;
-  background-color: rgba(0,0,0,1);
+  background-color: rgba(0,0,0,0.6);
   text-align: center;
   padding: 20px;
 }
@@ -176,8 +176,8 @@ input, textarea {
 }
 
 input[type=submit] {
-  background-color: green;
-  color: white;
+  background-color: yellow;
+  color: red;
   padding: 12px 20px;
   border: none;
   cursor: pointer;
@@ -185,7 +185,7 @@ input[type=submit] {
 
 input[type=reset] {
   background-color: red;
-  color: white;
+  color: yellow;
   padding: 12px 20px;
   border: none;
   cursor: pointer;

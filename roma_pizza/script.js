@@ -19,6 +19,7 @@ var onkoSpriteValittu; // Muuttuja johon tallennetaan tieto onko sprite valittu
 var tuleekoSpriteJaita; // Muuttuja johon tallennetaan tieto tuleeko spriteen jäitä
 var spriteYhteishinta // Muuttuja johon tallennetaan sprite juomien yhteishinta
 // Funktio jolla lasketaan kinkkuananaspizzan määrä ja hinta
+
 function kinkkuFunktio() {
   var kinkkuAnanasMaara = 0; // Muuttuja johon tallennetaan kinkkuananaspizzojen määrä
   onkoKinkkuValittu = document.getElementById("kinkkuananas"); // Tallennetaan tieto onko kinkkuananas valittu muuttujaan onkoKinkkuValittu
@@ -28,6 +29,7 @@ function kinkkuFunktio() {
       kinkkuPizzaYhteishinta = kinkkuAnanasMaara.value * 8; // Kinkkuananaspizzojen yhteishinta = Määrä * Hinta (8e)
       kinkkuAnanasLisaTayte() // Kutsuu funktiota
       document.getElementById("kinkkuVirhe").innerHTML = ""; // Jos pizzoja on yli 0 ja rasti ruudussa niin virhe teksti poistetaan
+      laskeYhteisHinta()
     } else { // Jos kinkkuananaspizzoja on valittu alle 0
       document.getElementById("kinkkuVirhe").innerHTML = "VIRHE: Valitse vähintään yksi";
       document.getElementById("kinkkuAnanasLisaTayte").innerHTML = "";
@@ -49,6 +51,7 @@ function juustoFunktio() {
       juustoPizzaYhteishinta = juustoPizzaMaara.value * 5;
       juustoLisaTayte()
       document.getElementById("juustoVirhe").innerHTML = "";
+      laskeYhteisHinta()
     } else {
       document.getElementById("juustoVirhe").innerHTML = "VIRHE: Valitse vähintään yksi";
       document.getElementById("juustoLisaTayte").innerHTML = "";
@@ -71,6 +74,7 @@ function cocaColaFunktio() {
       kokaKolaYhteishinta = cocaColaJuomaMaara.value * 3;
       cocaColaLisaJaat()
       document.getElementById("cocaColaVirhe").innerHTML = "";
+      laskeYhteisHinta()
     } else {
       document.getElementById("cocaColaVirhe").innerHTML = "VIRHE: Valitse vähintään yksi";
       document.getElementById("cocaCola").innerHTML = "";
@@ -95,6 +99,7 @@ function spriteFunktio() {
       spriteYhteishinta = spriteJuomaMaara.value * 3;
       spriteLisaJaat()
       document.getElementById("spriteVirhe").innerHTML = "";
+      laskeYhteisHinta()
     } else {
       document.getElementById("spriteVirhe").innerHTML = "VIRHE: Valitse vähintään yksi";
       document.getElementById("sprite").innerHTML = "";
@@ -117,6 +122,7 @@ function jaffaFunktio() {
       jaffaYhteishinta = jaffaJuomaMaara.value * 3;
       jaffaLisaJaat()
       document.getElementById("jaffaVirhe").innerHTML = "";
+      laskeYhteisHinta()
     } else {
       document.getElementById("jaffaVirhe").innerHTML = "VIRHE: Valitse vähintään yksi";
       document.getElementById("jaffa").innerHTML = "";
@@ -178,6 +184,7 @@ function laskeYhteisHinta() {
     }
 }
   document.getElementById("hinta").innerHTML = "Yhteishinta: " + kaikenYhteisHinta + " €"; // Tulostaa yhteishinnan
+
   if (kinkkuAnanasMaara.value > 0) { // Jos kinkkuananas pizzoja on enemmän kuin 0 niin jatketaan:
     if (lisaKatkarapu.checked || lisaSipuli.checked) {  // Jos kinkkuananas pizzoissa on lisätäytteitä niin jatketaan:
       document.getElementById("valitutKinkkuPizzat").innerHTML = kinkkuAnanasMaara.value + " kinkkuananaspizzaa valituilla lisätäytteillä";
@@ -219,6 +226,8 @@ function laskeYhteisHinta() {
       document.getElementById("valitutJaffat").innerHTML = jaffaJuomaMaara.value + " Jaffaa ilman jäitä";
     }
   }
+
+
 }
 // 2 funktiota jotka toteutuu kun käyttäjä valitsee joko 'nouto' tai 'kuljetus'
 function kotiinKuljetus() { // Jos käyttäjä valitsee kuljetuksen

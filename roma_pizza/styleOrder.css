@@ -125,6 +125,22 @@ body {
   text-align: center;
   font-weight: lighter;
 }
+#juomaRajaus {
+  color:black;
+  font-weight: bold;
+  border: 1px solid grey;
+  border-radius: 10px;
+  background-color: antiquewhite;
+  box-sizing: content-box;  
+  width: 550px;
+  height: auto;
+  padding: 5px;
+}
+#juomaRajaus p {
+  color: black;
+  text-align: center;
+  font-weight: lighter;
+}
 
 #order-pizza-kuvat {
   width: 250px;

@@ -507,25 +507,25 @@ function validate(){
   
   var text;
   if(name.length < 5){
-    text = "Please Enter valid Name";
+    text = "Syötä oikea nimi!";
     error_message.innerHTML = text;
     return false;
   }
   if(isNaN(phone) || phone.length != 10){
-    text = "Please Enter valid Phone Number";
+    text = "Syötä oikea puhelin numero!";
     error_message.innerHTML = text;
     return false;
   }
   if(email.indexOf("@") == -1 || email.length < 6){
-    text = "Please Enter valid Email";
+    text = "Syötä oikea sähköpostiosoite!";
     error_message.innerHTML = text;
     return false;
   }
   if(message.length <= 140){
-    text = "Please Enter More Than 140 Characters";
+    text = "Syötä vähintään 140 merkkiä!";
     error_message.innerHTML = text;
     return false;
   }
-  alert("Form Submitted Successfully!");
+  alert("Lähetetty onnistuneesti!");
   return true;
 }

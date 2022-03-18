@@ -141,8 +141,8 @@ input[type=text]:hover{
 
 
 .card{
-  max-width: 700px;
-  max-height: 450px;
+  max-width: 800px;
+  max-height: 550px;
   display: inline-block;
   border-radius: 30px;
   padding: 15px 25px;
@@ -160,8 +160,8 @@ input[type=text]:hover{
 }
 
 .card2{
-  max-width: 700px;
-  max-height: 450px;
+  max-width: 800px;
+  max-height: 550px;
   display: inline-block;
   border-radius: 30px;
   padding: 15px 25px;

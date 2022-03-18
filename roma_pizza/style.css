@@ -194,35 +194,6 @@ input[type=text]:hover{
   margin: auto;
 }
 
-form {
-  max-width: 600px;
-  max-height: 4500px;
-  background-color: rgba(255,255,255,0.7);
-  text-align: center;
-  padding: 20px;
-  font-size: 25px;
-  margin: auto;
-  border-radius: 15px;
-}
-
-input, textarea {
-  padding: 12px;  
-  margin: 6px 6px 6px 0;
-}
-
-input[type=reset] {
-  background-color: red;
-  color: yellow;
-  padding: 12px 20px;
-  border: none;
-  cursor: pointer;
-}
-
-input[type=reset]:hover {
-  background-color: yellow;
-  color: black;
-}
-
 
 .wrapper{
   position: absolute;
@@ -231,7 +202,7 @@ input[type=reset]:hover {
   transform: translate(-50%,-50%);
   max-width: 350px;
   width: 100%;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.7);
   padding: 25px;
   border-radius: 5px;
   box-shadow: 4px 4px 2px rgba(254,236,164,1); 
@@ -267,7 +238,7 @@ input[type=reset]:hover {
   padding: 10px;
   text-align: center;
   width: 100%;
-  background: #fece0c;
+  background: red;
   color: #332902;
   text-transform: uppercase;
   letter-spacing: 5px;

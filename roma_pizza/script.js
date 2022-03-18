@@ -521,8 +521,8 @@ function validate(){
     error_message.innerHTML = text;
     return false;
   }
-  if(message.length <= 140){
-    text = "Syötä vähintään 140 merkkiä!";
+  if(message.length <= 10){
+    text = "Syötä vähintään 10 merkkiä!";
     error_message.innerHTML = text;
     return false;
   }

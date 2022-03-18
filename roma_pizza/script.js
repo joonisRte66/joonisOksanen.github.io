@@ -512,11 +512,6 @@ function validate(){
     error_message.innerHTML = text;
     return false;
   }
-  if(subject.length < 10){
-    text = "Please Enter Correct Subject";
-    error_message.innerHTML = text;
-    return false;
-  }
   if(isNaN(phone) || phone.length != 10){
     text = "Syötä oikea puhelin numero!";
     error_message.innerHTML = text;

@@ -498,7 +498,6 @@ function myOrderJ(){
 
 function validate(){
   var name = document.getElementById("name").value;
-  var subject = document.getElementById("subject").value;
   var phone = document.getElementById("phone").value;
   var email = document.getElementById("email").value;
   var message = document.getElementById("message").value;
@@ -509,11 +508,6 @@ function validate(){
   var text;
   if(name.length < 5){
     text = "Please Enter valid Name";
-    error_message.innerHTML = text;
-    return false;
-  }
-  if(subject.length < 10){
-    text = "Please Enter Correct Subject";
     error_message.innerHTML = text;
     return false;
   }

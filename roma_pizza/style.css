@@ -178,12 +178,13 @@ input[type=text]:hover{
 
 form {
   max-width: 600px;
-  max-height: 400px;
+  max-height: 4500px;
   background-color: rgba(255,255,255,0.7);
   text-align: center;
   padding: 20px;
   font-size: 25px;
   margin: auto;
+  border-radius: 15px;
 }
 
 input, textarea {

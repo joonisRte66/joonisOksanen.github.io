@@ -148,7 +148,6 @@ input[type=text]:hover{
   padding: 15px 25px;
   box-sizing: border-box;
   cursor: pointer;
-  margin: 95px 70px;
   background-image: url('img/fantasia_blur.png');
   background-position: center;
   background-size: cover;
@@ -167,7 +166,6 @@ input[type=text]:hover{
   padding: 15px 25px;
   box-sizing: border-box;
   cursor: pointer;
-  margin: 100px 70px;
   background-image: url('img/pizza_blur.png');
   background-position: center;
   background-size: cover;
@@ -186,7 +184,6 @@ input[type=text]:hover{
   padding: 15px 25px;
   box-sizing: border-box;
   cursor: pointer;
-  margin: 100px 70px;
   background-color: black;
   background-position: center;
   background-size: cover;

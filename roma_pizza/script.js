@@ -512,21 +512,26 @@ function validate(){
     error_message.innerHTML = text;
     return false;
   }
+  if(subject.length < 10){
+    text = "Please Enter Correct Subject";
+    error_message.innerHTML = text;
+    return false;
+  }
   if(isNaN(phone) || phone.length != 10){
-    text = "Syötä oikea puhelin numero!";
+    text = "Please Enter valid Phone Number";
     error_message.innerHTML = text;
     return false;
   }
   if(email.indexOf("@") == -1 || email.length < 6){
-    text = "Syötä oikea sähköposti osoite!";
+    text = "Please Enter valid Email";
     error_message.innerHTML = text;
     return false;
   }
-  if(message.length <= 10){
-    text = "Syötä enemmän kuin 10 merkkiä!";
+  if(message.length <= 140){
+    text = "Please Enter More Than 140 Characters";
     error_message.innerHTML = text;
     return false;
   }
-  alert("Lähetetty onnistuneesti!");
+  alert("Form Submitted Successfully!");
   return true;
 }

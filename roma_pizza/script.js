@@ -496,11 +496,6 @@ function myOrderJ(){
   location.href = "orderJ.html";
 }
 
-function myFeed(){
-  location.href = "index.html";
-  alert("Kiitos palautteesta.");
-}
-
 function validate(){
   var name = document.getElementById("name").value;
   var subject = document.getElementById("subject").value;
@@ -523,20 +518,20 @@ function validate(){
     return false;
   }
   if(isNaN(phone) || phone.length != 10){
-    text = "Please Enter valid Phone Number";
+    text = "Syötä oikea puhelin numero!";
     error_message.innerHTML = text;
     return false;
   }
   if(email.indexOf("@") == -1 || email.length < 6){
-    text = "Please Enter valid Email";
+    text = "Syötä oikea sähköposti osoite!";
     error_message.innerHTML = text;
     return false;
   }
-  if(message.length <= 140){
-    text = "Please Enter More Than 140 Characters";
+  if(message.length <= 10){
+    text = "Syötä enemmän kuin 10 merkkiä!";
     error_message.innerHTML = text;
     return false;
   }
-  alert("Form Submitted Successfully!");
+  alert("Lähetetty onnistuneesti!");
   return true;
 }

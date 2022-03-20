@@ -123,10 +123,77 @@
   </div>
 </div>
 
-
-
+<div class="rowKaksi">
+    <div class="columnKaksi">
+          <!--Juomien tilaus-->
+          <article id="juomaRajaus">
+            <p>Juomien tilaus</p>
+            <p>Valitse juoma(t)</p> 
     
-        <script src="script.js"></script>
+        <!--Cocacola-->
+        <input type="checkbox" id="cocaCola" value=""> Cocacola <strong>3€</strong>
+        <input type="number" min="1" max="10" id="cocaColaJuomaMaara" value="">
+        <input type="checkbox" id="cocaColaLisaJaa" value="">Jää (<strong>+0€</strong>)
+        <button onclick="cocaColaFunktio()">Lisää juoma ostoskoriin</button>
+        <p id="cocaColaLisaJaat"></p>
+        <p style="color:red;" id="cocaColaVirhe"></p>
+    
+        <!--Sprite-->
+        <input type="checkbox" id="sprite" value=""> Sprite<strong>3€</strong>
+        <input type="number" min="1" max="10" id="spriteJuomaMaara" value="">  
+        <input type="checkbox" id="spriteLisaJaa" value=""> Jää (<strong>+0€</strong>)
+        <button onclick="spriteFunktio()">Lisää juoma ostoskoriin</button>
+        <p id="spriteLisaJaat"></p>
+        <p style="color:red;" id="spriteVirhe"></p>
+    
+        <!--Jaffa-->
+        <input type="checkbox" id="jaffa" value=""> Jaffa<strong>3€</strong>
+        <input type="number" min="1" max="10" id="jaffaJuomaMaara" value="">
+        <input type="checkbox" id="jaffaLisaJaa" value=""> Jää (<strong>+0€</strong>)
+        <button onclick="jaffaFunktio()">Lisää juoma ostoskoriin</button>
+        <p id="jaffaLisaJaat"></p>
+        <p style="color:red;" id="jaffaVirhe"></p>
+        </article>
+        <br>
+    </div>
+    <div class="columnKaksi">
+        <article id="lisaTayteRajaus">
+            <p id="yhteenVeto">Yhteenveto</p1>
+            <p id="kinkku"></p> <!-- Tähän tulee kinkkupizzojen määrä ja yhteishinta -->
+            <p id="juusto"></p> 
+            <p id="opera"></p>
+            <p id="kebab"></p>
+            <p id="jauheliha"></p>
+            <p id="pepperoni"></p>
+            <p id="cocaCola"></p>
+            <p id="sprite"></p>
+            <p id="jaffa"></p>
+            <p id="hinta"></p>
+            <p id="valitutKinkkuPizzat"></p>
+            <p id="valitutJuustoPizzat"></p>
+            <p id="valitutOperaPizzat"></p>
+            <p id="valitutKebabPizzat"></p>
+            <p id="valitutJauhelihaPizzat"></p>
+            <p id="valitutPepperoniPizzat"></p>
+            <p id="valitutCocaColat"></p>
+            <p id="valitutSpritet"></p>
+            <p id="valitutJaffat"></p>
+            </article>
+        
+            <br>
+        
+            <!-- Vaihtoehto ottaa nouto tai kotiinkuljetus -->
+            <button onclick="kotiinKuljetus()">Kotiin</button>
+            <button onclick="tilausNouto()">Tilaus</button>
+            <p id="kuljetus"></p>
+            
+            <!-- 'Hyväksy' nappi ei tee mitään sillä ei kuulu tallentaa tietoja tietokantaan tai vastaavaan -->
+            <article id="huvaksu">
+            <input type="text" value="">
+            <button onclick="">Hyväksy</button>
+    </div>
+  </div>
+    <script src="script.js"></script>
     </main>
     </body>
 </html>

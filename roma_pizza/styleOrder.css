@@ -23,6 +23,18 @@ body {
   display: table;
   clear: both;
 }
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+.rowKaksi {
+  display: flex;
+}
+.columnKaksi {
+  flex: 50%;
+  padding: 10px;
+}
 main {
   margin-left: auto;
   margin-right: auto;

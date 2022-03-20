@@ -2,14 +2,43 @@
 
 body {
   background-image:url('img/banner_2.png');
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  font-family: Roboto, sans-serif;
+  background-color: #252627;
+  color: #a9a9b3;
+  margin: 0;
+  padding: 0;
+  overflow-y: scroll;
+}
+
+main {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1em;
+  max-width: 1000px;
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+}
+
+h1 {
+  text-align: center;
 }
 
 /* Navigointipalkki */
+#navigointi {
+  white-space: nowrap;
+}
 #navigointi ul {
-  list-style-type: none;
+  display: flex;
+  flex-wrap: nowrap;
   margin: 0;
+  overflow-x: auto;
   padding: 0;
-  overflow: hidden;
   background-color: black;
 }
 #navigointi li {
@@ -26,8 +55,22 @@ body {
 #navigointi li a:hover {
   background-color: yellow;
 }
+#navigointi ul li {
+  list-style-type: none;
+    display: flex;
+}
 #navigointi ul li[nykyinen] {
   background-color: yellow;
+}
+#navigointi ul li a {
+  display: flex;
+  text-decoration: none;
+  padding: 1em;
+  align-items: center;
+  font-size:100%;
+  letter-spacing: 0.6px;
+  text-shadow: 0.3px 0.3px;
+  font-weight: 400;
 }
 
 #pizzaRoma {

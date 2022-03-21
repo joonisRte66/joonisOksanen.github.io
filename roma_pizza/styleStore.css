@@ -1,7 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family');
 
 body {
-  background-image:url('img/banner_2.png');
+  background-image:url('img/banner_2_blur.png');
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  margin: 0;
+  padding: 0;
+  overflow-y: scroll;
 }
 
 /* Navigointipalkki */

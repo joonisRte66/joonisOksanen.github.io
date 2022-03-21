@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family');
 
 body {
-  background-image:url('img/banner_2.png');
+  background-image:url('img/banner_2_blur.png');
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -44,15 +44,11 @@ h1 {
 }
 
 /* Navigointipalkki */
-#navigointi {
-  white-space: nowrap;
-}
 #navigointi ul {
-  display: flex;
-  flex-wrap: nowrap;
+  list-style-type: none;
   margin: 0;
-  overflow-x: auto;
   padding: 0;
+  overflow: hidden;
   background-color: black;
 }
 #navigointi li {
@@ -61,7 +57,6 @@ h1 {
 #navigointi li a {
   display: block;
   color: red;
-  text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 200%;
@@ -69,23 +64,20 @@ h1 {
 #navigointi li a:hover {
   background-color: yellow;
 }
-#navigointi ul li {
-  list-style-type: none;
-    display: flex;
-}
-#navigointi ul li[aria-current] {
+#navigointi ul li[nykyinen] {
   background-color: yellow;
 }
-#navigointi ul li a {
-  display: flex;
-  text-decoration: none;
-  padding: 1em;
-  align-items: center;
-  font-size:100%;
-  letter-spacing: 0.6px;
-  text-shadow: 0.3px 0.3px;
-  font-weight: 400;
+
+#navigointi img{
+  width: auto;
+  height: auto;
 }
+
+#navigointi form{
+  padding-bottom: 1%;
+  text-align: center;
+}
+
 
 #pizzaRoma {
   font-size: 155%;

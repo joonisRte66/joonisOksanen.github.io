@@ -68,8 +68,9 @@ body {
   float: left;
   width: 33.3%;
   padding: 8px;
-  background-color: antiquewhite;
-  
+  background-color: rgba(0,0,0,0.7);
+  color: antiquewhite;
+  font-size: 150%;
 }
 
 .price {

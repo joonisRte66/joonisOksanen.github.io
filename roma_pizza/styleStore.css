@@ -60,35 +60,69 @@ body {
   cursor: pointer;
 }
 
-.button1 {
+* {
+  box-sizing: border-box;
+}
+
+.columns {
+  float: left;
+  width: 33.3%;
+  padding: 8px;
+  background-color: antiquewhite;
+}
+
+.price {
+  list-style-type: none;
+  border: 1px solid black;
+  margin: 0;
+  padding: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.price:hover {
+  box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+}
+
+.price .header {
+  background-color: red;
+  color: black;
+  font-size: 25px;
+}
+
+.price li {
+  border-bottom: 1px solid black;
+  padding: 20px;
+  text-align: center;
+}
+
+.price .grey {
+  background-color: black;
+  color: antiquewhite;
+  font-size: 20px;
+}
+
+.button {
+  border: none;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  cursor: pointer;
   background-color: black; 
   color: yellow; 
   border: 5px solid red;
 }
 
-.button1:hover {
+.button:hover {
   background-color: red;
   color: black;
 }
 
-.button2 {
-  background-color: black; 
-  color: yellow; 
-  border: 5px solid red;
-}
-
-.button2:hover {
-  background-color: red;
-  color: black;
-}
-
-.button3 {
-  background-color: black; 
-  color: yellow; 
-  border: 5px solid red;
-}
-
-.button3:hover {
-  background-color: red;
-  color: black;
+@media only screen and (max-width: 600px) {
+  .columns {
+    width: 100%;
+  }
 }

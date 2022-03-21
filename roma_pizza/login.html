@@ -18,6 +18,51 @@
                   <li><a href="index.html">Koti</a></li>
                 </ul>
             </nav>
+            <div class="login">
+                <form name='form-login'>
+            
+                    <h1>Rekisteröidy!</h1>
+            
+                    <label for="name">Sähköposti</label>
+                    <input type="email" id="name" placeholder="Sähköposti" required>
+            
+                    <label for="pw">Salasana</label>
+                    <input type="password"
+                           id= "pw"
+                           placeholder="Salasana" required>
+            
+                    <ul class="helper-text">
+                        <li class="length">On oltava vähintään 8 merkkiä!</li>
+                        <li class="lowercase">Pitää sisältää pieni kirjain!</li>
+                        <li class="uppercase">Pitää sisältää iso kirjain!</li>
+                        <li class="special">Pitää sisältää numero tai erikoismerkki!</li>
+                    </ul>
+                    <input id="rgstr_btn" type="submit" value="Register" onclick="store()">
+            
+                </form>
+            </div>
+            
+            <div class="login">
+                <form name='form-login'>
+            
+                    <h1>Kirjaudu</h1>
+            
+                    <label for="userName">Sähköposti</label>
+                    <input type="email" id="userName" placeholder="Sähköposti" required>
+            
+                    <label for="userPw">Salasana</label>
+                    <input type="password" id= "userPw" placeholder="Salasana" required>
+            
+                    <div id="remember">
+                        <input type="checkbox" value="lsRememberMe" id="rememberMe"
+                               style="display: inline-block;">
+                        <label>Muista minut</label>
+                    </div>
+            
+                    <input id= "login_btn" type="submit" value="Login" onclick="check()">
+            
+                </form>
+            </div>            
         <script src="script.js"></script>
     </body>
 </html>

@@ -191,7 +191,7 @@ input[type=text]:hover{
   padding: 15px 25px;
   box-sizing: border-box;
   cursor: pointer;
-  background-color: black;
+  background-image: url('img/drinks_blur.jpg');
   background-position: center;
   background-size: cover;
   font-size: 180%;

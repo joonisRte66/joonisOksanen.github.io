@@ -83,11 +83,25 @@ function kinkkuFunktio() {
       document.getElementById("kinkkuVirhe").innerHTML = "VIRHE: Valitse vähintään yksi";
       document.getElementById("kinkkuAnanasLisaTayte").innerHTML = "";
       document.getElementById("valitutKinkkuPizzat").innerHTML = "";
+      document.getElementById("kinkku").innerHTML = "";
+      document.getElementById("valmistus").innerHTML = "";
+      document.getElementById("hinta").innerHTML = "";
     }
   } else { // Jos kinkkuananaspizzaa ei ole valittu
     document.getElementById("kinkkuVirhe").innerHTML = "VIRHE: Laita rasti ruutuun ensin";
     document.getElementById("kinkkuAnanasLisaTayte").innerHTML = "";
     document.getElementById("valitutKinkkuPizzat").innerHTML = "";
+    document.getElementById("kinkku").innerHTML = "";
+    document.getElementById("valmistus").innerHTML = "";
+    document.getElementById("hinta").innerHTML = "";
+  }
+  if (kinkkuAnanasMaara.value > 10) {
+    document.getElementById("kinkkuVirhe").innerHTML = "VIRHE: Valitse alle 10";
+    document.getElementById("kinkkuAnanasLisaTayte").innerHTML = "";
+    document.getElementById("valitutKinkkuPizzat").innerHTML = "";
+    document.getElementById("kinkku").innerHTML = "";
+    document.getElementById("valmistus").innerHTML = "";
+    document.getElementById("hinta").innerHTML = "";
   }
 }
 function juustoFunktio() {
@@ -105,11 +119,25 @@ function juustoFunktio() {
       document.getElementById("juustoVirhe").innerHTML = "VIRHE: Valitse vähintään yksi";
       document.getElementById("juustoLisaTayte").innerHTML = "";
       document.getElementById("valitutJuustoPizzat").innerHTML = "";
+      document.getElementById("juusto").innerHTML = "";
+      document.getElementById("valmistus").innerHTML = "";
+      document.getElementById("hinta").innerHTML = "";
     }
   } else {
     document.getElementById("juustoVirhe").innerHTML = "VIRHE: Laita rasti ruutuun ensin";
     document.getElementById("juustoLisaTayte").innerHTML = "";
     document.getElementById("valitutJuustoPizzat").innerHTML = "";
+    document.getElementById("juusto").innerHTML = "";
+    document.getElementById("valmistus").innerHTML = "";
+    document.getElementById("hinta").innerHTML = "";
+  }
+  if (juustoPizzaMaara.value > 10) {
+    document.getElementById("juustoVirhe").innerHTML = "VIRHE: Valitse alle 10";
+    document.getElementById("juustoLisaTayte").innerHTML = "";
+    document.getElementById("valitutJuustoPizzat").innerHTML = "";
+    document.getElementById("juusto").innerHTML = "";
+    document.getElementById("valmistus").innerHTML = "";
+    document.getElementById("hinta").innerHTML = "";
   }
 }
 function operaFunktio() {
@@ -127,11 +155,25 @@ function operaFunktio() {
       document.getElementById("operaVirhe").innerHTML = "VIRHE: Valitse vähintään yksi";
       document.getElementById("operaLisaTayte").innerHTML = "";
       document.getElementById("valitutOperaPizzat").innerHTML = "";
+      document.getElementById("opera").innerHTML = "";
+      document.getElementById("valmistus").innerHTML = "";
+      document.getElementById("hinta").innerHTML = "";
     }
   } else {
     document.getElementById("operaVirhe").innerHTML = "VIRHE: Laita rasti ruutuun ensin";
     document.getElementById("operaLisaTayte").innerHTML = "";
     document.getElementById("valitutOperaPizzat").innerHTML = "";
+    document.getElementById("opera").innerHTML = "";
+    document.getElementById("valmistus").innerHTML = "";
+    document.getElementById("hinta").innerHTML = "";
+  }
+  if (operaPizzaMaara.value > 10) {
+    document.getElementById("operaVirhe").innerHTML = "VIRHE: Valitse alle 10";
+    document.getElementById("operaLisaTayte").innerHTML = "";
+    document.getElementById("valitutOperaPizzat").innerHTML = "";
+    document.getElementById("opera").innerHTML = "";
+    document.getElementById("valmistus").innerHTML = "";
+    document.getElementById("hinta").innerHTML = "";
   }
 }
 function kebabFunktio() {
@@ -149,11 +191,25 @@ function kebabFunktio() {
       document.getElementById("kebabVirhe").innerHTML = "VIRHE: Valitse vähintään yksi";
       document.getElementById("kebabLisaTayte").innerHTML = "";
       document.getElementById("valitutKebabPizzat").innerHTML = "";
+      document.getElementById("kebab").innerHTML = "";
+      document.getElementById("valmistus").innerHTML = "";
+      document.getElementById("hinta").innerHTML = "";
     }
   } else {
     document.getElementById("kebabVirhe").innerHTML = "VIRHE: Laita rasti ruutuun ensin";
     document.getElementById("kebabLisaTayte").innerHTML = "";
     document.getElementById("valitutKebabPizzat").innerHTML = "";
+    document.getElementById("kebab").innerHTML = "";
+    document.getElementById("valmistus").innerHTML = "";
+    document.getElementById("hinta").innerHTML = "";
+  }
+  if (kebabPizzaMaara.value > 10) {
+    document.getElementById("kebabVirhe").innerHTML = "VIRHE: Valitse alle 10";
+    document.getElementById("kebabLisaTayte").innerHTML = "";
+    document.getElementById("valitutKebabPizzat").innerHTML = "";
+    document.getElementById("kebab").innerHTML = "";
+    document.getElementById("valmistus").innerHTML = "";
+    document.getElementById("hinta").innerHTML = "";
   }
 }
 function jauhelihaFunktio() {
@@ -171,11 +227,25 @@ function jauhelihaFunktio() {
       document.getElementById("jauhelihaVirhe").innerHTML = "VIRHE: Valitse vähintään yksi";
       document.getElementById("jauhelihaLisaTayte").innerHTML = "";
       document.getElementById("valitutJauhelihaPizzat").innerHTML = "";
+      document.getElementById("jauheliha").innerHTML = "";
+      document.getElementById("valmistus").innerHTML = "";
+      document.getElementById("hinta").innerHTML = "";
     }
   } else {
     document.getElementById("jauhelihaVirhe").innerHTML = "VIRHE: Laita rasti ruutuun ensin";
     document.getElementById("jauhelihaLisaTayte").innerHTML = "";
     document.getElementById("valitutJauhelihaPizzat").innerHTML = "";
+    document.getElementById("jauheliha").innerHTML = "";
+    document.getElementById("valmistus").innerHTML = "";
+    document.getElementById("hinta").innerHTML = "";
+  }
+  if (jauhelihaPizzaMaara.value > 10) {
+    document.getElementById("jauhelihaVirhe").innerHTML = "VIRHE: Valitse alle 10";
+    document.getElementById("jauhelihaLisaTayte").innerHTML = "";
+    document.getElementById("valitutJauhelihaPizzat").innerHTML = "";
+    document.getElementById("jauheliha").innerHTML = "";
+    document.getElementById("valmistus").innerHTML = "";
+    document.getElementById("hinta").innerHTML = "";
   }
 }
 function pepperoniFunktio() {
@@ -193,11 +263,25 @@ function pepperoniFunktio() {
       document.getElementById("pepperoniVirhe").innerHTML = "VIRHE: Valitse vähintään yksi";
       document.getElementById("pepperoniLisaTayte").innerHTML = "";
       document.getElementById("valitutPepperoniPizzat").innerHTML = "";
+      document.getElementById("pepperoni").innerHTML = "";
+      document.getElementById("valmistus").innerHTML = "";
+      document.getElementById("hinta").innerHTML = "";
     }
   } else {
     document.getElementById("pepperoniVirhe").innerHTML = "VIRHE: Laita rasti ruutuun ensin";
     document.getElementById("pepperoniLisaTayte").innerHTML = "";
     document.getElementById("valitutPepperoniPizzat").innerHTML = "";
+    document.getElementById("pepperoni").innerHTML = "";
+    document.getElementById("valmistus").innerHTML = "";
+    document.getElementById("hinta").innerHTML = "";
+  }
+  if (pepperoniPizzaMaara.value > 10) {
+    document.getElementById("pepperoniVirhe").innerHTML = "VIRHE: Valitse alle 10";
+    document.getElementById("pepperoniLisaTayte").innerHTML = "";
+    document.getElementById("valitutPepperoniPizzat").innerHTML = "";
+    document.getElementById("pepperoni").innerHTML = "";
+    document.getElementById("valmistus").innerHTML = "";
+    document.getElementById("hinta").innerHTML = "";
   }
 }
 

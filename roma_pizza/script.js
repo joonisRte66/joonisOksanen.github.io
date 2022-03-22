@@ -605,6 +605,13 @@ function laskeYhteisHinta() {
 function valmista() {
   document.getElementById("valmistus").innerHTML = "Valmistusaika on noin " + valmistusAika + " min";
 }
+
+function kuljeta() {
+  var kuljetusOsoite = document.getElementById("kuljetusOsoite");
+  var kuljetusAika;
+  document.getElementById("kuljetusAika").innerHTML = "Kuljetus osoitteeseen " + kuljetusOsoite.value;
+}
+
 // PIZZANTILAUSPROSESSI LOPPUU TÄHÄN!
 
 function validate(){

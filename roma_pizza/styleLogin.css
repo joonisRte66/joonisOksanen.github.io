@@ -122,3 +122,8 @@ after { clear: both; }
 #login form input[type="submit"]:hover {
   background: yellow;
 }
+
+h2{
+  text-align: center;
+  margin: auto;
+}

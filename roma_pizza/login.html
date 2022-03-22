@@ -18,6 +18,7 @@
                   <li><a href="index.html">Koti</a></li>
                 </ul>
             </nav>
+            <h2 id="tervetulo_teksti"></h2>
             <div class="login">
                 <form name='form-login'>
             
@@ -43,8 +44,7 @@
             </div>
             
             <div class="login">
-                <form name='form-login'>
-            
+                <form name='form-login' id="kirjautumis_lomake">
                     <h1>Kirjaudu!</h1>
             
                     <label for="userName">Sähköposti</label>
@@ -52,15 +52,11 @@
             
                     <label for="userPw">Salasana</label>
                     <input type="password" id= "userPw" placeholder="Salasana" required>
-            
-                    <div id="remember">
-                        <input type="checkbox" value="lsRememberMe" id="rememberMe"
-                               style="display: inline-block;">
-                        <label>Muista minut</label>
-                    </div>
-            
                     <input id= "login_btn" type="submit" value="Kirjaudu" onclick="check()">
-            
+                    </form>
+                    <form id="ulosKirjautumis_lomake">
+                        <input id="kirjaudu_nappi_ulos" type="submit" value="Kirjaudu ulos" onClick="kirjauduUlos()" />
+                    </form>
                 </form>
             </div>            
         <script src="script.js"></script>

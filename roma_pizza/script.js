@@ -31,6 +31,8 @@ var onkoJauhelihaValittu;
 // Muuttuja johon tallennetaan kaiken yhteishinta
 var kaikenYhteisHinta;
 
+let valmistusAika = 0;
+
 // Muuttujat johon tallennetaan tiedot onko lisätäytteet valittu
 var juustoLisaKatkarapu;
 var juustoLisaSipuli;
@@ -76,6 +78,7 @@ function kinkkuFunktio() {
       kinkkuAnanasLisaTayte() // Kutsuu funktiota
       document.getElementById("kinkkuVirhe").innerHTML = ""; // Jos pizzoja on yli 0 ja rasti ruudussa niin virhe teksti poistetaan
       laskeYhteisHinta() // Kutsuu funktiota
+      valmista()
     } else { // Jos kinkkuananaspizzoja on valittu alle 0
       document.getElementById("kinkkuVirhe").innerHTML = "VIRHE: Valitse vähintään yksi";
       document.getElementById("kinkkuAnanasLisaTayte").innerHTML = "";
@@ -97,6 +100,7 @@ function juustoFunktio() {
       juustoLisaTayte()
       document.getElementById("juustoVirhe").innerHTML = "";
       laskeYhteisHinta()
+      valmista()
     } else {
       document.getElementById("juustoVirhe").innerHTML = "VIRHE: Valitse vähintään yksi";
       document.getElementById("juustoLisaTayte").innerHTML = "";
@@ -118,6 +122,7 @@ function operaFunktio() {
       operaLisaTayte()
       document.getElementById("operaVirhe").innerHTML = "";
       laskeYhteisHinta()
+      valmista()
     } else {
       document.getElementById("operaVirhe").innerHTML = "VIRHE: Valitse vähintään yksi";
       document.getElementById("operaLisaTayte").innerHTML = "";
@@ -139,6 +144,7 @@ function kebabFunktio() {
       kebabLisaTayte()
       document.getElementById("kebabVirhe").innerHTML = "";
       laskeYhteisHinta()
+      valmista()
     } else {
       document.getElementById("kebabVirhe").innerHTML = "VIRHE: Valitse vähintään yksi";
       document.getElementById("kebabLisaTayte").innerHTML = "";
@@ -160,6 +166,7 @@ function jauhelihaFunktio() {
       jauhelihaLisaTayte()
       document.getElementById("jauhelihaVirhe").innerHTML = "";
       laskeYhteisHinta()
+      valmista()
     } else {
       document.getElementById("jauhelihaVirhe").innerHTML = "VIRHE: Valitse vähintään yksi";
       document.getElementById("jauhelihaLisaTayte").innerHTML = "";
@@ -181,6 +188,7 @@ function pepperoniFunktio() {
       pepperoniLisaTayte()
       document.getElementById("pepperoniVirhe").innerHTML = "";
       laskeYhteisHinta()
+      valmista()
     } else {
       document.getElementById("pepperoniVirhe").innerHTML = "VIRHE: Valitse vähintään yksi";
       document.getElementById("pepperoniLisaTayte").innerHTML = "";
@@ -328,70 +336,107 @@ tulostaa yhteishinnan ja valitut tuotteet. Funktiota voisi muuntaa selkeämmäks
 */
 function laskeYhteisHinta() {
   kaikenYhteisHinta = kinkkuAnanasMaara.value * 8 + juustoPizzaMaara.value * 5 + operaPizzaMaara.value * 13 + kebabPizzaMaara.value * 7 + jauhelihaPizzaMaara.value * 6 + cocaColaJuomaMaara.value * 3 + spriteJuomaMaara.value * 3 + jaffaJuomaMaara.value * 3 + pepperoniPizzaMaara.value * 8;
+  valmistusAika = kinkkuAnanasMaara.value * 10 + juustoPizzaMaara.value * 10 + operaPizzaMaara.value * 10 + kebabPizzaMaara.value * 10 + jauhelihaPizzaMaara.value * 10 + pepperoniPizzaMaara.value * 10;
   if (kinkkuAnanasMaara.value > 0) { // Jos kinkkuananas pizzoja on enemmän kuin 0 niin jatketaan:
     if (lisaKatkarapu.checked) { // Jos kinkkuananaspizzaan tulee katkarapua niin jatketaan:
-     kaikenYhteisHinta = kaikenYhteisHinta + 1 * kinkkuAnanasMaara.value; // Lisätään lisätäytteen hinta
+     kaikenYhteisHinta = kinkkuAnanasMaara.value + 1; // Lisätään lisätäytteen hinta
+     valmistusAika = valmistusAika + 1 * kinkkuAnanasMaara.value;
+     valmista()
     }
-    if (lisaSipuli.checked) { // Jos kinkkuananaspizzassa on sipulia niin jatketaan:
-     kaikenYhteisHinta = kaikenYhteisHinta + 1 * kinkkuAnanasMaara.value;
+    if (lisaSipuli.checked) {
+      kaikenYhteisHinta = kinkkuAnanasMaara.value + 1; // Lisätään lisätäytteen hinta
+      valmistusAika = valmistusAika + 1 * kinkkuAnanasMaara.value;
+      valmista()
     }
     if (kinkkuAnanasGluteenitonPohja.checked) {
-     kaikenYhteisHinta = kaikenYhteisHinta + 2 * kinkkuAnanasMaara.value;
+      kaikenYhteisHinta = kinkkuAnanasMaara.value + 1; // Lisätään lisätäytteen hinta
+      valmistusAika = valmistusAika + 3 * kinkkuAnanasMaara.value;
+      valmista()
     }
   }
   if (juustoPizzaMaara.value > 0) {
     if (juustoLisaKatkarapu.checked) {
-     kaikenYhteisHinta = kaikenYhteisHinta + 1 * juustoPizzaMaara.value;
+      kaikenYhteisHinta = juustoPizzaMaara.value + 1; // Lisätään lisätäytteen hinta
+      valmistusAika = valmistusAika + 1 * juustoPizzaMaara.value;
+      valmista()
     }
     if (juustoLisaSipuli.checked) {
-     kaikenYhteisHinta = kaikenYhteisHinta + 1 * juustoPizzaMaara.value;
+      kaikenYhteisHinta = juustoPizzaMaara.value + 1; // Lisätään lisätäytteen hinta
+      valmistusAika = valmistusAika + 1 * juustoPizzaMaara.value;
+      valmista()
     }
     if (juustoGluteenitonPohja.checked) {
-     kaikenYhteisHinta = kaikenYhteisHinta + 2 * juustoPizzaMaara.value;
+      kaikenYhteisHinta = juustoPizzaMaara.value + 1; // Lisätään lisätäytteen hinta
+      valmistusAika = valmistusAika + 3 * juustoPizzaMaara.value;
+      valmista()
     }
 }
   if (operaPizzaMaara.value > 0) {
     if (operaLisaKatkarapu.checked) {
-      kaikenYhteisHinta = kaikenYhteisHinta + 1 * operaPizzaMaara.value;
+      kaikenYhteisHinta = operaPizzaMaara.value + 1; // Lisätään lisätäytteen hinta
+      valmistusAika = valmistusAika + 1 * operaPizzaMaara.value;
+      valmista()
     }
     if (operaLisaSipuli.checked) {
-      kaikenYhteisHinta = kaikenYhteisHinta + 1 * operaPizzaMaara.value;
+      kaikenYhteisHinta = operaPizzaMaara.value + 1;
+      valmistusAika = valmistusAika + 1 * operaPizzaMaara.value;
+      valmista()
     }
     if (operaGluteenitonPohja.checked) {
-      kaikenYhteisHinta = kaikenYhteisHinta + 2 * operaPizzaMaara.value;
+      kaikenYhteisHinta = operaPizzaMaara.value + 1; // Lisätään lisätäytteen hinta
+      valmistusAika = valmistusAika + 3 * operaPizzaMaara.value;
+      valmista()
     }
   }
   if (kebabPizzaMaara.value > 0) {
     if (kebabLisaKatkarapu.checked) {
-      kaikenYhteisHinta = kaikenYhteisHinta + 1 * kebabPizzaMaara.value;
+      kaikenYhteisHinta = kebabPizzaMaara.value + 1;
+      valmistusAika = valmistusAika + 1 * kebabPizzaMaara.value;
+      valmista()
     }
     if (kebabLisaSipuli.checked) {
-      kaikenYhteisHinta = kaikenYhteisHinta + 1 * kebabPizzaMaara.value;
+      kaikenYhteisHinta = kebabPizzaMaara.value + 1;
+      valmistusAika = valmistusAika + 1 * kebabPizzaMaara.value;
+      valmista()
     }
     if (kebabGluteenitonPohja.checked) {
-      kaikenYhteisHinta = kaikenYhteisHinta + 2 * kebabPizzaMaara.value;
+      kaikenYhteisHinta = kebabPizzaMaara.value + 1;
+      valmistusAika = valmistusAika + 3 * kebabPizzaMaara.value;
+      valmista()
     }
   }
   if (jauhelihaPizzaMaara.value > 0) {
     if (jauhelihaLisaKatkarapu.checked) {
-      kaikenYhteisHinta = kaikenYhteisHinta + 1 * jauhelihaPizzaMaara.value;
+      kaikenYhteisHinta = jauhelihaPizzaMaara.value + 1;
+      valmistusAika = valmistusAika + 1 * jauhelihaPizzaMaara.value;
+      valmista()
     }
     if (jauhelihaLisaSipuli.checked) {
-      kaikenYhteisHinta = kaikenYhteisHinta + 1 * jauhelihaPizzaMaara.value;
+      kaikenYhteisHinta = jauhelihaPizzaMaara.value + 1;
+      valmistusAika = valmistusAika + 1 * jauhelihaPizzaMaara.value;
+      valmista()
     }
     if (jauhelihaGluteenitonPohja.checked) {
-      kaikenYhteisHinta = kaikenYhteisHinta + 2 * jauhelihaPizzaMaara.value;
+      kaikenYhteisHinta = jauhelihaPizzaMaara.value + 1;
+      valmistusAika = valmistusAika + 3 * jauhelihaPizzaMaara.value;
+      valmista()
     }
   }
   if (pepperoniPizzaMaara.value > 0) {
     if (pepperoniLisaKatkarapu.checked) {
-      kaikenYhteisHinta = kaikenYhteisHinta + 1 * pepperoniPizzaMaara.value;
+      kaikenYhteisHinta = pepperoniPizzaMaara.value + 1;
+      valmistusAika = valmistusAika + 1 * pepperoniPizzaMaara.value;
+      valmista()
     }
     if (pepperoniLisaSipuli.checked) {
-      kaikenYhteisHinta = kaikenYhteisHinta + 1 * pepperoniPizzaMaara.value;
+      kaikenYhteisHinta = pepperoniPizzaMaara.value + 1;
+      valmistusAika = valmistusAika + 1 * pepperoniPizzaMaara.value;
+      valmista()
     }
     if (pepperoniGluteenitonPohja.checked) {
-      kaikenYhteisHinta = kaikenYhteisHinta + 2 * pepperoniPizzaMaara.value;
+      kaikenYhteisHinta = pepperoniPizzaMaara.value + 1;
+      valmistusAika = valmistusAika + 3 * pepperoniPizzaMaara.value;
+      valmista()
     }
   }
   document.getElementById("hinta").innerHTML = "Yhteishinta: " + kaikenYhteisHinta + " €"; // Tulostaa yhteishinnan
@@ -472,15 +517,13 @@ function laskeYhteisHinta() {
     }
   }
 }
-// 2 funktiota jotka toteutuu kun käyttäjä valitsee joko 'nouto' tai 'kuljetus'
-function kotiinKuljetus() { // Jos käyttäjä valitsee kuljetuksen
-  document.getElementById("kuljetus").innerHTML = "Kotiinkuljetus. Kuljetusaika on noin " + kaikenYhteisHinta * 0.7 + " min. Mihin toimitamme tämän?"; // kaikenYhteisHinta * 0.5 on toimitusaika
-  document.getElementById("huvaksu").style.display = "block"; // Kysyy osoitetta jos kotiin kuljetus valitaan
+
+
+function valmista() {
+  document.getElementById("valmistus").innerHTML = "Valmistusaika on noin " + valmistusAika + " min";
 }
-function tilausNouto() { // Jos käyttäjä valitsee noudon
-  document.getElementById("kuljetus").innerHTML = kaikenYhteisHinta * 0.5 + " min valmistumiseen";
-  document.getElementById("huvaksu").style.display = "none"; // Piiloittaa osoitekentän jos noutotilaus valitaan
-}
+
+
 // PIZZANTILAUSPROSESSI LOPPUU TÄHÄN!
 
 

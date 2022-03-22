@@ -483,19 +483,6 @@ function tilausNouto() { // Jos käyttäjä valitsee noudon
 }
 // PIZZANTILAUSPROSESSI LOPPUU TÄHÄN!
 
-
-function myOrderF(){
-  location.href = "orderF.html";
-}
-
-function myOrder(){
-  location.href = "order.html";
-}
-
-function myOrderJ(){
-  location.href = "orderJ.html";
-}
-
 function validate(){
   var name = document.getElementById("name").value;
   var phone = document.getElementById("phone").value;
@@ -573,11 +560,58 @@ function check(){
 
   var userName = document.getElementById('userName');
   var userPw = document.getElementById('userPw');
-  var userRemember = document.getElementById("rememberMe");
 
   if(userName.value == storedName && userPw.value == storedPw){
-      alert('Olet kirjautunut sisään.');
+      localStorage.setItem("userName", document.getElementById("userName").value);
+      localStorage.setItem("kirjautunut", "kylla");
+      alert('Olet kirjautunut sisään tunnuksillasi. Pääset kirjautumaan ulos Kirjaudu välilehdeltä painamalla "Kirjaudu ulos" painiketta.');  
   }else{
       alert('Virhe kirjautumisessa.');
+  }
+}
+
+document.addEventListener("DOMContentLoaded", onkoKirjautunut);
+
+function onkoKirjautunut(){
+    if(localStorage.getItem("kirjautunut") === "kylla") {
+        document.getElementById("tervetulo_teksti").textContent += "Olet kirjautunut sähköpostilla: " + localStorage.getItem("userName") + " pizzerian nettisivuille!";
+        document.getElementById("kirjautumis_lomake").style.display = "none";
+        document.getElementById("ulosKirjautumis_lomake");
+    }
+    else
+        document.getElementById("ulosKirjautumis_lomake").style.display = "none";
+}
+function kirjauduUlos(){
+    localStorage.setItem("kirjautunut", "null")
+}
+
+
+function myOrderF(){
+  if(localStorage.getItem("kirjautunut") === "kylla"){
+    location.href = "orderF.html";
+  }
+  else{
+    alert('Sinun pitää kirjautua, jotta voit tilata!!!');
+    location.href ="login.html";
+  }
+}
+
+function myOrder(){
+  if(localStorage.getItem("kirjautunut") === "kylla"){
+    location.href = "order.html";
+  }
+  else{
+    alert('Sinun pitää kirjautua, jotta voit tilata!!!');
+    location.href ="login.html";
+  }
+}
+
+function myOrderJ(){
+  if(localStorage.getItem("kirjautunut") === "kylla"){
+    location.href = "orderJ.html";
+  }
+  else{
+    alert('Sinun pitää kirjautua, jotta voit tilata!!!');
+    location.href ="login.html";
   }
 }

@@ -19,87 +19,51 @@
                   <li><a href="index.html">Koti</a></li>
                 </ul>
             </nav>
-            
+        </header>
             <!-- logo -->
             <div id="logo" class="pizza"> 
                 <h1 id="pizzaRoma">Tervetuloa Pizza Roman tilaukseen!</h1>
                 <h1 id="teksti">Tilaa itsellesi sopiva pizza alla olevasta listasta!</h1>
             </div>
-<!-- Pizzantilausprosessi alkaa tästä -->
-<article id="pizzaTilaus">
-    <p>Tilauksen teko:</p>
-    <p>Valitse vaihtoehdoista ja tilaa kotiovelle edullisesti maukas ja lämmin pizza!!</p>
-
-    <!-- Kinkkuananaspizza -->
-    <input type="checkbox" id="kinkkuananas" value=""> Kinkkuananaspizza <strong>8€</strong><br> <!-- Luo 'checkboxin' josta valitaan pizza -->
-    <input type="number" min="1" max="10" id="kinkkuAnanasMaara" value=""> <!-- Luo alueen johon syötetään pizzojen määrä -->
-
-    <input type="checkbox" id="lisaKatkarapu" value="">Katkarapu (<strong>+1€</strong>)
-    <input type="checkbox" id="lisaSipuli" value="">Sipuli (<strong>+1€</strong>)
-    <input type="checkbox" id="kinkkuAnanasGluteenitonPohja" value="">Gluteeniton pohja (<strong>+1€</strong>)
-    <button onclick="kinkkuFunktio()">Lisää ostoskoriin</button>
-    <p id="kinkkuAnanasLisaTayte"></p>
-    
-    <!-- Juustopizza -->
-    <input type="checkbox" id="juustoPizza" value=""> Juustopizza <strong>5€</strong><br>
-    <input type="number" min="1" max="10" id="juustoPizzaMaara" value="">
-
-    <input type="checkbox" id="juustoLisaKatkarapu" value="">Katkarapu (<strong>+1€</strong>)
-    <input type="checkbox" id="juustoLisaSipuli" value="">Sipuli (<strong>+1€</strong>)
-    <input type="checkbox" id="juustoGluteenitonPohja" value="">Gluteeniton pohja (<strong>+1€</strong>)
-    <button onclick="juustoFunktio()">Lisää ostoskoriin</button>
-    <p id="juustoLisaTayte"></p>
-
-    
-    <!--Juomien tilaus-->
-    <article id="juomaTilaus">
-        <p>Juomien tilaus: </p>
-        <p>Valitse mieleisesi juoma(t)!</p> 
-    
-        <!--Cocacola-->
-        <input type="checkbox" id="Cocacola" value=""> Cocacola <strong>3€</strong><br>
-        <input type="number" min="1" max="10" id="cocacolaJuomaMaara" value="">
-    
-        <input type="checkbox" id="cocacolaLisaJaa" value="">Jää (<strong>+0€</strong>)
-        <button onclick="cocacolaFunktio()">Lisää juoma ostoskoriin</button>
-        <p id="cocacolaLisaJaa"></p>
-    
-        <!--Sprite-->
-        <input type="checkbox" id="Sprite" value=""> Sprite<strong>3€</strong>
-        <input type="number" min="1" max="10" id="spriteJuomaMaara" value="">
-    
-        <input type="checkbox" id="spriteLisaJaa" value=""> Jää (<strong>+0€</strong>)
-        <button onclick="spriteFunktio()">Lisää juoma ostoskoriin</button>
-        <p id="spriteLisaJaa"></p>
-    
-        <!--Jaffa-->
-        <input type="checkbox" id="Jaffa" value=""> Jaffa <strong>3€</strong>
-        <input type="number" min="1" max="10" id="jaffaJuomaMaara" value="">
-    
-        <input type="checkbox" id="jaffaLisaJaa" value=""> Jää (<strong>+0€</strong>)
-        <button onclick="jaffaFunktio()">Lisää juoma ostoskoriin</button>
-    </header>
-
-    <p id="kinkku"></p> <!-- Tähän tulee kinkkupizzojen määrä ja yhteishinta -->
-    <p id="juusto"></p> 
-    <button onclick="laskeYhteisHinta()">Laske yhteishinta</button> <!-- Nappi joka laukaisee funktion laskeYhteisHinta() -->
-    <p id="hinta"></p>
-    <p id="valitutKinkkuPizzat"></p>
-    <p id="valitutJuustoPizzat"></p>
-        <!-- Vaihtoehto ottaa nouto tai kotiinkuljetus -->
-        <button onclick="kotiinKuljetus()">Kotiin</button>
-        <button onclick="tilausNouto()">Tilaus</button>
-        <p id="kuljetus"></p>
-
-    
-    <!-- 'Hyväksy' nappi ei tee mitään sillä ei kuulu tallentaa tietoja tietokantaan tai vastaavaan -->
-    <article id="huvaksu">
-    <input type="text" value="">
-    <button onclick="">Hyväksy</button>
-    </article>
-            </article> 
-            
         </header>
-        <script src="script.js"></script>
-    </body>
+        <main>
+
+<article id="yhteenvetoRajaus">
+    <p id="yhteenVeto">Yhteenveto</p1>
+    <p id="valmistus"></p>
+    <p id="hinta"></p>
+</article>
+
+<!-- valitaan pohja (norm/gluteeniton)
+kastike (valkosipulilla tai ilman)
+täytteet 3-5 kpl (eri hintaisia vaihtoehtoja väh. 10 kpl)
+sekä juusto (pari vaihtoehtoa). -->
+<article id="pizzaTilaus">
+    <p id="fantasiaHinta"></p>
+    <input type="checkbox" id="fantasiaLisaKatkarapu" value="">Katkarapu (<strong>+3€</strong>) <br>
+    <input type="checkbox" id="fantasiaLisaSipuli" value="">Kebabliha (<strong>+1€</strong>) <br>
+    <input type="checkbox" id="fantasiaLisaKinkku" value="">Kinkku (<strong>+1€</strong>) <br>
+    <input type="checkbox" id="" value="">
+    <input type="checkbox" id="" value="">
+    <input type="checkbox" id="" value="">
+    <input type="checkbox" id="" value="">
+    <input type="checkbox" id="" value="">
+    <input type="checkbox" id="" value="">
+    <input type="checkbox" id="" value="">
+    <input type="checkbox" id="" value="">
+    <input type="checkbox" id="" value="">
+    <input type="checkbox" id="" value="">
+    <input type="checkbox" id="" value="">
+    <input type="checkbox" id="" value="">
+    <input type="checkbox" id="" value="">
+    <input type="checkbox" id="" value="">
+    <input type="checkbox" id="" value="">
+    <input type="checkbox" id="" value="">
+    <input type="checkbox" id="" value="">
+    <input type="number" id="fantasiaMaara">Määrä
+</article>
+<button onclick="fantasiaPizza()">Lisää ostoskoriin</button>
+
+<script src="script.js"></script>
+</body>
 </html>

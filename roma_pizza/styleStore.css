@@ -105,6 +105,7 @@ body {
 }
 
 .button {
+  margin-left: 37%;
   border: none;
   padding: 16px 32px;
   text-align: center;

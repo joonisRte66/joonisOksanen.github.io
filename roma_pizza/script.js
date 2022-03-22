@@ -574,8 +574,8 @@ function store(){
   }else if(name.value.length == 0 && pw.value.length == 0){
       alert('Täytä sähköpostisi ja salasanasi!');
 
-  }else if(pw.value.length > 8){
-      alert('Maksimissaan 8');
+  }else if(pw.value.length < 6){
+      alert('Pitää olla vähintään 6 merkkiä!');
 
   }else if(!pw.value.match(numbers)){
       alert('Lisää yksi numero!');

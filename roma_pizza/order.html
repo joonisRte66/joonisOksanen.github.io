@@ -19,16 +19,44 @@
                     <li><a href="index.html">Koti</a></li>
                 </ul>
             </nav>
-         </header>
+        </header>
             <main>
             
             <!-- logo -->
             <div id="logo" class="pizza"> 
                 <h1 id="pizzaRoma">Tervetuloa Pizza Roman tilaukseen!</h1>
-                <h1 id="teksti">Tilaa itsellesi sopiva pizza alla olevasta listasta!</h1>
+                <h1 id="teksti">Tilaa itsellesi sopiva pizza ja juoma alla olevasta listasta!</h1>
             </div>
 
-<!-- Pizzantilausprosessi alkaa tästä -->
+        <!--Juomien tilaus-->
+    <article id="pizzaTilaus">
+        <section id="juomaRajaus">
+            <p>Juomien tilaus</p>
+            <!--Cocacola-->
+            <input type="checkbox" id="cocaCola" value=""> Cocacola <strong>3€</strong>
+            <input type="number" min="1" max="10" id="cocaColaJuomaMaara" value="">
+            <input type="checkbox" id="cocaColaLisaJaa" value="">Jää (<strong>+0€</strong>)
+            <button onclick="cocaColaFunktio()">Lisää juoma ostoskoriin</button>
+            <p id="cocaColaLisaJaat"></p>
+            <p style="color:red;" id="cocaColaVirhe"></p>
+            <!--Sprite-->
+            <input type="checkbox" id="sprite" value=""> Sprite<strong>3€</strong>
+            <input type="number" min="1" max="10" id="spriteJuomaMaara" value="">  
+            <input type="checkbox" id="spriteLisaJaa" value=""> Jää (<strong>+0€</strong>)
+            <button onclick="spriteFunktio()">Lisää juoma ostoskoriin</button>
+            <p id="spriteLisaJaat"></p>
+            <p style="color:red;" id="spriteVirhe"></p>
+            <!--Jaffa-->
+            <input type="checkbox" id="jaffa" value=""> Jaffa<strong>3€</strong>
+            <input type="number" min="1" max="10" id="jaffaJuomaMaara" value="">
+            <input type="checkbox" id="jaffaLisaJaa" value=""> Jää (<strong>+0€</strong>)
+            <button onclick="jaffaFunktio()">Lisää juoma ostoskoriin</button>
+            <p id="jaffaLisaJaat"></p>
+            <p style="color:red;" id="jaffaVirhe"></p>
+        </section>
+    </article>
+
+<br><br>
 <article id="yhteenvetoRajaus">
     <p id="yhteenVeto">Yhteenveto</p1>
     <p id="valmistus"></p>
@@ -53,6 +81,7 @@
     <p id="valitutJaffat"></p>
 </article>
 
+<!-- Pizzantilausprosessi alkaa tästä -->
 <article id="pizzaTilaus">
 <div class="row">
   <div class="column">
@@ -149,36 +178,6 @@
             <br><br>
   </div>
 </div>
-          <!--Juomien tilaus-->
-        <article id="juomaRajaus">
-        <p>Juomien tilaus</p>
-        <p>Valitse juoma(t)</p> 
-    
-        <!--Cocacola-->
-        <input type="checkbox" id="cocaCola" value=""> Cocacola <strong>3€</strong>
-        <input type="number" min="1" max="10" id="cocaColaJuomaMaara" value="">
-        <input type="checkbox" id="cocaColaLisaJaa" value="">Jää (<strong>+0€</strong>)
-        <button onclick="cocaColaFunktio()">Lisää juoma ostoskoriin</button>
-        <p id="cocaColaLisaJaat"></p>
-        <p style="color:red;" id="cocaColaVirhe"></p>
-    
-        <!--Sprite-->
-        <input type="checkbox" id="sprite" value=""> Sprite<strong>3€</strong>
-        <input type="number" min="1" max="10" id="spriteJuomaMaara" value="">  
-        <input type="checkbox" id="spriteLisaJaa" value=""> Jää (<strong>+0€</strong>)
-        <button onclick="spriteFunktio()">Lisää juoma ostoskoriin</button>
-        <p id="spriteLisaJaat"></p>
-        <p style="color:red;" id="spriteVirhe"></p>
-    
-        <!--Jaffa-->
-        <input type="checkbox" id="jaffa" value=""> Jaffa<strong>3€</strong>
-        <input type="number" min="1" max="10" id="jaffaJuomaMaara" value="">
-        <input type="checkbox" id="jaffaLisaJaa" value=""> Jää (<strong>+0€</strong>)
-        <button onclick="jaffaFunktio()">Lisää juoma ostoskoriin</button>
-        <p id="jaffaLisaJaat"></p>
-        <p style="color:red;" id="jaffaVirhe"></p>
-        </article>
-        <br>
     <script src="script.js"></script>
     </div>
     </main>

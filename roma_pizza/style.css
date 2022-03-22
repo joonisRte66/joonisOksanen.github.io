@@ -272,3 +272,24 @@ input[type=text]:hover{
   font-size: 14px;
   transition: all 0.5s ease;
 }
+
+.tiedot{
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.tiedot p{
+  color: red;
+  font-size: 200%;
+  text-align: center;
+}
+
+.tiedot h1{
+  color: antiquewhite;
+  font-size: 150%;
+  text-align: center;
+}
+.tiedot h2{
+  color: antiquewhite;
+  font-size: 70%;
+  text-align: center;
+}

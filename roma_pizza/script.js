@@ -518,13 +518,9 @@ function laskeYhteisHinta() {
     }
   }
 }
-
-
 function valmista() {
   document.getElementById("valmistus").innerHTML = "Valmistusaika on noin " + valmistusAika + " min";
 }
-
-
 // PIZZANTILAUSPROSESSI LOPPUU TÄHÄN!
 
 function validate(){

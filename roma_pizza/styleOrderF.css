@@ -126,18 +126,22 @@ h1 {
 }
 #pizzaTilaus {
   color:yellow;
+  text-align: center;
+  margin: auto;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  font-size: 120%;
 }
 #pizzaTilaus p{
-  color: yellow;
+  font-size: 150%;
+  color: red;
+  border-radius: 10px;
+  border: 0.5px solid antiquewhite;
+  background-color: rgba(0,0,0,0.7);
 }
 
 #huvaksu {
   display:none;
-}
-
-#juomaRajaus h2{
-  text-align: center;
-  font-size: 150%;
 }
 
 /* Muuntaa checkboxit "toggle" mallisiksi */

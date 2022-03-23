@@ -802,3 +802,7 @@ function myOrderJ(){
     location.href ="login.html";
   }
 }
+
+function fantasiaPizza(){
+  
+}

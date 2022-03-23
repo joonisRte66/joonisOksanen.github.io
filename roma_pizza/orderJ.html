@@ -34,7 +34,7 @@
         <p style="color:red;" id="cocaColaVirhe"></p>
     
         <!--Sprite-->
-        <input type="checkbox" id="sprite" value=""> Sprite<strong>3€</strong>
+        <input type="checkbox" id="sprite" value=""> Sprite <strong>3€</strong>
         <input type="number" min="1" max="10" id="spriteJuomaMaara" value="">  
         <input type="checkbox" id="spriteLisaJaa" value=""> Jää (<strong>+0€</strong>)
         <button onclick="spriteFunktio()">Lisää juoma ostoskoriin</button>
@@ -42,21 +42,41 @@
         <p style="color:red;" id="spriteVirhe"></p>
     
         <!--Jaffa-->
-        <input type="checkbox" id="jaffa" value=""> Jaffa<strong>3€</strong>
+        <input type="checkbox" id="jaffa" value=""> Jaffa <strong>3€</strong>
         <input type="number" min="1" max="10" id="jaffaJuomaMaara" value="">
         <input type="checkbox" id="jaffaLisaJaa" value=""> Jää (<strong>+0€</strong>)
         <button onclick="jaffaFunktio()">Lisää juoma ostoskoriin</button>
         <p id="jaffaLisaJaat"></p>
         <p style="color:red;" id="jaffaVirhe"></p>
-        </article>
-        <br>
          
         <!--muumilimu-->
+        <input type="checkbox" id="muumilimu" value=""> Muumilimu <strong>3€</strong>
+        <input type="number" min="1" max="10" id="muumilimuJuomaMaara" value="">
+        <input type="checkbox" id="muumilimuLisaJaa" value=""> Jää (<strong>+0€</strong>)
+        <button onclick="muumilimuFunktio()">Lisää juoma ostoskoriin</button>
+        <p id="muumilimuLisaJaat"></p>
+        <p style="color:red;" id="muumilimuVirhe"></p>
 
         <!--Novelle-->
+        <input type="checkbox" id="novelle" value=""> Novelle <strong>3€</strong>
+        <input type="number" min="1" max="10" id="novelleJuomaMaara" value="">
+        <input type="checkbox" id="novelleLisaJaa" value=""> Jää (<strong>+0€</strong>)
+        <button onclick="novelleFunktio()">Lisää juoma ostoskoriin</button>
+        <p id="jaffaLisaJaat"></p>
+        <p style="color:red;" id="novelleVirhe"></p>
 
         <!--pepsi-->
+        <input type="checkbox" id="pepsi" value=""> Pepsi <strong>3€</strong>
+        <input type="number" min="1" max="10" id="pepsiJuomaMaara" value="">
+        <input type="checkbox" id="pepsiLisaJaa" value=""> Jää (<strong>+0€</strong>)
+        <button onclick="pepsiFunktio()">Lisää juoma ostoskoriin</button>
+        <p id="pepsiLisaJaat"></p>
+        <p style="color:red;" id="pepsiVirhe"></p>
 
+
+        </article>
+        <br>
+    
         <article id="lisaTayteRajaus">
         <p id="yhteenVeto">Yhteenveto</p1>
         <p id="cocaCola"></p>

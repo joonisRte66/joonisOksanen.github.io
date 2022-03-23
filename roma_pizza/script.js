@@ -570,7 +570,9 @@ function laskeYhteisHinta() {
       document.getElementById("valitutKinkkuPizzat").innerHTML = kinkkuAnanasMaara.value + " kinkkuananaspizzaa valituilla lisätäytteillä";
     } else if (kinkkuAnanasGluteenitonPohja.checked) {
       document.getElementById("valitutKinkkuPizzat").innerHTML = kinkkuAnanasMaara.value + " kinkkuananaspizzaa gluteenittomalla pohjalla";
-    } else { // Jos lisätäytteitä ei ole:
+    }else if (kinkkuIsoPizza.checked) {
+      document.getElementById("valitutKinkkuPizzat").innerHTML = kinkkuAnanasMaara.value + " kinnkuananaspizzaa isolla pohjalla";
+    }else { // Jos lisätäytteitä ei ole:
       document.getElementById("valitutKinkkuPizzat").innerHTML = kinkkuAnanasMaara.value + " kinkkuananaspizzaa";
     }
   }
@@ -579,6 +581,8 @@ function laskeYhteisHinta() {
       document.getElementById("valitutJuustoPizzat").innerHTML = juustoPizzaMaara.value + " juustopizzaa valituilla lisätäytteillä";
   } else if (juustoGluteenitonPohja.checked) {
     document.getElementById("valitutJuustoPizzat").innerHTML = juustoPizzaMaara.value + " juustopizzaa gluteenittomalla pohjalla";
+  }else if (juustoIsoPizza.checked) {
+      document.getElementById("valitutJuustoPizzat").innerHTML = juustoPizzaMaara.value + " juustopizzaa isolla pohjalla";
   } else {
     document.getElementById("valitutJuustoPizzat").innerHTML = juustoPizzaMaara.value + " juustopizzaa";
   }
@@ -588,6 +592,8 @@ function laskeYhteisHinta() {
       document.getElementById("valitutOperaPizzat").innerHTML = operaPizzaMaara.value + " operapizzaa valituilla lisätäytteillä";
     } else if (operaGluteenitonPohja.checked) {
       document.getElementById("valitutOperaPizzat").innerHTML = operaPizzaMaara.value + " operapizzaa gluteenittomalla pohjalla";
+    }else if (operaIsoPizza.checked) {
+        document.getElementById("valitutOperaPizzat").innerHTML = operaPizzaMaara.value + " operapizzaa isolla pohjalla"; 
     } else {
       document.getElementById("valitutOperaPizzat").innerHTML = operaPizzaMaara.value + " operapizzaa"
     }
@@ -597,6 +603,8 @@ function laskeYhteisHinta() {
       document.getElementById("valitutKebabPizzat").innerHTML = kebabPizzaMaara.value + " kebabpizzaa valituilla lisätäytteillä";
     } else if (kebabGluteenitonPohja.checked) {
       document.getElementById("valitutKebabPizzat").innerHTML = kebabPizzaMaara.value + " kebabpizzaa gluteenittomalla pohjalla";
+    }else if (kebabIsoPizza.checked) {
+        document.getElementById("valitutKebabPizzat").innerHTML = kebabPizzaMaara.value + " kebabpizzaa isolla pohjalla";
     } else {
       document.getElementById("valitutKebabPizzat").innerHTML = kebabPizzaMaara.value + " kebabpizzaa"
     }
@@ -606,6 +614,8 @@ function laskeYhteisHinta() {
       document.getElementById("valitutJauhelihaPizzat").innerHTML = jauhelihaPizzaMaara.value + " jauhelihapizzaa valituilla lisätäytteillä";
     } else if (jauhelihaGluteenitonPohja.checked) {
       document.getElementById("valitutJauhelihaPizzat").innerHTML = jauhelihaPizzaMaara.value + " jauhelihapizzaa gluteenittomalla pohjalla";
+    }else if (jauhelihaIsoPizza.checked) {
+        document.getElementById("valitutJauhelihaPizzat").innerHTML = jauhelihaPizzaMaara.value + " jauhelihapizzaa isolla pohjalla";
     } else {
       document.getElementById("valitutJauhelihaPizzat").innerHTML = jauhelihaPizzaMaara.value + " jauhelihapizzaa"
     }
@@ -615,7 +625,9 @@ function laskeYhteisHinta() {
       document.getElementById("valitutPepperoniPizzat").innerHTML = pepperoniPizzaMaara.value + " pepperonipizzaa valituilla lisätäytteillä";
     } else if (pepperoniGluteenitonPohja.checked) {
       document.getElementById("valitutPepperoniPizzat").innerHTML = pepperoniPizzaMaara.value + " pepperonipizzaa gluteenittomalla pohjalla";
-    } else {
+    } else if (pepperoniIsoPizza.checked) {
+      document.getElementById("valitutPepperoniPizzat").innerHTML = pepperoniPizzaMaara.value + " pepperonipizzaa isolla pohjalla";
+    }else {
       document.getElementById("valitutPepperoniPizzat").innerHTML = pepperoniPizzaMaara.value + " pepperonipizzaa"
     }
   }
@@ -804,5 +816,5 @@ function myOrderJ(){
 }
 
 function fantasiaPizza(){
-  
+
 }

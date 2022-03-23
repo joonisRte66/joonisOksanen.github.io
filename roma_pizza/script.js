@@ -680,6 +680,182 @@ function nouto() {
   document.getElementById("kuljetusOsoitee").innerHTML = valmistusAika + " min valmistukseen";
 }
 
+function fantasiaPizza() {
+  var fantasiaPizzaHinta;
+
+  var isoPohja = document.getElementById("fantasiaIsoPizza");
+
+  var fantasiaNormaaliPohja = document.getElementById("fantasiaNormaali");
+  var fantasiaGluteeniton = document.getElementById("fantasiaGluteeniton");
+
+  var fantasiaKatkarapu = document.getElementById("fantasiaLisaKatkarapu");
+  var fantasiaKebab = document.getElementById("fantasiaLisaKebab");
+  var fantasiaKinkku = document.getElementById("fantasiaLisaKinkku");
+  var fantasiaPekoni = document.getElementById("fantasiaLisaPekoni");
+  var fantasiaPepperoni = document.getElementById("fantasiaLisaPepperoni");
+  var fantasiaSalami = document.getElementById("fantasiaLisaSalami");
+
+  var fantasiaEiKastiketta  = document.getElementById("fantasiaEiKastiketta");
+  var fantasiaValkosipuli  = document.getElementById("fantasiaLisaValkospilu");
+  var fantasiaBbq  = document.getElementById("fantasiaLisaBbq");
+  var fantasiaChili  = document.getElementById("fantasiaLisaChili");
+  var fantasiaTabasco  = document.getElementById("fantasiaLisaTabasco");
+
+  var fantasiaSipuli = document.getElementById("fantasiaLisaSipuli");
+  var fantasiaAnanas = document.getElementById("fantasiaLisaAnanas");
+  var fantasiaHerkkusieni = document.getElementById("fantasiaHerkkusieni");
+  var fantasiaPaprika = document.getElementById("fantasiaLisaPaprika");
+  var fantasiaTomaatti = document.getElementById("fantasiaLisaTomaatti");
+  var fantasiaOliivi = document.getElementById("fantasiaLisaOliivi");
+
+  var fantasiaAura = document.getElementById("fantasiaLisaAura");
+  var fantasiaCheddar = document.getElementById("fantasiaLisaCheddar");
+  var fantasiaMozzarella = document.getElementById("fantasiaLisaMozzarella");
+  var fantasiaFeta = document.getElementById("fantasiaLisaFeta");
+  var fantasiaParmesaani = document.getElementById("fantasiaLisaParmesaani");
+  var fantasiaTuplajuusto = document.getElementById("fantasiaLisaTuplajuusto");
+
+  var fantasiaPizzaMaara = document.getElementById("fantasiaMaara");
+
+  fantasiaPizzaHinta = fantasiaPizzaMaara.value * 5;
+
+  if (fantasiaGluteeniton.checked) {
+    fantasiaPizzaHinta = fantasiaPizzaHinta + 2 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaPohja").innerHTML = "Gluteeniton pohja";
+    document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+  }
+  if (fantasiaNormaaliPohja.checked) {
+    document.getElementById("fantasiaPohja").innerHTML = "Normaali pohja";
+    document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+  }
+  if (fantasiaGluteeniton.checked && fantasiaNormaaliPohja.checked) {
+    document.getElementById("fantasiaPohja").innerHTML = "VIRHE: Valitse vain yksi pohja";
+    document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+  }
+
+  if (isoPohja.checked) {
+    fantasiaPizzaHinta = fantasiaPizzaHinta + 2 * fantasiaPizzaMaara.value;
+    document.getElementById("isoPizza").innerHTML = "Iso pizza";
+    document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+  }
+
+  if (fantasiaKatkarapu.checked) {
+    fantasiaPizzaHinta = fantasiaPizzaHinta + 3 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaKatkarapu").innerHTML = "+ Katkarapu";
+    document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+  }
+  if (fantasiaKebab.checked) {
+    fantasiaPizzaHinta = fantasiaPizzaHinta + 3 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaKebab").innerHTML = "+ Kebab";
+    document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+  }
+  if (fantasiaKinkku.checked) {
+    fantasiaPizzaHinta = fantasiaPizzaHinta + 3 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaKinkku").innerHTML = "+ Kinkku";
+    document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+  }
+  if (fantasiaPekoni.checked) {
+    fantasiaPizzaHinta = fantasiaPizzaHinta + 3 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaPekoni").innerHTML = "+ Pekoni";
+    document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+  }
+  if (fantasiaPepperoni.checked) {
+    fantasiaPizzaHinta = fantasiaPizzaHinta + 3 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaPepperoni").innerHTML = "+ Pepperoni";
+    document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+  }
+  if (fantasiaSalami.checked) {
+    fantasiaPizzaHinta = fantasiaPizzaHinta + 3 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaSalami").innerHTML = "+ Salami";
+    document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+  }
+  if (fantasiaEiKastiketta.checked) {
+    fantasiaPizzaHinta = fantasiaPizzaHinta + 0 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaEiKastiketta").innerHTML = "Ei kastiketta";
+    document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+  }
+  if (fantasiaValkosipuli.checked) {
+    fantasiaPizzaHinta = fantasiaPizzaHinta + 3 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaValkosipuli").innerHTML = "+ valko siipuli kastike";
+    document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+  }
+  if (fantasiaBbq.checked) {
+    fantasiaPizzaHinta = fantasiaPizzaHinta + 2 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaBbq").innerHTML = "+ BBQ kastike";
+    document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+  }
+  if (fantasiaChili.checked) {
+    fantasiaPizzaHinta = fantasiaPizzaHinta + 3 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaChili").innerHTML = "+ Chili kastike";
+    document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+  }
+  if (fantasiaTabasco.checked) {
+    fantasiaPizzaHinta = fantasiaPizzaHinta + 3 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaTabasco").innerHTML = "+ Tabasco kastike";
+    document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+  }
+  if (fantasiaSipuli.checked) {
+    fantasiaPizzaHinta = fantasiaPizzaHinta + 1 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaSipuli").innerHTML = "+ Sipuli";
+    document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+  }
+  if (fantasiaAnanas.checked) {
+    fantasiaPizzaHinta = fantasiaPizzaHinta + 1 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaAnanas").innerHTML = "+ Ananas";
+    document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+  }
+  if (fantasiaHerkkusieni.checked) {
+    fantasiaPizzaHinta = fantasiaPizzaHinta + 2 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaHerkkusieni").innerHTML = "+ Herkkusieni";
+    document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+  }
+  if (fantasiaPaprika.checked) {
+    fantasiaPizzaHinta = fantasiaPizzaHinta + 2 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaPaprika").innerHTML = "+ Paprika";
+    document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+  }
+  if (fantasiaTomaatti.checked) {
+    fantasiaPizzaHinta = fantasiaPizzaHinta + 2 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaTomaatti").innerHTML = "+ Tomaatti";
+    document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+  }
+  if (fantasiaOliivi.checked) {
+    fantasiaPizzaHinta = fantasiaPizzaHinta + 2 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaOliivi").innerHTML = "+ Oliivi";
+    document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+  }
+  if (fantasiaAura.checked) {
+    fantasiaPizzaHinta = fantasiaPizzaHinta + 2 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaAura").innerHTML = "+ Aurajuusto";
+    document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+  }
+  if (fantasiaCheddar.checked) {
+    fantasiaPizzaHinta = fantasiaPizzaHinta + 2 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaCheddar").innerHTML = "+ Cheddar";
+    document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+  }
+  if (fantasiaMozzarella.checked) {
+    fantasiaPizzaHinta = fantasiaPizzaHinta + 2 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaMozzarella").innerHTML = "+ Mozzarella";
+    document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+  }
+  if (fantasiaFeta.checked) {
+    fantasiaPizzaHinta = fantasiaPizzaHinta + 1 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaFeta").innerHTML = "+ Fetajuusto";
+    document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+  }
+  if (fantasiaParmesaani.checked) {
+    fantasiaPizzaHinta = fantasiaPizzaHinta + 1 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaParsemaani").innerHTML = "+ Parsemaani";
+    document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+  }
+  if (fantasiaTuplajuusto.checked) {
+    fantasiaPizzaHinta = fantasiaPizzaHinta + 3 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaTuplajuusto").innerHTML = "+ Tuplajuusto";
+    document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+  }
+}
+
 // PIZZANTILAUSPROSESSI LOPPUU TÄHÄN!
 
 function validate(){
@@ -813,8 +989,4 @@ function myOrderJ(){
     alert('Sinun pitää kirjautua, jotta voit tilata!!!');
     location.href ="login.html";
   }
-}
-
-function fantasiaPizza(){
-
 }

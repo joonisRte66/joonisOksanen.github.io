@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styleOrderF.css">
+        <link rel="stylesheet" href="styleOrder.css">
         <title>Pizza Roma</title>
     </head>
 
@@ -23,15 +23,43 @@
             <!-- logo -->
             <div id="logo" class="pizza"> 
                 <h1 id="pizzaRoma">Tervetuloa Pizza Roman tilaukseen!</h1>
-                <h1 id="teksti">Tilaa fantasiapizza ja päätä täytteet alla olevassa listassa!</h1>
+                <h1 id="teksti">Tilaa itsellesi sopiva pizza alla olevasta listasta!</h1>
             </div>
         </header>
         <main>
 
 <article id="yhteenvetoRajaus">
+    <p>Fantasiapizza (5e)</p>
     <p id="yhteenVeto">Yhteenveto</p1>
+    <p id="fantasiaHinta"></p>
+
+    <p id="isoPizza"></p>
+    <p id="fantasiaPohja"></p>
+
+    <p id="fantasiaKatkarapu"></p>
+    <p id="fantasiaKebab"></p>
+    <p id="fantasiaKinkku"></p>
+    <p id="fantasiaPekoni"></p>
+    <p id="fantasiaPepperoni"></p>
+    <p id="fantasiaSalami"></p>
+    <p id="fantasiaEiKastiketta"></p>
+    <p id="fantasiaValkosipuli"></p>
+    <p id="fantasiaBbq"></p>
+    <p id="fantasiaChili"></p>
+    <p id="fantasiaTabasco"></p>
+    <p id="fantasiaSipuli"></p>
+    <p id="fantasiaAnanas"></p>
+    <p id="fantasiaHerkkusieni"></p>
+    <p id="fantasiaPaprika"></p>
+    <p id="fantasiaTomaatti"></p>
+    <p id="fantasiaOliivi"></p>
+    <p id="fantasiaAura"></p>
+    <p id="fantasiaCheddar"></p>
+    <p id="fantasiaMozzarella"></p>
+    <p id="fantasiaFeta"></p>
+    <p id="fantasiaParmesaani"></p>
+    <p id="fantasiaTuplajuusto"></p>
     <p id="valmistus"></p>
-    <p id="hinta"></p>
 </article>
 
 <!-- valitaan pohja (norm/gluteeniton)
@@ -39,26 +67,27 @@ kastike (valkosipulilla tai ilman)
 täytteet 3-5 kpl (eri hintaisia vaihtoehtoja väh. 10 kpl)
 sekä juusto (pari vaihtoehtoa). -->
 <article id="pizzaTilaus">
-    <p id="fantasiaHinta"></p>
+
+    <input type="checkbox" class="checkbox-kytkin" id="fantasiaIsoPizza" value="">iso pizza (normaalikokoinen muuten) (<strong>+2€</strong>)<br>
+
     <p>Pohja</p>
-    <input type="checkbox" id="fantasiaLisaKatkarapu" value="">Normaali (<strong>+0€</strong>) <br>
-    <input type="checkbox" id="fantasiaLisaKatkarapu" value="">Gluteeniton (<strong>+2€</strong>) <br>
+    <input type="checkbox" id="fantasiaNormaali" value="">Normaali (<strong>+0€</strong>) <br>
+    <input type="checkbox" id="fantasiaGluteeniton" value="">Gluteeniton (<strong>+2€</strong>) <br>
 
     <p>Lihat</p>
     <input type="checkbox" id="fantasiaLisaKatkarapu" value="">Katkarapu (<strong>+3€</strong>) <br>
-    <input type="checkbox" id="fantasiaLisaSipuli" value="">Kebabliha (<strong>+3€</strong>) <br>
+    <input type="checkbox" id="fantasiaLisaKebab" value="">Kebabliha (<strong>+3€</strong>) <br>
     <input type="checkbox" id="fantasiaLisaKinkku" value="">Kinkku (<strong>+3€</strong>) <br>
     <input type="checkbox" id="fantasiaLisaPekoni" value="">Pekoni (<strong>+3€</strong>) <br>
     <input type="checkbox" id="fantasiaLisaPepperoni" value="">Pepperoni (<strong>+3€</strong>) <br>
     <input type="checkbox" id="fantasiaLisaSalami" value="">Salami (<strong>+3€</strong>) <br>
 
     <p>Kastikkeet</p>
-    <input type="checkbox" id="fantasiaLisaKatkarapu" value="">Ilman (<strong>+0€</strong>) <br>
-    <input type="checkbox" id="fantasiaLisaKatkarapu" value="">Valkosipuli (<strong>+2.50€</strong>) <br>
-    <input type="checkbox" id="fantasiaLisaKatkarapu" value="">BBQ (<strong>+2.50€</strong>) <br>
-    <input type="checkbox" id="fantasiaLisaKatkarapu" value="">Kebab (<strong>+2.50€</strong>) <br>
-    <input type="checkbox" id="fantasiaLisaKatkarapu" value="">Chilimajoneesi (<strong>+2.50€</strong>) <br>
-    <input type="checkbox" id="fantasiaLisaKatkarapu" value="">Tabasco (<strong>+2.50€</strong>) <br>
+    <input type="checkbox" id="fantasiaEiKastiketta" value="">Ilman (<strong>+0€</strong>) <br>
+    <input type="checkbox" id="fantasiaLisaValkosipuli" value="">Valkosipuli (<strong>+3€</strong>) <br>
+    <input type="checkbox" id="fantasiaLisaBbq" value="">BBQ (<strong>+2€</strong>) <br>
+    <input type="checkbox" id="fantasiaLisaChili" value="">Chilimajoneesi (<strong>+3€</strong>) <br>
+    <input type="checkbox" id="fantasiaLisaTabasco" value="">Tabasco (<strong>+3€</strong>) <br>
 
     <p>Kasvikset</p>
     <input type="checkbox" id="fantasiaLisaSipuli" value="">Sipuli (<strong>+1€</strong>) <br>
@@ -69,19 +98,16 @@ sekä juusto (pari vaihtoehtoa). -->
     <input type="checkbox" id="fantasiaLisaOliivi" value="">Oliivi (<strong>+2€</strong>) <br>
 
     <p>Juustot</p>
-    <input type="checkbox" id="fantasiaLisaAura" value="">Aura (<strong>+2.50€</strong>) <br>
-    <input type="checkbox" id="fantasiaLisaCheddar" value="">Cheddar (<strong>+2.50€</strong>) <br>
-    <input type="checkbox" id="fantasiaLisaMozzarella" value="">Mozzarella (<strong>+2.50€</strong>) <br>
-    <input type="checkbox" id="fantasiaLisaFeta" value="">Feta (<strong>+1.50€</strong>) <br>
-    <input type="checkbox" id="fantasiaLisaParmesaani" value="">Parmesaani (<strong>+1.50€</strong>) <br>
+    <input type="checkbox" id="fantasiaLisaAura" value="">Aura (<strong>+2€</strong>) <br>
+    <input type="checkbox" id="fantasiaLisaCheddar" value="">Cheddar (<strong>+2€</strong>) <br>
+    <input type="checkbox" id="fantasiaLisaMozzarella" value="">Mozzarella (<strong>+2€</strong>) <br>
+    <input type="checkbox" id="fantasiaLisaFeta" value="">Feta (<strong>+1€</strong>) <br>
+    <input type="checkbox" id="fantasiaLisaParmesaani" value="">Parmesaani (<strong>+1€</strong>) <br>
     <input type="checkbox" id="fantasiaLisaTuplajuusto" value="">Tuplajuusto (<strong>+3€</strong>) <br>
-    <br>
-    <input type="checkbox" class="checkbox-kytkin" id="fantasiaIsoPizza" value="">iso pizza (normaalikokoinen muuten) (<strong>+2€</strong>)<br>
-    <input type="number" min="1" max="10" id="fantasiaMaara" value="">Pizzojen määrä
-    <br>
-    <button onclick="fantasiaPizza()">Lisää ostoskoriin</button>
+    <input type="number" min="1" max="10" id="fantasiaMaara" value="">Määrä
 </article>
+<button onclick="fantasiaPizza()">Lisää ostoskoriin</button>
 
 <script src="script.js"></script>
 </body>
-</html>
+</html> 

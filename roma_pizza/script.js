@@ -306,12 +306,24 @@ function cocaColaFunktio() {
       document.getElementById("cocaCola").innerHTML = "";
       document.getElementById("cocaColaLisaJaat").innerHTML = "";
       document.getElementById("valitutCocaColat").innerHTML = "";
+      document.getElementById("valmistus").innerHTML = "";
+      document.getElementById("hinta").innerHTML = "";
     }
   } else {
     document.getElementById("cocaColaVirhe").innerHTML = "VIRHE: Laita rasti ruutuun ensin";
     document.getElementById("cocaCola").innerHTML = "";
     document.getElementById("cocaColaLisaJaat").innerHTML = "";
     document.getElementById("valitutCocaColat").innerHTML = "";
+    document.getElementById("valmistus").innerHTML = "";
+    document.getElementById("hinta").innerHTML = "";
+  }
+  if (cocaColaJuomaMaara.value > 10) {
+    document.getElementById("cocaColaVirhe").innerHTML = "VIRHE: Valitse alle 10";
+    document.getElementById("cocaCola").innerHTML = "";
+    document.getElementById("cocaColaLisaJaat").innerHTML = "";
+    document.getElementById("valitutCocaColat").innerHTML = "";
+    document.getElementById("valmistus").innerHTML = "";
+    document.getElementById("hinta").innerHTML = "";
   }
 }
 function spriteFunktio() {
@@ -327,12 +339,26 @@ function spriteFunktio() {
     } else {
       document.getElementById("spriteVirhe").innerHTML = "VIRHE: Valitse vähintään yksi";
       document.getElementById("sprite").innerHTML = "";
+      document.getElementById("spriteLisaJaat").innerHTML = "";
       document.getElementById("valitutSpritet").innerHTML = "";
+      document.getElementById("valmistus").innerHTML = "";
+      document.getElementById("hinta").innerHTML = "";
     }
   } else {
     document.getElementById("spriteVirhe").innerHTML = "VIRHE: Laita rasti ruutuun ensin";
     document.getElementById("sprite").innerHTML = "";
+    document.getElementById("spriteLisaJaat").innerHTML = "";
     document.getElementById("valitutSpritet").innerHTML = "";
+    document.getElementById("valmistus").innerHTML = "";
+    document.getElementById("hinta").innerHTML = "";
+  }
+  if (spriteJuomaMaara.value > 10) {
+    document.getElementById("spriteVirhe").innerHTML = "VIRHE: Valitse alle 10";
+    document.getElementById("sprite").innerHTML = "";
+    document.getElementById("spriteLisaJaat").innerHTML = "";
+    document.getElementById("valitutSpritet").innerHTML = "";
+    document.getElementById("valmistus").innerHTML = "";
+    document.getElementById("hinta").innerHTML = "";
   }
 }
 function jaffaFunktio() {
@@ -348,12 +374,26 @@ function jaffaFunktio() {
     } else {
       document.getElementById("jaffaVirhe").innerHTML = "VIRHE: Valitse vähintään yksi";
       document.getElementById("jaffa").innerHTML = "";
+      document.getElementById("jaffaLisaJaat").innerHTML = "";
       document.getElementById("valitutJaffat").innerHTML = "";
+      document.getElementById("valmistus").innerHTML = "";
+      document.getElementById("hinta").innerHTML = "";
     }
   } else {
     document.getElementById("jaffaVirhe").innerHTML = "VIRHE: Laita rasti ruutuun ensin";
     document.getElementById("jaffa").innerHTML = "";
+    document.getElementById("jaffaLisaJaat").innerHTML = "";
     document.getElementById("valitutJaffat").innerHTML = "";
+    document.getElementById("valmistus").innerHTML = "";
+    document.getElementById("hinta").innerHTML = "";
+  }
+  if (jaffaJuomaMaara.value > 10) {
+    document.getElementById("jaffaVirhe").innerHTML = "VIRHE: Valitse alle 10";
+    document.getElementById("jaffa").innerHTML = "";
+    document.getElementById("jaffaLisaJaat").innerHTML = "";
+    document.getElementById("valitutJaffat").innerHTML = "";
+    document.getElementById("valmistus").innerHTML = "";
+    document.getElementById("hinta").innerHTML = "";
   }
 }
 

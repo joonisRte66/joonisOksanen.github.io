@@ -608,8 +608,24 @@ function valmista() {
 
 function kuljeta() {
   var kuljetusOsoite = document.getElementById("kuljetusOsoite");
-  var kuljetusAika;
-  document.getElementById("kuljetusAika").innerHTML = "Kuljetus osoitteeseen " + kuljetusOsoite.value;
+  var paikkaKunta = document.getElementById("kuljetusPaikkaKunta");
+
+  document.getElementById("kuljetusOsoitee").innerHTML = "Kuljetus osoitteeseen " + kuljetusOsoite.value;
+
+  if (paikkaKunta.value === 'Tuusula') {
+    document.getElementById("kuljetusAika").innerHTML = "Kuljetusaika on noin 5 min";
+  }
+  if (paikkaKunta.value === 'Vantaa') {
+    document.getElementById("kuljetusAika").innerHTML = "Kuljetusaika on noin 10 min";
+  }
+  if (paikkaKunta.value === 'Espoo') {
+    document.getElementById("kuljetusAika").innerHTML = "Kuljetusaika on noin 20 min";
+  }
+}
+
+function nouto() {
+  document.getElementById("kuljetusAika").innerHTML = "";
+  document.getElementById("kuljetusOsoitee").innerHTML = valmistusAika + " min valmistukseen";
 }
 
 // PIZZANTILAUSPROSESSI LOPPUU TÄHÄN!

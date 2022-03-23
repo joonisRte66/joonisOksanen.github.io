@@ -91,6 +91,23 @@ h1 {
   font-family: 'verdana';
 }
 
+
+  #pizzaTilausYhteenveto button {
+    border-radius: 8px;
+    background-color: antiquewhite;
+    cursor: pointer;
+    text-decoration:none;
+    padding: 10px;
+    transition-duration: 0.4s;
+  }
+  #pizzaTilausYhteenveto button:hover {
+    font-size:105%;
+  }
+  #pizzaTilausYhteenveto input {
+    border-radius:5px;
+    background-color: beige;
+  }
+
 /* Pizzantilausprosessi CSS */
 #pizzaTilaus button {
   border-radius: 8px;

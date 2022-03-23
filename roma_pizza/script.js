@@ -719,10 +719,14 @@ function fantasiaPizza() {
 
   fantasiaPizzaHinta = fantasiaPizzaMaara.value * 5;
 
+  var fantasiaPizzanValmistusaika = 7;
+
   if (fantasiaGluteeniton.checked) {
     fantasiaPizzaHinta = fantasiaPizzaHinta + 2 * fantasiaPizzaMaara.value;
     document.getElementById("fantasiaPohja").innerHTML = "Gluteeniton pohja";
     document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+    fantasiaPizzanValmistusaika = fantasiaPizzanValmistusaika + 3 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaValmistus").innerHTML = fantasiaPizzanValmistusaika + " min";
   }
   if (fantasiaNormaaliPohja.checked) {
     document.getElementById("fantasiaPohja").innerHTML = "Normaali pohja";
@@ -743,116 +747,162 @@ function fantasiaPizza() {
     fantasiaPizzaHinta = fantasiaPizzaHinta + 3 * fantasiaPizzaMaara.value;
     document.getElementById("fantasiaKatkarapu").innerHTML = "+ Katkarapu";
     document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+    fantasiaPizzanValmistusaika = fantasiaPizzanValmistusaika + 1 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaValmistus").innerHTML = "Valmistusaika: " + fantasiaPizzanValmistusaika + " min";
   }
   if (fantasiaKebab.checked) {
     fantasiaPizzaHinta = fantasiaPizzaHinta + 3 * fantasiaPizzaMaara.value;
     document.getElementById("fantasiaKebab").innerHTML = "+ Kebab";
     document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+    fantasiaPizzanValmistusaika = fantasiaPizzanValmistusaika + 1 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaValmistus").innerHTML = "Valmistusaika: " + fantasiaPizzanValmistusaika + " min";
   }
   if (fantasiaKinkku.checked) {
     fantasiaPizzaHinta = fantasiaPizzaHinta + 3 * fantasiaPizzaMaara.value;
     document.getElementById("fantasiaKinkku").innerHTML = "+ Kinkku";
     document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+    fantasiaPizzanValmistusaika = fantasiaPizzanValmistusaika + 1 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaValmistus").innerHTML = "Valmistusaika: " + fantasiaPizzanValmistusaika + " min";
   }
   if (fantasiaPekoni.checked) {
     fantasiaPizzaHinta = fantasiaPizzaHinta + 3 * fantasiaPizzaMaara.value;
     document.getElementById("fantasiaPekoni").innerHTML = "+ Pekoni";
     document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+    fantasiaPizzanValmistusaika = fantasiaPizzanValmistusaika + 1 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaValmistus").innerHTML = "Valmistusaika: " + fantasiaPizzanValmistusaika + " min";
   }
   if (fantasiaPepperoni.checked) {
     fantasiaPizzaHinta = fantasiaPizzaHinta + 3 * fantasiaPizzaMaara.value;
     document.getElementById("fantasiaPepperoni").innerHTML = "+ Pepperoni";
     document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+    fantasiaPizzanValmistusaika = fantasiaPizzanValmistusaika + 1 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaValmistus").innerHTML = "Valmistusaika: " + fantasiaPizzanValmistusaika + " min";
   }
   if (fantasiaSalami.checked) {
     fantasiaPizzaHinta = fantasiaPizzaHinta + 3 * fantasiaPizzaMaara.value;
     document.getElementById("fantasiaSalami").innerHTML = "+ Salami";
     document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+    fantasiaPizzanValmistusaika = fantasiaPizzanValmistusaika + 1 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaValmistus").innerHTML = "Valmistusaika: " + fantasiaPizzanValmistusaika + " min";
   }
   if (fantasiaEiKastiketta.checked) {
     fantasiaPizzaHinta = fantasiaPizzaHinta + 0 * fantasiaPizzaMaara.value;
     document.getElementById("fantasiaEiKastiketta").innerHTML = "Ei kastiketta";
     document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+    fantasiaPizzanValmistusaika = fantasiaPizzanValmistusaika + 1 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaValmistus").innerHTML = "Valmistusaika: " + fantasiaPizzanValmistusaika + " min";
   }
   if (fantasiaValkosipuli.checked) {
     fantasiaPizzaHinta = fantasiaPizzaHinta + 3 * fantasiaPizzaMaara.value;
     document.getElementById("fantasiaValkosipuli").innerHTML = "+ valko siipuli kastike";
     document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+    fantasiaPizzanValmistusaika = fantasiaPizzanValmistusaika + 1 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaValmistus").innerHTML = "Valmistusaika: " + fantasiaPizzanValmistusaika + " min";
   }
   if (fantasiaBbq.checked) {
     fantasiaPizzaHinta = fantasiaPizzaHinta + 2 * fantasiaPizzaMaara.value;
     document.getElementById("fantasiaBbq").innerHTML = "+ BBQ kastike";
     document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+    fantasiaPizzanValmistusaika = fantasiaPizzanValmistusaika + 1 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaValmistus").innerHTML = "Valmistusaika: " + fantasiaPizzanValmistusaika + " min";
   }
   if (fantasiaChili.checked) {
     fantasiaPizzaHinta = fantasiaPizzaHinta + 3 * fantasiaPizzaMaara.value;
     document.getElementById("fantasiaChili").innerHTML = "+ Chili kastike";
     document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+    fantasiaPizzanValmistusaika = fantasiaPizzanValmistusaika + 1 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaValmistus").innerHTML = "Valmistusaika: " + fantasiaPizzanValmistusaika + " min";
   }
   if (fantasiaTabasco.checked) {
     fantasiaPizzaHinta = fantasiaPizzaHinta + 3 * fantasiaPizzaMaara.value;
     document.getElementById("fantasiaTabasco").innerHTML = "+ Tabasco kastike";
     document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+    fantasiaPizzanValmistusaika = fantasiaPizzanValmistusaika + 1 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaValmistus").innerHTML = "Valmistusaika: " + fantasiaPizzanValmistusaika + " min";
   }
   if (fantasiaSipuli.checked) {
     fantasiaPizzaHinta = fantasiaPizzaHinta + 1 * fantasiaPizzaMaara.value;
     document.getElementById("fantasiaSipuli").innerHTML = "+ Sipuli";
     document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+    fantasiaPizzanValmistusaika = fantasiaPizzanValmistusaika + 1 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaValmistus").innerHTML = "Valmistusaika: " + fantasiaPizzanValmistusaika + " min";
   }
   if (fantasiaAnanas.checked) {
     fantasiaPizzaHinta = fantasiaPizzaHinta + 1 * fantasiaPizzaMaara.value;
     document.getElementById("fantasiaAnanas").innerHTML = "+ Ananas";
     document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+    fantasiaPizzanValmistusaika = fantasiaPizzanValmistusaika + 1 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaValmistus").innerHTML = "Valmistusaika: " + fantasiaPizzanValmistusaika + " min";
   }
   if (fantasiaHerkkusieni.checked) {
     fantasiaPizzaHinta = fantasiaPizzaHinta + 2 * fantasiaPizzaMaara.value;
     document.getElementById("fantasiaHerkkusieni").innerHTML = "+ Herkkusieni";
     document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+    fantasiaPizzanValmistusaika = fantasiaPizzanValmistusaika + 1 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaValmistus").innerHTML = "Valmistusaika: " + fantasiaPizzanValmistusaika + " min";
   }
   if (fantasiaPaprika.checked) {
     fantasiaPizzaHinta = fantasiaPizzaHinta + 2 * fantasiaPizzaMaara.value;
     document.getElementById("fantasiaPaprika").innerHTML = "+ Paprika";
     document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+    fantasiaPizzanValmistusaika = fantasiaPizzanValmistusaika + 1 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaValmistus").innerHTML = "Valmistusaika: " + fantasiaPizzanValmistusaika + " min";
   }
   if (fantasiaTomaatti.checked) {
     fantasiaPizzaHinta = fantasiaPizzaHinta + 2 * fantasiaPizzaMaara.value;
     document.getElementById("fantasiaTomaatti").innerHTML = "+ Tomaatti";
     document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+    fantasiaPizzanValmistusaika = fantasiaPizzanValmistusaika + 1 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaValmistus").innerHTML = "Valmistusaika: " + fantasiaPizzanValmistusaika + " min";
   }
   if (fantasiaOliivi.checked) {
     fantasiaPizzaHinta = fantasiaPizzaHinta + 2 * fantasiaPizzaMaara.value;
     document.getElementById("fantasiaOliivi").innerHTML = "+ Oliivi";
     document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+    fantasiaPizzanValmistusaika = fantasiaPizzanValmistusaika + 1 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaValmistus").innerHTML = "Valmistusaika: " + fantasiaPizzanValmistusaika + " min";
   }
   if (fantasiaAura.checked) {
     fantasiaPizzaHinta = fantasiaPizzaHinta + 2 * fantasiaPizzaMaara.value;
     document.getElementById("fantasiaAura").innerHTML = "+ Aurajuusto";
     document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+    fantasiaPizzanValmistusaika = fantasiaPizzanValmistusaika + 1 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaValmistus").innerHTML = "Valmistusaika: " + fantasiaPizzanValmistusaika + " min";
   }
   if (fantasiaCheddar.checked) {
     fantasiaPizzaHinta = fantasiaPizzaHinta + 2 * fantasiaPizzaMaara.value;
     document.getElementById("fantasiaCheddar").innerHTML = "+ Cheddar";
     document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+    fantasiaPizzanValmistusaika = fantasiaPizzanValmistusaika + 1 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaValmistus").innerHTML = "Valmistusaika: " + fantasiaPizzanValmistusaika + " min";
   }
   if (fantasiaMozzarella.checked) {
     fantasiaPizzaHinta = fantasiaPizzaHinta + 2 * fantasiaPizzaMaara.value;
     document.getElementById("fantasiaMozzarella").innerHTML = "+ Mozzarella";
     document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+    fantasiaPizzanValmistusaika = fantasiaPizzanValmistusaika + 1 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaValmistus").innerHTML = "Valmistusaika: " + fantasiaPizzanValmistusaika + " min";
   }
   if (fantasiaFeta.checked) {
     fantasiaPizzaHinta = fantasiaPizzaHinta + 1 * fantasiaPizzaMaara.value;
     document.getElementById("fantasiaFeta").innerHTML = "+ Fetajuusto";
     document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+    fantasiaPizzanValmistusaika = fantasiaPizzanValmistusaika + 1 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaValmistus").innerHTML = "Valmistusaika: " + fantasiaPizzanValmistusaika + " min";
   }
   if (fantasiaParmesaani.checked) {
     fantasiaPizzaHinta = fantasiaPizzaHinta + 1 * fantasiaPizzaMaara.value;
     document.getElementById("fantasiaParsemaani").innerHTML = "+ Parsemaani";
     document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+    fantasiaPizzanValmistusaika = fantasiaPizzanValmistusaika + 1 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaValmistus").innerHTML = "Valmistusaika: " + fantasiaPizzanValmistusaika + " min";
   }
   if (fantasiaTuplajuusto.checked) {
     fantasiaPizzaHinta = fantasiaPizzaHinta + 3 * fantasiaPizzaMaara.value;
     document.getElementById("fantasiaTuplajuusto").innerHTML = "+ Tuplajuusto";
     document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
+    fantasiaPizzanValmistusaika = fantasiaPizzanValmistusaika + 1 * fantasiaPizzaMaara.value;
+    document.getElementById("fantasiaValmistus").innerHTML = "Valmistusaika: " + fantasiaPizzanValmistusaika + " min";
   }
 }
 

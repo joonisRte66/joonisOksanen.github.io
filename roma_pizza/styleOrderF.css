@@ -129,8 +129,8 @@ h1 {
   text-align: center;
   margin: auto;
   border-radius: 10px;
-  background-color: rgba(255, 250, 222, 0.6);
   font-size: 120%;
+  background-color: rgba(255, 250, 222, 0.6);
 }
 #pizzaTilaus p{
   font-size: 150%;

@@ -721,6 +721,7 @@ function fantasiaPizza() {
 
   var fantasiaPizzanValmistusaika = 7;
 if (fantasiaPizzaMaara.value >= 1) {
+  if (fantasiaGluteeniton.checked || fantasiaNormaaliPohja.checked) {
   document.getElementById("fantasiaVirhe").innerHTML = "";
   if (fantasiaGluteeniton.checked) {
     fantasiaPizzaHinta = fantasiaPizzaHinta + 2 * fantasiaPizzaMaara.value;
@@ -905,6 +906,12 @@ if (fantasiaPizzaMaara.value >= 1) {
     fantasiaPizzanValmistusaika = fantasiaPizzanValmistusaika + 1 * fantasiaPizzaMaara.value;
     document.getElementById("fantasiaValmistus").innerHTML = "Valmistusaika: " + fantasiaPizzanValmistusaika + " min";
   }
+} else {
+  document.getElementById("fantasiaVirhe").innerHTML = "VIRHE: Valitse pohja ensin";
+  document.getElementById("fantasiaHinta").innerHTML = "";
+  document.getElementById("fantasiaValmistus").innerHTML = "";
+  document.getElementById("fantasiaPohja").innerHTML = "";
+}
 } else {
   document.getElementById("fantasiaVirhe").innerHTML = "VIRHE: Valitse vähintään yksi";
   document.getElementById("fantasiaHinta").innerHTML = "";

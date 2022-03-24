@@ -696,14 +696,14 @@ function fantasiaPizza() {
   var fantasiaSalami = document.getElementById("fantasiaLisaSalami");
 
   var fantasiaEiKastiketta  = document.getElementById("fantasiaEiKastiketta");
-  var fantasiaValkosipuli  = document.getElementById("fantasiaLisaValkospilu");
+  var fantasiaValkosipuli  = document.getElementById("fantasiaLisaValkosipuli");
   var fantasiaBbq  = document.getElementById("fantasiaLisaBbq");
   var fantasiaChili  = document.getElementById("fantasiaLisaChili");
   var fantasiaTabasco  = document.getElementById("fantasiaLisaTabasco");
 
   var fantasiaSipuli = document.getElementById("fantasiaLisaSipuli");
   var fantasiaAnanas = document.getElementById("fantasiaLisaAnanas");
-  var fantasiaHerkkusieni = document.getElementById("fantasiaHerkkusieni");
+  var fantasiaHerkkusieni = document.getElementById("fantasiaLisaHerkkusieni");
   var fantasiaPaprika = document.getElementById("fantasiaLisaPaprika");
   var fantasiaTomaatti = document.getElementById("fantasiaLisaTomaatti");
   var fantasiaOliivi = document.getElementById("fantasiaLisaOliivi");
@@ -797,7 +797,7 @@ if (fantasiaPizzaMaara.value >= 1) {
   }
   if (fantasiaValkosipuli.checked) {
     fantasiaPizzaHinta = fantasiaPizzaHinta + 3 * fantasiaPizzaMaara.value;
-    document.getElementById("fantasiaValkosipuli").innerHTML = "+ valko siipuli kastike";
+    document.getElementById("fantasiaValkosipuli").innerHTML = "+ valko sipuli kastike";
     document.getElementById("fantasiaHinta").innerHTML = "Yhteishinta: " + fantasiaPizzaHinta + " e";
     fantasiaPizzanValmistusaika = fantasiaPizzanValmistusaika + 1 * fantasiaPizzaMaara.value;
     document.getElementById("fantasiaValmistus").innerHTML = "Valmistusaika: " + fantasiaPizzanValmistusaika + " min";
@@ -865,6 +865,7 @@ if (fantasiaPizzaMaara.value >= 1) {
     fantasiaPizzanValmistusaika = fantasiaPizzanValmistusaika + 1 * fantasiaPizzaMaara.value;
     document.getElementById("fantasiaValmistus").innerHTML = "Valmistusaika: " + fantasiaPizzanValmistusaika + " min";
   }
+
   if (fantasiaAura.checked) {
     fantasiaPizzaHinta = fantasiaPizzaHinta + 2 * fantasiaPizzaMaara.value;
     document.getElementById("fantasiaAura").innerHTML = "+ Aurajuusto";
@@ -872,6 +873,7 @@ if (fantasiaPizzaMaara.value >= 1) {
     fantasiaPizzanValmistusaika = fantasiaPizzanValmistusaika + 1 * fantasiaPizzaMaara.value;
     document.getElementById("fantasiaValmistus").innerHTML = "Valmistusaika: " + fantasiaPizzanValmistusaika + " min";
   }
+
   if (fantasiaCheddar.checked) {
     fantasiaPizzaHinta = fantasiaPizzaHinta + 2 * fantasiaPizzaMaara.value;
     document.getElementById("fantasiaCheddar").innerHTML = "+ Cheddar";

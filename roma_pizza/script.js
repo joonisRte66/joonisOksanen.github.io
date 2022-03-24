@@ -720,7 +720,8 @@ function fantasiaPizza() {
   fantasiaPizzaHinta = fantasiaPizzaMaara.value * 5;
 
   var fantasiaPizzanValmistusaika = 7;
-
+if (fantasiaPizzaMaara.value >= 1) {
+  document.getElementById("fantasiaVirhe").innerHTML = "";
   if (fantasiaGluteeniton.checked) {
     fantasiaPizzaHinta = fantasiaPizzaHinta + 2 * fantasiaPizzaMaara.value;
     document.getElementById("fantasiaPohja").innerHTML = "Gluteeniton pohja";
@@ -904,6 +905,12 @@ function fantasiaPizza() {
     fantasiaPizzanValmistusaika = fantasiaPizzanValmistusaika + 1 * fantasiaPizzaMaara.value;
     document.getElementById("fantasiaValmistus").innerHTML = "Valmistusaika: " + fantasiaPizzanValmistusaika + " min";
   }
+} else {
+  document.getElementById("fantasiaVirhe").innerHTML = "VIRHE: Valitse vähintään yksi";
+  document.getElementById("fantasiaHinta").innerHTML = "";
+  document.getElementById("fantasiaValmistus").innerHTML = "";
+  document.getElementById("fantasiaPohja").innerHTML = "";
+}
 }
 
 // PIZZANTILAUSPROSESSI LOPPUU TÄHÄN!

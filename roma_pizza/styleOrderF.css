@@ -223,7 +223,7 @@ h1 {
   border-radius: 10px;
   background-color: antiquewhite;
   box-sizing: content-box;  
-  width: 980px;
+  width: auto;
   height: auto;
   padding: 5px;
 }

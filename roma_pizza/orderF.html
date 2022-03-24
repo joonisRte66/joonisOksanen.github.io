@@ -33,6 +33,8 @@
     <p id="yhteenVeto">Yhteenveto</p1>
     <p id="fantasiaHinta"></p>
 
+    <p style="color:red;" id="fantasiaVirhe"></p> 
+
     <p id="isoPizza"></p>
     <p id="fantasiaPohja"></p>
     <p id="fantasiaValmistus"></p>
@@ -62,6 +64,8 @@
     <p id="fantasiaTuplajuusto"></p>
     <p id="valmistus"></p>
 </article>
+
+<br>
 
 <!-- valitaan pohja (norm/gluteeniton)
 kastike (valkosipulilla tai ilman)
@@ -104,10 +108,11 @@ sekä juusto (pari vaihtoehtoa). -->
     <input type="checkbox" id="fantasiaLisaMozzarella" value="">Mozzarella (<strong>+2€</strong>) <br>
     <input type="checkbox" id="fantasiaLisaFeta" value="">Feta (<strong>+1€</strong>) <br>
     <input type="checkbox" id="fantasiaLisaParmesaani" value="">Parmesaani (<strong>+1€</strong>) <br>
-    <input type="checkbox" id="fantasiaLisaTuplajuusto" value="">Tuplajuusto (<strong>+3€</strong>) <br>
+    <input type="checkbox" id="fantasiaLisaTuplajuusto" value="">Tuplajuusto (<strong>+3€</strong>) <br><br>
     <input type="number" min="1" max="10" id="fantasiaMaara" value="">Määrä
+    <button onclick="fantasiaPizza()">Lisää ostoskoriin</button>
 </article>
-<button onclick="fantasiaPizza()">Lisää ostoskoriin</button>
+
 
 <script src="script.js"></script>
 </body>

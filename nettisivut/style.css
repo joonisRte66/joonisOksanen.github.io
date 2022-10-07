@@ -11,6 +11,10 @@
     background-position: center;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 .navbar{
     background-color: rgb(255, 255, 255);
     width: 100%;

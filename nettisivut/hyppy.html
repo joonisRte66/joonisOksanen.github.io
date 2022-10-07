@@ -1,0 +1,88 @@
+<html>
+<head>
+ 
+<script src="https://unpkg.com/vue@2.4.3/dist/vue.js"></script>
+<style type="text/css">
+      #myBallRed{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background-color:red;
+        height:100px;
+        width: 100px;
+        border-radius: 100px;
+      }
+</style>
+ 
+ 
+ 
+ 
+</head>
+ 
+<body>
+ 
+      <div id="red">
+        <button v-on:click="changeWidth()">vaihda</button>
+        <button v-on:click="addForceRed()">PAMAUTA</button>                            
+        <div id="myBallRed" v-bind:style="{ left: computedLeft, top: computedTop }"></div>
+      </div>
+
+      <script language="javascript">
+ 
+        var vm = new Vue({ 
+            el: '#red',
+            data: {
+               width:'200px',
+               widthInteger: 200,
+ 
+               top: 100,
+               left: 1000,
+               xAdd: 1,
+               yAdd: 1,
+ 
+               timer:null,
+            },
+            computed: {
+              computedLeft: function()
+              {
+                return this.left;
+              },
+              computedTop: function()
+              {
+                return this.top;
+              }
+            },
+            methods: {
+              addForceRed: function (event) 
+              {
+                this.yAdd -= 5;
+              },
+              updateBallRed: function (event) 
+              {
+                  this.yAdd +=0.11;
+                  this.top += this.yAdd;                 
+                  this.left += this.xAdd;                 
+
+                  if(this.top > 500)
+                  {
+                    this.yAdd = -this.yAdd;
+                  }
+                  if(this.left > 1000)
+                  {
+                    this.xAdd = -this.xAdd;
+                  }
+                  else if(this.left < -300)
+                  {
+                    this.xAdd = 3;
+                  }
+              },
+            },
+            mounted: function () {
+            this.timer = setInterval(() => {
+                this.updateBallRed();
+            }, 20)
+            },
+          })
+    </script>      
+</body>
+</html>

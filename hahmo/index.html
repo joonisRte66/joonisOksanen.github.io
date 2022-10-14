@@ -1,0 +1,49 @@
+<html>
+    <script lang="javascrpit">
+
+        function rndName(numOfChars)
+        {
+            const csanants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "r", "s", "t", "v", "w"];
+            const vowels = ["a", "e", "i", "o", "u", "y", "å", "ä", "ö"];
+            let name = "";
+            for(let i=0; i<numOfChars; i++)
+                name += i % 2 == 0 ? csanants[Math.floor(Math.random() * csanants.length)] : vowels[Math.floor(Math.random() * vowels.length)];
+            return name;
+        }
+
+        function chrRnd(r)
+        {
+            let characters = [];
+            let firstNameCharsNum = 0;
+            let lastNameCharsNum = 0;
+
+            for (let i = 0; i < r; i++)
+            {
+                firstNameCharsNum = Math.floor((Math.random() * 6) +1);
+                lastNameCharsNum = Math.floor((Math.random() * 6) +1);
+
+                while(firstNameCharsNum <= 3)
+                    firstNameCharsNum = Math.floor((Math.random() * 6) +1);
+                while(lastNameCharsNum <= 3)
+                    lastNameCharsNum = Math.floor((Math.random() * 6) +1);
+
+                characters[i] =
+                [
+                    {
+                        "damagePower" : Math.floor(Math.random() * 10) + 1,
+                        "speed" : Math.floor(Math.random() * 10) + 1,
+                        "name" : rndName(firstNameCharsNum) + " " + rndName(lastNameCharsNum),
+                    }
+                ]
+            }
+            return characters;
+        }
+
+        let numOfPerson = 5;
+        let readyPersons = chrRnd(numOfPerson);
+
+        for(let i=0; i<numOfPerson; i++)
+            document.writeln(JSON.stringify(readyPersons[i]));
+
+    </script>
+</html>

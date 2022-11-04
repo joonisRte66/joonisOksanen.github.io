@@ -44,30 +44,6 @@ nav ul li a:hover{
 	color: #ff00ffff;
 	transition: .4s;
 }
-.menu{
-	display: none;
-	color: #ff00ffff;
-	font-size: 50px;
-	cursor: pointer;
-}
-@media only screen and (max-width:770px){
-	.menu{
-		display: block;
-	}
-
-	nav ul li{
-		position: fixed;
-		left: -100%;
-		top: 70px;
-		gap: 0;
-		flex-direction: column;
-		background-color: #000;
-		text-align: center;
-		transition: 0.3s;
-	}
-}
-
-
 .content{
 	position: absolute;
 	top: 50%;

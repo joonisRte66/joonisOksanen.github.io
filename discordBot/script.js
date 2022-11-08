@@ -1,16 +1,25 @@
-whurl="https://discord.com/api/webhooks/1034418803574050827/5FyjlWWVxUW6J-MZjQq1mPPj8iLHotKA0GGgsYdiPi_3w5OGudx_Pou7bzsm-qJ2amYL"
-var str= "";
-var name= "";
+whurl="https://discord.com/api/webhooks/1034428831886491710/bLLy1zDBHV7rPBCEDhyUfIMKMbLk3g6Fz4AyCAjJassQZXSBL1Kb2ZlOdczhbTCahug5"
+var str = "";
+var hmin = 0;
 function f1(){
-    name = document.getElementById("NameInput").value;
-    str = document.getElementById("InputField").value;
-    console.log(document.getElementById("InputField").value)
+    str = str + document.getElementById("user").value + "\r\n" + "\r\n";
+    str = str + document.getElementById("InputFieldStart").value;
+    str = str + " - ";
+    str = str + document.getElementById("InputFieldEnd").value;
+    str = str + "\n\r" + "Kilometrit: " + document.getElementById("InputFieldkm").value + "km";
+    str = str + "\n\r" + "Ajetut kilometrit: " + document.getElementById("InputFieldakm").value + "km";
+    var travel = parseFloat(document.getElementById("InputFieldakm").value);
+    var ftravel = travel / 65;
+    var ntravel = Math.trunc(ftravel);
+    var min = (travel / ftravel) - 48;
+    str = str + "\n\r" + "Rekka: " + document.getElementById("truck").value + "\n\r";
+    str = str + "Aikaa kului: " + ntravel + " tuntia ja " + min + " minuuttia.";
 }
 function send(){
     f1();
     const msg = {
         "content": str,
-        "username": name
+        "username": document.getElementById("user").value
     };
     console.log(msg)
     if(str == ""){
@@ -18,12 +27,14 @@ function send(){
         setTimeout(function(){
             document.getElementById("Message1").style.opacity = 0;
         }, 4000)
-        console.log("ERROR")
         return;
     }
     try{
         fetch(whurl + "?wait=true", {"method":"POST", "headers": {"content-type": "application/json"}, "body": JSON.stringify(msg)});
-        document.getElementById("InputField").value = "";
+        document.getElementById("InputFieldStart").value = "";
+        document.getElementById("InputFieldEnd").value = "";
+        document.getElementById("InputFieldkm").value = "";
+        document.getElementById("InputFieldakm").value = "";
         document.getElementById("MessageSent").style.opacity = 1;
         setTimeout(function(){
             document.getElementById("MessageSent").style.opacity = 0;

@@ -5,19 +5,31 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
         <script src="script.js"></script>
-        <title>discordBot</title>
+        <title>ets2 log book</title>
     </head>
     <body>
         <div class="Contact">
-            <h1 id="ContactText">DISCORD BOT</h1>
-            <label class="Name-input">
-                <input maxlength=15 id="NameInput" type="text" required></input>
-                <span class="placeholder">Anna nimi botille, joka lähettää viestin</span>
-            </label>
-            <textarea maxlength="200" id="InputField" placeholder="Kirjoita viesti tähän"></textarea>
-            <button onclick="send()" id="SendMessage">Lähetä viesti</button>
-            <h3 id="MessageSent">Viesti lähetetty bottina discord serverille</h3>
-            <h3 id="MessageSent">Viestiä ei lähetetty!</h3>
+            <h1 id="ContactText">ETS2 LOG BOOK</h1>
+            <select id="user" name="user">
+                <option value="King Driver - jobs">King Driver - jobs</option>
+                <option value="Ruote66Man - jobs">Ruote66Man - jobs</option>
+              </select>
+            <textarea maxlength="30" id="InputFieldStart" placeholder="Kirjoita lähtöpaikka"></textarea>
+            <textarea maxlength="30" id="InputFieldEnd" placeholder="Kirjoita määränpää"></textarea>
+            <textarea maxlength="5" id="InputFieldkm" placeholder="Anna kokonais kilometrit"></textarea>
+            <textarea maxlength="5" id="InputFieldakm" placeholder="Anna ajamasi kilometrit"></textarea>
+            <select id="truck" name="truck">
+                <option value="Scania">Scania</option>
+                <option value="Volvo">Volvo</option>
+                <option value="Mercedes">Mercedes</option>
+                <option value="Man">Man</option>
+                <option value="Daf">Daf</option>
+                <option value="Renault">Renault</option>
+                <option value="Iveco">Iveco</option>
+              </select>
+            <button onclick="send()" id="SendMessage">Lisää merkintä</button>
+            <h3 id="MessageSent">Merkintä lisätty!</h3>
+            <h3 id="MessageSent">Lisääminen ei onnistunut!</h3>
         </div>
     </body>
 </html>

@@ -8,14 +8,18 @@ function f1(){
     str = str + "\n\r" + "Kilometrit: " + document.getElementById("InputFieldkm").value + "km";
     str = str + "\n\r" + "Ajetut kilometrit: " + document.getElementById("InputFieldakm").value + "km";
     var travel = parseFloat(document.getElementById("InputFieldakm").value);
-    var ftravel = travel / 65;
+    var ftravel = travel / 80;
     var ntravel = Math.trunc(ftravel);
+    if(travel >= 45)
+        ntravel = ntravel + 1;
     var min = (travel / ftravel) + ftravel - 48 + ftravel*ftravel;
     var nmin = Math.trunc(min);
     while(nmin > 60)
     {
         nmin = nmin - 60;
     }
+    if(travel <= 44)
+        nmin = nmin + 20;
     str = str + "\n\r" + "Rekka: " + document.getElementById("truck").value + "\n\r";
     str = str + "Aikaa kului: " + ntravel + " tuntia ja " + nmin + " minuuttia.";
     str = str + "\n\r" + document.getElementById("InputFieldInfo").value;

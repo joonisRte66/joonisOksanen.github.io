@@ -106,6 +106,19 @@ h2{
     margin-top: 5px;
 }
 
+#InputFieldInfo{
+    width: 50%;
+    height: 300px;
+    border: none;
+    border-radius: 20px;
+    background-color: whitesmoke;
+    font-size: 20px;
+    font-family: sans-serif;
+    padding: 20px;
+    outline: none;
+    margin-top: 5px;
+}
+
 #SendMessage{
     position: absolute;
     width: 50%;

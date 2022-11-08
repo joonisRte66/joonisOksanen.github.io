@@ -1,6 +1,5 @@
 whurl="https://discord.com/api/webhooks/1034428831886491710/bLLy1zDBHV7rPBCEDhyUfIMKMbLk3g6Fz4AyCAjJassQZXSBL1Kb2ZlOdczhbTCahug5"
 var str = "";
-var hmin = 0;
 function f1(){
     str = str + document.getElementById("user").value + "\r\n" + "\r\n";
     str = str + document.getElementById("InputFieldStart").value;
@@ -14,6 +13,7 @@ function f1(){
     var min = (travel / ftravel) + ftravel - 48 + ftravel*ftravel;
     str = str + "\n\r" + "Rekka: " + document.getElementById("truck").value + "\n\r";
     str = str + "Aikaa kului: " + ntravel + " tuntia ja " + min + " minuuttia.";
+    str = str + "\n\r" + document.getElementById("InputFieldInfo").value;
 }
 function send(){
     f1();
@@ -35,6 +35,7 @@ function send(){
         document.getElementById("InputFieldEnd").value = "";
         document.getElementById("InputFieldkm").value = "";
         document.getElementById("InputFieldakm").value = "";
+        document.getElementById("InputFieldInfo").value = "";
         document.getElementById("MessageSent").style.opacity = 1;
         setTimeout(function(){
             document.getElementById("MessageSent").style.opacity = 0;

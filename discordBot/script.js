@@ -12,6 +12,10 @@ function f1(){
     var ntravel = Math.trunc(ftravel);
     var min = (travel / ftravel) + ftravel - 48 + ftravel*ftravel;
     var nmin = Math.trunc(min);
+    while(nmin > 60)
+    {
+        nmin = nmin - 60;
+    }
     str = str + "\n\r" + "Rekka: " + document.getElementById("truck").value + "\n\r";
     str = str + "Aikaa kului: " + ntravel + " tuntia ja " + nmin + " minuuttia.";
     str = str + "\n\r" + document.getElementById("InputFieldInfo").value;

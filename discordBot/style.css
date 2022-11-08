@@ -108,8 +108,8 @@ h2{
 
 #SendMessage{
     position: absolute;
-    width: 20%;
-    height: 40px;
+    width: 50%;
+    height: 60px;
     bottom: -20%;
     align-items: center;
     font-size: 1em;

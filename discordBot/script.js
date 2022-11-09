@@ -6,9 +6,8 @@ function f1(){
     str = str + " - ";
     str = str + document.getElementById("InputFieldEnd").value;
     str = str + "\n\r" + "Kilometrit: " + document.getElementById("InputFieldkm").value + "km";
-    str = str + "\n\r" + "Ajetut kilometrit: " + document.getElementById("InputFieldakm").value + "km";
-    var travel = parseFloat(document.getElementById("InputFieldakm").value);
-    var ftravel = travel / 80;
+    var travel = parseFloat(document.getElementById("InputFieldkm").value);
+    var ftravel = travel / 85;
     var ntravel = Math.trunc(ftravel);
     if(travel >= 45)
         ntravel = ntravel + 1;
@@ -28,6 +27,7 @@ function send(){
     f1();
     const msg = {
         "content": str,
+        "avatar_url": "https://i.imgur.com/oBPXx0D.png",
         "username": document.getElementById("user").value
     };
     console.log(msg)
@@ -43,7 +43,6 @@ function send(){
         document.getElementById("InputFieldStart").value = "";
         document.getElementById("InputFieldEnd").value = "";
         document.getElementById("InputFieldkm").value = "";
-        document.getElementById("InputFieldakm").value = "";
         document.getElementById("InputFieldInfo").value = "";
         document.getElementById("MessageSent").style.opacity = 1;
         setTimeout(function(){

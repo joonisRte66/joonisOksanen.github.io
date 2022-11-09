@@ -4,7 +4,7 @@ var str = "";
 var ava = "";
 function f1(){
     if(document.getElementById("user").value == "Ruote66Man - jobs")
-        ava = "https://raw.githubusercontent.com/gitjona/gitjona.github.io/main/etslog/scania.png";
+        ava = "https://joonisrte66.github.io/discordBot/scania.png";
     else
         ava = "https://joonisrte66.github.io/discordBot/a.png";
 

@@ -2,9 +2,9 @@ whurl="https://discord.com/api/webhooks/1034428831886491710/bLLy1zDBHV7rPBCEDhyU
 var str = "";
 function f1(){
     str = str + document.getElementById("user").value + "\r\n" + "\r\n";
-    str = str + document.getElementById("InputFieldStart").value;
+    str = str + ":triangular_flag_on_post:" + document.getElementById("InputFieldStart").value;
     str = str + " - ";
-    str = str + document.getElementById("InputFieldEnd").value;
+    str = str + ":checkered_flag:" + document.getElementById("InputFieldEnd").value;
     str = str + "\n\r" + "Kilometrit: " + document.getElementById("InputFieldkm").value + "km";
     var travel = parseFloat(document.getElementById("InputFieldkm").value);
     var ftravel = travel / 85;
@@ -27,10 +27,9 @@ function send(){
     f1();
     const msg = {
         "content": str,
-        "avatar_url": "https://i.imgur.com/oBPXx0D.png",
+        "avatar_url": "https://joonisrte66.github.io/discordBot/a.png",
         "username": document.getElementById("user").value
     };
-    console.log(msg)
     if(str == ""){
         document.getElementById("Message1").style.opacity = 1; 
         setTimeout(function(){

@@ -1,6 +1,12 @@
-whurl="https://discord.com/api/webhooks/1034428831886491710/bLLy1zDBHV7rPBCEDhyUfIMKMbLk3g6Fz4AyCAjJassQZXSBL1Kb2ZlOdczhbTCahug5"
+//whurl="https://discord.com/api/webhooks/1034428831886491710/bLLy1zDBHV7rPBCEDhyUfIMKMbLk3g6Fz4AyCAjJassQZXSBL1Kb2ZlOdczhbTCahug5"
+whurl="https://discord.com/api/webhooks/1039905021531271268/cf90zAYQgeT4pKXBxORsAcdt8Z38FHv8oeTu-mUOp-tkdESUF8gBYcfe9LwHi0n2S4wd"
 var str = "";
+var ava = "";
 function f1(){
+    if(document.getElementById("user").value == "Ruote66Man - jobs")
+        ava = "https://raw.githubusercontent.com/gitjona/gitjona.github.io/main/etslog/scania.png";
+    else
+        ava = "https://joonisrte66.github.io/discordBot/a.png";
     str = str + document.getElementById("user").value + "\r\n" + "\r\n";
     str = str + ":triangular_flag_on_post:" + document.getElementById("InputFieldStart").value;
     str = str + " - ";
@@ -27,7 +33,7 @@ function send(){
     f1();
     const msg = {
         "content": str,
-        "avatar_url": "https://joonisrte66.github.io/discordBot/a.png",
+        "avatar_url": ava,
         "username": document.getElementById("user").value
     };
     if(str == ""){

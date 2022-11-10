@@ -4,7 +4,7 @@ var str = "";
 var ava = "";
 function f1(){
     if(document.getElementById("user").value == "Ruote66Man - jobs")
-        ava = "https://joonisrte66.github.io/discordBot/scania.png";
+        ava = "https://raw.githubusercontent.com/gitjona/gitjona.github.io/main/etslog/scania.png";
     else
         ava = "https://joonisrte66.github.io/discordBot/a.png";
 
@@ -16,16 +16,15 @@ function f1(){
     var travel = parseFloat(document.getElementById("InputFieldkm").value);
     var ftravel = travel / 85;
     var ntravel = Math.trunc(ftravel);
-    if(travel >= 45)
-        ntravel = ntravel + 1;
-    var min = (travel / ftravel) + ftravel - 48 + ftravel*ftravel;
+
+    if(ntravel > ftravel)
+        ntravel = ntravel -1;
+    
+    ftravel = ftravel - ntravel;
+
+    var min = (60 * ftravel);
     var nmin = Math.trunc(min);
-    while(nmin > 60)
-    {
-        nmin = nmin - 60;
-    }
-    if(travel <= 44)
-        nmin = nmin + 20;
+    
     str = str + "\n\r" + "Rekka: " + document.getElementById("truck").value + "\n\r";
     str = str + "Aikaa kului: " + ntravel + " tuntia ja " + nmin + " minuuttia.";
     str = str + "\n\r" + document.getElementById("InputFieldInfo").value;

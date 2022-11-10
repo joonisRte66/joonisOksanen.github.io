@@ -27,7 +27,8 @@ function f1(){
     
     str = str + "\n\r" + "Rekka: " + document.getElementById("truck").value + "\n\r";
     str = str + "Aikaa kului: " + ntravel + " tuntia ja " + nmin + " minuuttia.";
-    str = str + "\n\r" + document.getElementById("InputFieldInfo").value;
+    str = str + "\n\r" + document.getElementById("InputFieldInfo").value + "\n\r\n\r";
+    str = str + "---------------------------------------------------";
 }
 function send(){
     f1();

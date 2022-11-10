@@ -14,7 +14,7 @@ function f1(){
     str = str + ":checkered_flag:" + document.getElementById("InputFieldEnd").value;
     str = str + "\n\r" + "Kilometrit: " + document.getElementById("InputFieldkm").value + "km";
     var travel = parseFloat(document.getElementById("InputFieldkm").value);
-    var ftravel = travel / 85;
+    var ftravel = travel / 80;
     var ntravel = Math.trunc(ftravel);
 
     if(ntravel > ftravel)

@@ -11,7 +11,7 @@ function f1(){
     str = str + document.getElementById("user").value + "\r\n" + "\r\n";
     str = str + ":triangular_flag_on_post:" + document.getElementById("InputFieldStart").value;
     str = str + " - ";
-    str = str + ":checkered_flag:" + "" + document.getElementById("InputFieldEnd").value;
+    str = str + ":checkered_flag:" + document.getElementById("InputFieldEnd").value;
     str = str + "\n\r" + "Kilometrit: " + document.getElementById("InputFieldkm").value + "km";
     var travel = parseFloat(document.getElementById("InputFieldkm").value);
     var ftravel = travel / 80;

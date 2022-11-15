@@ -39,7 +39,7 @@ function send(){
     const msg = {
         "embeds": [{
             "thumbnail": {
-                "url": "https://joonisrte66.github.io/discordBot/r.png"
+                "url": "https://joonisrte66.github.io/discordBot/e.png"
               },
             "description": str,
             "color": c

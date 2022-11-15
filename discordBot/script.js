@@ -2,23 +2,18 @@
 whurl="https://discord.com/api/webhooks/1039905021531271268/cf90zAYQgeT4pKXBxORsAcdt8Z38FHv8oeTu-mUOp-tkdESUF8gBYcfe9LwHi0n2S4wd"
 var str = "";
 var ava = "";
-var logo = "";
 var c = "";
 function makeText(){
     if(document.getElementById("user").value == "Ruote66Man - jobs")
     {
         ava = "https://joonisrte66.github.io/discordBot/scania.png";
-        logo = "https://joonisrte66.github.io/discordBot/r.png";
         c = "14571776";
     }
     else
     {
         ava = "https://joonisrte66.github.io/discordBot/a.png";
-        logo = "https://joonisrte66.github.io/discordBot/k.png";
         c = "2753410";
     }
-
-    str = str + document.getElementById("user").value + "\r\n" + "\r\n";
     str = str + ":triangular_flag_on_post:" + document.getElementById("InputFieldStart").value;
     str = str + " - ";
     str = str + ":checkered_flag:" + document.getElementById("InputFieldEnd").value;
@@ -43,8 +38,8 @@ function send(){
     makeText();
     const msg = {
         "embeds": [{
-            "image": {
-                "url": logo
+            "thumbnail": {
+                "url": "https://joonisrte66.github.io/discordBot/r.png"
               },
             "description": str,
             "color": c

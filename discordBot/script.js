@@ -1,5 +1,5 @@
-//whurl="https://discord.com/api/webhooks/1034428831886491710/bLLy1zDBHV7rPBCEDhyUfIMKMbLk3g6Fz4AyCAjJassQZXSBL1Kb2ZlOdczhbTCahug5"
-whurl="https://discord.com/api/webhooks/1039905021531271268/cf90zAYQgeT4pKXBxORsAcdt8Z38FHv8oeTu-mUOp-tkdESUF8gBYcfe9LwHi0n2S4wd"
+whurl="https://discord.com/api/webhooks/1034428831886491710/bLLy1zDBHV7rPBCEDhyUfIMKMbLk3g6Fz4AyCAjJassQZXSBL1Kb2ZlOdczhbTCahug5"
+//whurl="https://discord.com/api/webhooks/1039905021531271268/cf90zAYQgeT4pKXBxORsAcdt8Z38FHv8oeTu-mUOp-tkdESUF8gBYcfe9LwHi0n2S4wd"
 var str = "";
 var ava = "";
 var c = "";
@@ -18,6 +18,9 @@ function makeText(){
     str = str + " - ";
     str = str + ":checkered_flag:" + document.getElementById("InputFieldEnd").value;
     str = str + "\n\r" + "Kilometrit: " + document.getElementById("InputFieldkm").value + "km";
+    str = str + "\n\r tulo:" + document.getElementById("InputFielde").value + "€";
+    var e = parseFloat(document.getElementById("InputFielde").value) / parseFloat(document.getElementById("InputFieldkm").value);
+    str = str + "\n\r" + "Kilometri korvaus: " + Math.trunc(e) + "€";
     var travel = parseFloat(document.getElementById("InputFieldkm").value);
     var ftravel = travel / 85;
     var ntravel = Math.trunc(ftravel);
@@ -38,9 +41,6 @@ function send(){
     makeText();
     const msg = {
         "embeds": [{
-            "thumbnail": {
-                "url": "https://joonisrte66.github.io/discordBot/e.png"
-              },
             "description": str,
             "color": c
           }],
@@ -59,6 +59,7 @@ function send(){
         document.getElementById("InputFieldStart").value = "";
         document.getElementById("InputFieldEnd").value = "";
         document.getElementById("InputFieldkm").value = "";
+        document.getElementById("InputFielde").value = "";
         document.getElementById("InputFieldInfo").value = "";
         document.getElementById("MessageSent").style.opacity = 1;
         setTimeout(function(){

@@ -1,0 +1,96 @@
+*{
+	padding: 0;
+	margin: 0;
+	font-family: 'Josefin Sans', sans-serif;
+	box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+.page{
+	height: 100vh;
+	width: 100%;
+	background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0)), url(b.png);
+	background-size: cover;
+	background-position: center;
+    position: relative;
+}
+.navbar{
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    margin: auto;
+    padding: 3vh 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 40px;
+    position: relative;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+    font-size: 1.6vh;
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(0, 0, 0);
+}
+
+.navbar ul li a:hover{
+    color: rgb(21, 139, 255);
+}
+
+.navbar ul li::after{
+    content: '';
+    height: 5px;
+    width: 0;
+    background-color: rgb(21, 139, 255);
+    border-radius: 20px;
+    position: absolute;
+    right: 0;
+    bottom: -10px;
+    transition: 0.2s;
+}
+
+.navbar ul li:hover::after{
+    width: 100%;
+}
+
+.home{
+    margin-left: 8%;
+    margin-top: 13%;
+}
+
+.home h1{
+    font-size: 5vh;
+    color: rgb(255, 255, 255);
+}
+
+span{
+    color: rgb(21, 139, 255);
+}
+
+.home p{
+    margin-right: 65%;
+    color: white;
+    line-height: 2vh;
+}
+
+.home a{
+    background-color: white;
+    padding: 1.3vh 2.3vh;
+    text-decoration: none;
+    font-weight: bold;
+    color: #111;
+    display: inline-block;
+    margin: 5vh 0;
+    border-radius: 1vh;
+}
+
+.home a:hover{
+    background-color: rgb(21, 139, 255);
+}

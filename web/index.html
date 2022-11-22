@@ -3,6 +3,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
+        <script src="https://unpkg.com/vue@2.4.3/dist/vue.js"></script>
         <title>Joonis Oksanen</title>
 </head>
 <body>
@@ -19,7 +20,7 @@
             </div>
         </nav>
         <div class="home" id="content">
-            <h1>I'm<span> Software developer</span></h1>
+            <h1>I'm<span> {{ name }}</span></h1>
             <p>I'm Joonis Oksanen. I live in Järvenpää, Finland. I study at Keuda in Kerava.
                 I'm studying to be a software developer and I have already 5 years of experience
                 in this field. I like to do a lot of graphic design and 3d modelling in my spare time.
@@ -27,4 +28,13 @@
         <a href="#">CHECK MY CV</a>
         </div>
     </div>
+    <script lang="Javascript">
+        var vm = new Vue({
+            el: '#content',
+
+            data: {
+                name: 'Developer'
+            },
+        });
+    </script>
 </body>

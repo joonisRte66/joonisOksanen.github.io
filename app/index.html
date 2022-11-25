@@ -100,21 +100,23 @@
  
             mounted: function()
             {
-                console.log(newTask);
+                console.log(this.newTask);
             },
             methods:
             {
                 saveTask()
                 {
-                    newTask = this$refs.newTask.value;
-                    let encodedName = newTask;
-                    axios.get("localhost://app/task.php?taskName=" + encodedName)
+                    this.newTask = this.$refs.newTask.value;
+                    let encodedName = this.newTask; //TODO: Make base64 enconding here.
+                    axios.get("http://localhost/GitHub/joonisRte66.github.io/app/task.php?insertTask=1&taskName=" + encodedName)
                 }          
             }
         });
  
     </script>
+ 
 </body>
+ 
  
  
 </html>

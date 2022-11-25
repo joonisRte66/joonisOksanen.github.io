@@ -70,9 +70,35 @@
 </head>
 
 <body>
+    <div id="mainContainer" class="mainContainer">
+        <div class="priorityBlock">
+            PRIORITEETTI 1
+        </div>        
+        <!-- this is sample data -->
+        <div class="taskBlock">
+            Lue kokeisiin
+        </div>
+        <div class="taskBlock">
+            Koulu projekti
+        </div>
+        <div class="taskBlock">
+            Korjaa mopo
+        </div>
+        <div class="priorityBlock">
+            PRIORITEETTI 2
+        </div>
+        <div class="priorityBlock">
+            PRIORITEETTI 3
+        </div>                            
+ 
+ 
+        <div id="newTaskContainer" class="newTaskContainer">
+            <input placeholder="INSERT HERE A TASK" ref="newTask" id="taskName" class="newTaskName" type="text" v-bind:value="newTask" />
+            <input @click= "saveTask"  class="submitButton" type="button" value=" + " />
+        </div>
+    </div>        
 
     <script language="javascript">
-        
         let vueComponent = new Vue(
         {
             el: "#mainContainer",
@@ -80,49 +106,22 @@
             {
                 newTask: ""
             },
-
+ 
             mounted: function()
             {
-                console.log(newTask);
+                console.log(this.newTask);
             },
-
             methods:
             {
                 saveTask()
                 {
-                    newTask = $refs.newTask.value;
-                }
+                    this.newTask = this.$refs.newTask.value;
+                    let encodedName = this.newTask; //TODO: Make base64 enconding here.
+                    axios.get("localhost://app/task.php?taskName=" + encodedName)
+                }          
             }
         });
-
+ 
     </script>
-
-    <div class="priorityBlock">
-        PRIORITEETTI 1
-    </div>
-    <div id="mainContainer" class="mainContainer">
-        <!--this is sample data-->
-        <div class="taskBlock">
-            Lue kokeisiin
-        </div>
-        <div class="taskBlock">
-            Kouluprojekti
-        </div>
-        <div class="taskBlock">
-            Korjaa auto
-        </div>
-        <div class="priorityBlock">
-            PRIORITEETTI 2
-        </div>
-        <div class="priorityBlock">
-            PRIORITEETTI 3
-        </div>
-        <div id="newTaskContainer" class="newTaskContainer">
-            <input ref="newTask" class="newTaskName" type="text" v-bind:value="newTask" />
-            <input @click="saveTask" class="submitButton" type="button" value="+" />
-        </div>
-    </div>
-
 </body>
-
 </html>

@@ -81,8 +81,7 @@
         </div>
         <div class="priorityBlock">
             PRIORITEETTI 3
-        </div>                            
- 
+        </div>
  
         <div id="newTaskContainer" class="newTaskContainer">
             <input placeholder="INSERT HERE A TASK" ref="newTask" id="taskName" class="newTaskName" type="text" v-bind:value="newTask" />
@@ -107,7 +106,7 @@
                 saveTask()
                 {
                     this.newTask = this.$refs.newTask.value;
-                    let encodedName = this.newTask; //TODO: Make base64 enconding here.
+                    let encodedName = this.newTask;
                     axios.get("http://localhost/GitHub/joonisRte66.github.io/app/task.php?insertTask=1&taskName=" + encodedName)
                 }          
             }

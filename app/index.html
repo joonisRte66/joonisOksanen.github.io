@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<head>
+
+    <title>Todo app</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    
+    <style>
+        .taskBlock
+        {
+            background-color: #119;
+            color: #fff;
+            padding: 4px;
+            font-family: fantasy;
+            width: 100%;
+            margin-top: 1vh;
+            font-size: 4vh;
+            text-align: center;
+        }
+        .mainContainer
+        {
+            padding: 0vh 1vh;
+        }
+        .priorityBlock
+        {
+            
+            background-color: #f0f;
+            color: #fff;
+            padding: 0.5vh;
+            font-family: fantasy;
+            width: 100%;
+            margin-top: 1vh;
+            font-size: 5vh;
+            text-align: center;
+        }
+        .newTaskContainer
+        {
+            position: fixed;
+            bottom: 0px;
+            padding: 3vh;
+            width: 90%;
+ 
+        } 
+        .newTaskName, .submitButton
+        {
+            font-size: 2vh;
+            padding: 2vh;
+        }
+        .newTaskName
+        {
+            margin-top: 6vh;
+            width: 70%;
+            border-radius: 10vh;
+            border: 0.5vh solid #f0f;
+            color: #999;
+        }
+        .submitButton
+        {
+            float: right;
+            margin-bottom: 0px;
+            border: 0.5vh solid #f0f;
+            border-radius: 10vh;
+            padding: 1vh;
+            color: #fff;
+            font-size: 5vh;
+            background-color: #f0f; 
+            width: 8vh;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <script language="javascript">
+        
+        let vueComponent = new Vue(
+        {
+            el: "#mainContainer",
+            data:
+            {
+                newTask: ""
+            },
+
+            mounted: function()
+            {
+                console.log(newTask);
+            },
+
+            methods:
+            {
+                saveTask()
+                {
+                    newTask = $refs.newTask.value;
+                }
+            }
+        });
+
+    </script>
+
+    <div class="priorityBlock">
+        PRIORITEETTI 1
+    </div>
+    <div id="mainContainer" class="mainContainer">
+        <!--this is sample data-->
+        <div class="taskBlock">
+            Lue kokeisiin
+        </div>
+        <div class="taskBlock">
+            Kouluprojekti
+        </div>
+        <div class="taskBlock">
+            Korjaa auto
+        </div>
+        <div class="priorityBlock">
+            PRIORITEETTI 2
+        </div>
+        <div class="priorityBlock">
+            PRIORITEETTI 3
+        </div>
+        <div id="newTaskContainer" class="newTaskContainer">
+            <input ref="newTask" class="newTaskName" type="text" v-bind:value="newTask" />
+            <input @click="saveTask" class="submitButton" type="button" value="+" />
+        </div>
+    </div>
+
+</body>
+
+</html>

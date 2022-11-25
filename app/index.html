@@ -1,74 +1,66 @@
-<!DOCTYPE html>
+<html>
 <head>
-
     <title>Todo app</title>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-    
     <style>
         .taskBlock
         {
-            background-color: #119;
+            background-color: #33aa33;
             color: #fff;
             padding: 4px;
-            font-family: fantasy;
+            font-family: Verdana;
             width: 100%;
-            margin-top: 1vh;
-            font-size: 4vh;
-            text-align: center;
+            margin-top: 10px;
+            font-size: 22px;
+            text-align: center;         
         }
         .mainContainer
         {
-            padding: 0vh 1vh;
+            padding: 0px 10px;
         }
         .priorityBlock
         {
-            
-            background-color: #f0f;
+            background-color: #b0b0f2;
             color: #fff;
-            padding: 0.5vh;
-            font-family: fantasy;
+            padding: 2px 4px;
+            font-family: Verdana;
             width: 100%;
-            margin-top: 1vh;
-            font-size: 5vh;
-            text-align: center;
+            margin-top: 10px;
+            font-size: 22px;
+            text-align: center;         
         }
         .newTaskContainer
         {
             position: fixed;
             bottom: 0px;
-            padding: 3vh;
+            padding: 14px;
             width: 90%;
  
         } 
         .newTaskName, .submitButton
         {
-            font-size: 2vh;
-            padding: 2vh;
+            font-size: 22px;
+            padding: 4px;
         }
         .newTaskName
         {
-            margin-top: 6vh;
-            width: 70%;
-            border-radius: 10vh;
-            border: 0.5vh solid #f0f;
-            color: #999;
+            margin-top: 12px;
         }
         .submitButton
         {
             float: right;
             margin-bottom: 0px;
-            border: 0.5vh solid #f0f;
-            border-radius: 10vh;
-            padding: 1vh;
+            border: 1px solid #33aa33;
+            border-radius: 40px;
+            padding: 10px;
             color: #fff;
-            font-size: 5vh;
-            background-color: #f0f; 
-            width: 8vh;
+            font-size: 32px;
+            background-color: #33aa33; 
         }
+ 
     </style>
-
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
 </head>
-
 <body>
     <div id="mainContainer" class="mainContainer">
         <div class="priorityBlock">
@@ -97,7 +89,6 @@
             <input @click= "saveTask"  class="submitButton" type="button" value=" + " />
         </div>
     </div>        
-
     <script language="javascript">
         let vueComponent = new Vue(
         {
@@ -109,19 +100,21 @@
  
             mounted: function()
             {
-                console.log(this.newTask);
+                console.log(newTask);
             },
             methods:
             {
                 saveTask()
                 {
-                    this.newTask = this.$refs.newTask.value;
-                    let encodedName = this.newTask; //TODO: Make base64 enconding here.
-                    axios.get("localhost://app/task.php?insertTask=1&taskName=" + encodedName)
+                    newTask = this$refs.newTask.value;
+                    let encodedName = newTask;
+                    axios.get("localhost://app/task.php?taskName=" + encodedName)
                 }          
             }
         });
  
     </script>
 </body>
+ 
+ 
 </html>

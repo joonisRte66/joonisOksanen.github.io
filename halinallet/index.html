@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://unpkg.com/vue@2.4.3/dist/vue.js"></script>
+        <title>Page</title>
+    </head>
+    <body>
+        <div class="columns">
+            <ul class="price">
+                <li class="header">Sähkön hinta tänään:</li>
+                <li class="grey">€ 9.99 / kwh</li>
+                <li>Halpa hinta</li>
+                <li>Saunan voi laittaa päälle.</li>
+                <li>Tietokonetta voi käyttää.</li>
+                <li>Ei kannata lämmittää uunia.</li>
+                <li class="grey"><a @click="findData()" class="button">Nyky hinta</a></li>
+            </ul>
+        </div> 
+        <div class="columns">
+            <ul class="price">
+                <li class="header">Sähkön hinta (Tähän päivämäärä jonka käyttäjä syöttää):</li>
+                <li class="grey">€ 9.99 / kwh</li>
+                <li>Halpa hinta</li>
+                <li>Saunan voi laittaa päälle.</li>
+                <li>Tietokonetta voi käyttää.</li>
+                <li>Ei kannata lämmittää uunia.</li>
+                <input type="text" id="date" name="date" placeholder="Anna päivämäärä">
+                <li class="grey"><a @click="#" class="button">Tarkista hinta</a></li>
+            </ul>
+        </div> 
+
+        <script language="javascript">
+
+            var vueObject = new Vue({
+                       el: '#app',
+                       data: {
+                          answer: "",
+    
+    
+                       },
+                       methods: {
+                         findData: function ()
+                         {
+                        let url1 = ("http://www.boredapi.com/api/activity/") // Tähän vaihda oikea url 
+    
+    
+                        axios.get (url1)
+                          /* Tässä suodatetaan tulevasta JSONISTA tarvittavat datat ja heijastetaan VUE/HTML osioon {{answer}} */
+                            .then((response) => {
+                                let filter = response.data.activity; 
+    
+                                this.answer = filter ;
+    
+    
+                              });
+                         }
+    
+                       },
+                       mounted: function () {
+                        this.data();
+                       },
+    
+    
+                     })
+                 </script>
+    </body>
+</html> 

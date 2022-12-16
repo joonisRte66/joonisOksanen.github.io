@@ -60,4 +60,11 @@ html{
     .columns {
         width: 100%;
     }
+    #date{
+        width: 40%;
+        margin-left: 10%;
+        background-color: #f5ff04ff;
+        color: #111;
+        font-size: 25px;
+    }
 }

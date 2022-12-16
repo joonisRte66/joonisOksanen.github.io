@@ -10,7 +10,7 @@ html{
 }
 .columns {
     margin-left: 25%;
-    width: 50%;
+    width: 60%;
     padding: 20px;
 }
 .price {
@@ -49,9 +49,11 @@ html{
 }
 
 #date{
-    margin-left: 40%;
+    width: 70%;
+    margin-left: 20%;
     background-color: #f5ff04ff;
     color: #111;
+    font-size: 25px;
 }
 
 @media only screen and (max-width: 600px) {
